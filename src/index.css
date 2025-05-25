@@ -1,0 +1,79 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 200 20% 98%;
+    --foreground: 200 50% 3%;
+    --card: 0 0% 100%;
+    --card-foreground: 200 50% 3%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 50% 3%;
+    --primary: 196 100% 50%;
+    --primary-foreground: 200 50% 98%;
+    --secondary: 200 30% 96%;
+    --secondary-foreground: 200 50% 3%;
+    --muted: 200 30% 96%;
+    --muted-foreground: 200 30% 40%;
+    --accent: 196 100% 50%;
+    --accent-foreground: 200 50% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 200 50% 98%;
+    --border: 200 30% 92%;
+    --input: 200 30% 92%;
+    --ring: 196 100% 50%;
+    --radius: 0.75rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-slate-900 to-slate-800 text-white font-sans;
+  }
+
+  .glass {
+    @apply transition-colors duration-300;
+  }
+
+  .section-padding {
+    @apply py-24 px-4 md:px-6 lg:px-8;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(96,165,250,0.3)];
+  }
+}
+
+.nav-link {
+  @apply relative text-sm font-sans uppercase tracking-wider hover:text-blue-400 transition-colors duration-300;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute left-0 bottom-0 w-0 h-0.5 bg-blue-400 transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.section-title {
+  @apply text-4xl md:text-5xl font-bold mb-12 text-white relative;
+}
+
+.section-title::after {
+  content: '';
+  @apply absolute -bottom-4 left-0 w-24 h-1 bg-blue-400;
+}
+
+.card {
+  @apply rounded-xl p-8 transition-all duration-300 hover:text-blue-400;
+}
+
+.skill-tag {
+  @apply px-4 py-2 rounded-full text-sm font-medium text-blue-300;
+}
