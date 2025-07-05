@@ -27,7 +27,7 @@ const hackathons: Achievement[] = [
     description: "Collaborated in exploring and validating public data to promote transparency and accountability.",
     date: "Jan 2025",
     projectLink: "https://openknowledge.np/datathon2025"
-    
+
   },
   {
     name: "KEC HackFest 2024",
@@ -46,10 +46,10 @@ const hackathons: Achievement[] = [
     githubLink: "https://github.com/dhirendraxd",
     linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
     date: "Dec 6th–8th, 2023",
-    skills: ["React", "Next.js", "Supabase"]
+    skills: ["HTML", "CSS", "XAMPP"]
 
   },
-  
+
 ];
 
 const achievements: Achievement[] = [
@@ -81,7 +81,7 @@ const achievements: Achievement[] = [
     description: "Completed Google’s cybersecurity training covering networking, Linux, and incident response.",
     date: "Oct 2024"
   },
-  
+
 ];
 
 export const AchievementsSection = () => {
