@@ -23,6 +23,13 @@ const hackathons: Achievement[] = [
     certificateLink: "https://www.udacity.com/certificate/15ec95fe-48d9-11f0-a9d2-875efbc54a76" // example
   },
   {
+    name: "PublicBodies Datathon 2025",
+    description: "Collaborated in exploring and validating public data to promote transparency and accountability.",
+    date: "Jan 2025",
+    projectLink: "https://openknowledge.np/datathon2025"
+    
+  },
+  {
     name: "KEC HackFest 2024",
     description: "Built a volunteer recruitment platform using HTML5, CSS, JavaScript, and deployed it on Vercel.",
     projectLink: "https://github.com/KEC-Hack-a-LITE/NewBie.git",
@@ -30,7 +37,7 @@ const hackathons: Achievement[] = [
     linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
     date: "Feb 16th–17th, 2024",
     skills: ["HTML5", "CSS", "JavaScript", "Vercel"]
-    // no certificateLink here
+
   },
   {
     name: "KIST HackFest 2023",
@@ -40,15 +47,9 @@ const hackathons: Achievement[] = [
     linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
     date: "Dec 6th–8th, 2023",
     skills: ["React", "Next.js", "Supabase"]
-    // no certificateLink here
+
   },
-  {
-    name: "PublicBodies Datathon 2025",
-    description: "Collaborated in exploring and validating public data to promote transparency and accountability.",
-    date: "Jan 2025",
-    projectLink: "https://openknowledge.np/datathon2025"
-    // no certificateLink here
-  }
+  
 ];
 
 const achievements: Achievement[] = [
