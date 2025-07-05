@@ -39,38 +39,38 @@ const certifications = [
     name: "AWS Knowledge: Cloud Essentials",
     issuer: "Amazon Web Services",
     year: "2025",
-    certificateLink: "https://aws.amazon.com/certification/cloud-essentials/"
+    certificateLink: "https://www.credly.com/badges/2a76a90c-8cb9-4c9b-8dbc-8bc60c980492/linked_in_profile"
   },
   {
-    name: "Google UI/UX Design Professional Certificate",
+    name: "Google UX Design Professional Certificate",
     issuer: "Google",
     year: "2024",
-    certificateLink: "https://www.coursera.org/account/accomplishments/professional-certificates/ui-ux-design"
+    certificateLink: "https://www.coursera.org/account/accomplishments/specialization/DYZCKXPPE7CW"
   },
   {
     name: "Google Digital Marketing & E-Commerce Professional Certificate",
     issuer: "Google",
     year: "2024",
-    certificateLink: "https://www.coursera.org/account/accomplishments/professional-certificates/digital-marketing-e-commerce"
+    certificateLink: "https://www.coursera.org/account/accomplishments/specialization/ZXQWFHLPSQQ4"
   },
   {
     name: "Google Cybersecurity Professional Certificate",
     issuer: "Google",
     year: "2024",
-    certificateLink: "https://www.coursera.org/account/accomplishments/professional-certificates/cybersecurity"
+    certificateLink: "https://www.coursera.org/account/accomplishments/specialization/IVM70IZXSS6H"
   },
   {
     name: "Introducing Generative AI with AWS",
     issuer: "Udacity",
     year: "2025",
     credentialId: "15ec95fe-48d9-11f0-a9d2-875efbc54a76",
-    certificateLink: "https://www.udacity.com/certificate/15ec95fe-48d9-11f0-a9d2-875efbc54a76"
+    certificateLink: "https://www.udacity.com/certificate/e/15ec95fe-48d9-11f0-a9d2-875efbc54a76"
   },
   {
     name: "असल नागरिक बनौं – Civic Leadership Training (Part 5)",
     issuer: "Ganeshman Singh Foundation",
     year: "2025",
-    certificateLink: "https://ganeshmansinghfoundation.org/certificates/dhirendra"
+    certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7341260946419417088/"
   }
 ];
 
