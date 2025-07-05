@@ -37,16 +37,33 @@ const Resume = () => {
 
             {/* Experience */}
             <section className="card">
-              <h2 className="text-2xl font-bold mb-4 text-blue-300">Experience</h2>
+              {/* Work Experience */}
+              <h2 className="text-2xl font-bold mb-4 text-blue-300">Work Experience</h2>
               <div className="space-y-4 text-gray-300">
+
                 <div>
-                  <h3 className="text-xl font-semibold">Campus Representative</h3>
-                  <p className="text-gray-400">AWS Cloud Club Nepal • Mar 2025 – Present</p>
+                  <h3 className="text-xl font-semibold">SEO Specialist</h3>
+                  <p className="text-gray-400">CtrlBits • May 2025 – Present</p>
                   <ul className="list-disc list-inside mt-2 space-y-1">
-                    <li>Promoting AWS resources in college and organizing cloud-related events.</li>
-                    <li>Actively participating in AWS training and student community building.</li>
+                    <li>Leading SEO strategy and implementation to improve organic search performance and visibility.</li>
+                    <li>Conducting keyword research, content optimization, and technical SEO audits.</li>
+                    <li>Collaborating with marketing and development teams to enhance website traffic and conversion.</li>
                   </ul>
                 </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold">College Representative</h3>
+                  <p className="text-gray-400">AWS Cloud Club - Nepal • Mar 2025 – Present</p>
+                  <ul className="list-disc list-inside mt-2 space-y-1">
+                    <li>Representing AWS Cloud Club at college and promoting cloud technology awareness.</li>
+                    <li>Organizing cloud-focused workshops and events for student engagement.</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Volunteer Experience */}
+              <h2 className="text-2xl font-bold mt-12 mb-4 text-blue-300">Volunteer Experience</h2>
+              <div className="space-y-4 text-gray-300">
 
                 <div>
                   <h3 className="text-xl font-semibold">Volunteer – Hospitality & Guest Handling</h3>
@@ -71,6 +88,7 @@ const Resume = () => {
                     <li>Assisted in logistics and guest experience for the independently organized TEDx event.</li>
                   </ul>
                 </div>
+
               </div>
             </section>
 
@@ -120,14 +138,21 @@ const Resume = () => {
             {/* Education & Certifications */}
             <section className="card">
               <h2 className="text-2xl font-bold mb-4 text-blue-300">Education & Certifications</h2>
-              <div className="space-y-4">
+              <div className="space-y-4 text-gray-300">
                 <div>
                   <h3 className="text-xl font-bold mb-2">Bachelor's in Information Management</h3>
-                  <p className="text-gray-400">KIST College & SS • 2023 - Present</p>
+                  <p>KIST College & SS | 2023 –  2027</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">Certifications</h3>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
+                  <ul className="list-disc list-inside space-y-2">
+                    <li>
+                      Introducing Generative AI with AWS — <span className="italic">Udacity</span><br />
+
+                    </li>
+                    <li>
+                      Civic Leadership Training (Part 5) — <span className="italic">Ganeshman Singh Foundation</span><br />
+                    </li>
                     <li>Google Cybersecurity Professional Certificate</li>
                     <li>Google Digital Marketing & E-Commerce</li>
                     <li>Google UI/UX Design Certificate</li>

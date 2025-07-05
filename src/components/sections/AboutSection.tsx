@@ -38,11 +38,24 @@ const skillCategories = {
 
 
 const certifications = [
+  
+  {
+    name: "Introducing Generative AI with AWS",
+    issuer: "Udacity",
+    year: "2025",
 
+  },
+  {
+    name: "असल नागरिक बनौं – Civic Leadership Training (Part 5)",
+    issuer: "Ganeshman Singh Foundation",
+    year: "2025",
+    description: "Completed 10-day civic leadership training focused on ethics, democracy, development, and effective communication."
+  },
   {
     name: "AWS Knowledge: Cloud Essentials",
     issuer: "Amazon Web Services",
-    year: "2025"
+    year: "2025",
+    expiration: "2028"
   },
   {
     name: "Google UI/UX Design Professional Certificate",
@@ -57,9 +70,12 @@ const certifications = [
   {
     name: "Google Cybersecurity Professional Certificate",
     issuer: "Google",
-    year: "2024"
+    year: "2024",
+    description: "Comprehensive training covering threat analysis, network security, and incident response."
   }
+  
 ];
+
 
 export const AboutSection = () => {
   return (

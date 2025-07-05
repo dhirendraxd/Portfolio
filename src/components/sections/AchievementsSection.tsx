@@ -1,4 +1,4 @@
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Award } from "lucide-react";
 
 interface Achievement {
   name: string;
@@ -7,6 +7,8 @@ interface Achievement {
   projectLink?: string;
   githubLink?: string;
   linkedinLink?: string;
+  certificateLink?: string;
+  skills?: string[];
 }
 
 const hackathons: Achievement[] = [
@@ -16,7 +18,8 @@ const hackathons: Achievement[] = [
     projectLink: "https://devpost.com/software/devbus#updates",
     githubLink: "https://github.com/dhirendraxd/Codeyatra-Hackathon.git",
     linkedinLink: "https://www.linkedin.com/in/dhirendra-singh-dhami/",
-    date: "Feb 9th–11th, 2025"
+    date: "Feb 9th–11th, 2025",
+    skills: ["React", "Supabase", "OpenAI API"]
   },
   {
     name: "KEC HackFest 2024",
@@ -24,7 +27,8 @@ const hackathons: Achievement[] = [
     projectLink: "https://github.com/KEC-Hack-a-LITE/NewBie.git",
     githubLink: "https://github.com/dhirendraxd",
     linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
-    date: "Feb 16th–17th, 2024"
+    date: "Feb 16th–17th, 2024",
+    skills: ["HTML5", "CSS", "JavaScript", "Vercel"]
   },
   {
     name: "KIST HackFest 2023",
@@ -32,7 +36,14 @@ const hackathons: Achievement[] = [
     projectLink: "https://new-b-hackathon.vercel.app/",
     githubLink: "https://github.com/dhirendraxd",
     linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
-    date: "Dec 6th–8th, 2023"
+    date: "Dec 6th–8th, 2023",
+    skills: ["React", "Next.js", "Supabase"]
+  },
+  {
+    name: "PublicBodies Datathon 2025",
+    description: "Collaborated in exploring and validating public data to promote transparency and accountability.",
+    date: "Jan 2025",
+    projectLink: "https://openknowledge.np/datathon2025"
   }
 ];
 
@@ -40,17 +51,28 @@ const achievements: Achievement[] = [
   {
     name: "AWS Cloud Club College Representative",
     description: "Selected as a CR for AWS Cloud Club Nepal to foster cloud learning and community growth.",
-    date: "March 2025 - Present",
+    date: "March 2025 - Present"
   },
   {
     name: "Volunteer - Nepal International Film Festival 2025",
     description: "Handled guest coordination and hospitality during the Nepal International Film Festival.",
-    date: "March 2025",
+    date: "March 2025"
   },
   {
     name: "Volunteer - TEDxBaneshwor 2nd Edition 2024",
     description: "Completed Google’s cybersecurity training covering networking, Linux, and incident response.",
-    date: "Oct 2024",
+    date: "Oct 2024"
+  },
+  {
+    name: "Civic Leadership Training (Part 5)",
+    description: "Completed a 10-day intensive training focused on ethics, democracy, development, and communication.",
+    date: "Jun 2025",
+    certificateLink: "https://ganeshmansinghfoundation.org/certificates/dhirendra"
+  },
+  {
+    name: "AWS Cloud Practitioner (In Progress)",
+    description: "Currently pursuing AWS foundational cloud certification to deepen cloud expertise.",
+    date: "2025"
   }
 ];
 
@@ -72,6 +94,11 @@ export const AchievementsSection = () => {
                       <h4 className="font-bold text-blue-300 mb-1">{project.name}</h4>
                       <span className="text-xs text-gray-400">{project.date}</span>
                       <p className="text-sm text-gray-300 mt-1">{project.description}</p>
+                      {project.skills && project.skills.length > 0 && (
+                        <p className="mt-2 text-xs text-blue-400 font-mono">
+                          Skills: {project.skills.join(", ")}
+                        </p>
+                      )}
                     </div>
                   </div>
                   <div className="flex items-center gap-3 mt-4 flex-wrap">
@@ -122,6 +149,17 @@ export const AchievementsSection = () => {
                     <span className="text-xs text-gray-400">{cert.date}</span>
                   </div>
                   <p className="text-sm text-gray-300 mt-1">{cert.description}</p>
+                  {cert.certificateLink && (
+                    <a
+                      href={cert.certificateLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center mt-2 text-xs text-blue-400 hover:underline"
+                    >
+                      <Award className="w-4 h-4 mr-1" />
+                      View Certificate
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
