@@ -147,11 +147,11 @@ const Resume = () => {
                   <h3 className="text-xl font-bold mb-2">Certifications</h3>
                   <ul className="list-disc list-inside space-y-2">
                     <li>
-                      Introducing Generative AI with AWS — <span className="italic">Udacity</span><br />
+                      Introducing Generative AI with AWS 
 
                     </li>
                     <li>
-                      Civic Leadership Training (Part 5) — <span className="italic">Ganeshman Singh Foundation</span><br />
+                      Civic Leadership Training (Part 5) 
                     </li>
                     <li>Google Cybersecurity Professional Certificate</li>
                     <li>Google Digital Marketing & E-Commerce</li>
