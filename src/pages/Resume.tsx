@@ -73,19 +73,20 @@ const Resume = () => {
                   </ul>
                 </div>
 
+              
+
+                <div>
+                  <h3 className="text-xl font-semibold">TEDxBaneshwor Volunteer</h3>
+                  <p className="text-gray-400">TEDx Event • Dec 2023</p>
+                  <ul className="list-disc list-inside mt-2 space-y-1">
+                    <li>Assisted in logistics and guest experience for the independently organized TEDx event.</li>
+                  </ul>
+                </div>
                 <div>
                   <h3 className="text-xl font-semibold">Volunteer – Technical & Logistics</h3>
                   <p className="text-gray-400">KIST HackFest 2024 • Jun 2024</p>
                   <ul className="list-disc list-inside mt-2 space-y-1">
                     <li>Helped set up tech infrastructure, managed registrations, and supported teams during hackathon.</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-semibold">TEDxBaneshwor Volunteer</h3>
-                  <p className="text-gray-400">TEDx Event • 2023</p>
-                  <ul className="list-disc list-inside mt-2 space-y-1">
-                    <li>Assisted in logistics and guest experience for the independently organized TEDx event.</li>
                   </ul>
                 </div>
 

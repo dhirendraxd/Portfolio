@@ -26,7 +26,7 @@ const hackathons: Achievement[] = [
     name: "PublicBodies Datathon 2025",
     description: "Collaborated in exploring and validating public data to promote transparency and accountability.",
     date: "Jan 2025",
-    projectLink: "https://openknowledge.np/datathon2025"
+    projectLink: "https://www.linkedin.com/feed/update/urn:li:activity:7283845541002665984/",
 
   },
   {
