@@ -36,6 +36,25 @@ const skillCategories = {
 
 const certifications = [
   {
+    name: "Introducing Generative AI with AWS",
+    issuer: "Udacity",
+    year: "2025",
+    credentialId: "15ec95fe-48d9-11f0-a9d2-875efbc54a76",
+    certificateLink: "https://www.udacity.com/certificate/e/15ec95fe-48d9-11f0-a9d2-875efbc54a76"
+  },
+  {
+    name: "AWS Educate Machine Learning Foundations",
+    issuer: "Amazon Web Services",
+    year: "2025",
+    certificateLink: "https://www.credly.com/badges/028b9181-dbc3-444b-a478-4c90639811f8/public_url"
+  },
+  {
+    name: "असल नागरिक बनौं – Civic Leadership Training (Part 5)",
+    issuer: "Ganeshman Singh Foundation",
+    year: "2025",
+    certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7341260946419417088/"
+  },
+  {
     name: "AWS Knowledge: Cloud Essentials",
     issuer: "Amazon Web Services",
     year: "2025",
@@ -59,19 +78,7 @@ const certifications = [
     year: "2024",
     certificateLink: "https://www.coursera.org/account/accomplishments/specialization/IVM70IZXSS6H"
   },
-  {
-    name: "Introducing Generative AI with AWS",
-    issuer: "Udacity",
-    year: "2025",
-    credentialId: "15ec95fe-48d9-11f0-a9d2-875efbc54a76",
-    certificateLink: "https://www.udacity.com/certificate/e/15ec95fe-48d9-11f0-a9d2-875efbc54a76"
-  },
-  {
-    name: "असल नागरिक बनौं – Civic Leadership Training (Part 5)",
-    issuer: "Ganeshman Singh Foundation",
-    year: "2025",
-    certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7341260946419417088/"
-  }
+  
 ];
 
 export const AboutSection = () => {
