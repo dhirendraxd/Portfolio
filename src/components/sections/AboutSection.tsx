@@ -1,7 +1,6 @@
 import { FileText, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-
 const skillCategories = {
   'Cyber Security': [
     'Cybersecurity Fundamentals',
@@ -9,7 +8,6 @@ const skillCategories = {
     'OAuth/OIDC',
     'Network Security',
     'Digital Forensics'
-
   ],
   'Web Development': [
     'HTML5',
@@ -36,31 +34,30 @@ const skillCategories = {
   ]
 };
 
-
 const certifications = [
   {
     name: "AWS Knowledge: Cloud Essentials",
     issuer: "Amazon Web Services",
     year: "2025",
-    certificateLink: "https://aws.amazon.com/certification/cloud-essentials/" // example link; replace if you have exact URL
+    certificateLink: "https://aws.amazon.com/certification/cloud-essentials/"
   },
   {
     name: "Google UI/UX Design Professional Certificate",
     issuer: "Google",
     year: "2024",
-    certificateLink: "https://www.coursera.org/account/accomplishments/professional-certificates/ui-ux-design" // example
+    certificateLink: "https://www.coursera.org/account/accomplishments/professional-certificates/ui-ux-design"
   },
   {
     name: "Google Digital Marketing & E-Commerce Professional Certificate",
     issuer: "Google",
     year: "2024",
-    certificateLink: "https://www.coursera.org/account/accomplishments/professional-certificates/digital-marketing-e-commerce" // example
+    certificateLink: "https://www.coursera.org/account/accomplishments/professional-certificates/digital-marketing-e-commerce"
   },
   {
     name: "Google Cybersecurity Professional Certificate",
     issuer: "Google",
     year: "2024",
-    certificateLink: "https://www.coursera.org/account/accomplishments/professional-certificates/cybersecurity" // example
+    certificateLink: "https://www.coursera.org/account/accomplishments/professional-certificates/cybersecurity"
   },
   {
     name: "Introducing Generative AI with AWS",
@@ -76,46 +73,6 @@ const certifications = [
     certificateLink: "https://ganeshmansinghfoundation.org/certificates/dhirendra"
   }
 ];
-
-// const certifications = [
-  
-//   {
-//     name: "Introducing Generative AI with AWS",
-//     issuer: "Udacity",
-//     year: "2025",
-
-//   },
-//   {
-//     name: "असल नागरिक बनौं – Civic Leadership Training (Part 5)",
-//     issuer: "Ganeshman Singh Foundation",
-//     year: "2025",
-//     description: "Completed 10-day civic leadership training focused on ethics, democracy, development, and effective communication."
-//   },
-//   {
-//     name: "AWS Knowledge: Cloud Essentials",
-//     issuer: "Amazon Web Services",
-//     year: "2025",
-//     expiration: "2028"
-//   },
-//   {
-//     name: "Google UI/UX Design Professional Certificate",
-//     issuer: "Google",
-//     year: "2024"
-//   },
-//   {
-//     name: "Google Digital Marketing & E-Commerce Professional Certificate",
-//     issuer: "Google",
-//     year: "2024"
-//   },
-//   {
-//     name: "Google Cybersecurity Professional Certificate",
-//     issuer: "Google",
-//     year: "2024",
-//     description: "Comprehensive training covering threat analysis, network security, and incident response."
-//   }
-  
-// ];
-
 
 export const AboutSection = () => {
   return (
@@ -182,12 +139,26 @@ export const AboutSection = () => {
                 {certifications.map((cert) => (
                   <div
                     key={cert.name}
-                    className="card backdrop-blur-sm bg-slate-800/30 p-6 hover:border-blue-500/50 transition-all"
+                    className="card backdrop-blur-sm bg-slate-800/30 p-6 hover:border-blue-500/50 transition-all flex items-center justify-between"
                   >
-                    <h4 className="font-bold text-blue-300">{cert.name}</h4>
-                    <p className="text-sm text-gray-400 mt-1">
-                      {cert.issuer} • {cert.year}
-                    </p>
+                    <div>
+                      <h4 className="font-bold text-blue-300">{cert.name}</h4>
+                      <p className="text-sm text-gray-400 mt-1">
+                        {cert.issuer} • {cert.year}
+                      </p>
+                    </div>
+                    {cert.certificateLink && (
+                      <a
+                        href={cert.certificateLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-blue-400 hover:text-blue-600 transition-colors"
+                        title="View Certificate"
+                      >
+                        <Award className="mr-1" size={18} />
+                        Certificate
+                      </a>
+                    )}
                   </div>
                 ))}
               </div>
