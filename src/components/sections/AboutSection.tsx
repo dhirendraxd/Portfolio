@@ -55,7 +55,7 @@ const certifications = [
     certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7341260946419417088/"
   },
   {
-    name: "AWS Knowledge: Cloud Essentials",
+    name: "AWS Cloud Essentials",
     issuer: "Amazon Web Services",
     year: "2025",
     certificateLink: "https://www.credly.com/badges/2a76a90c-8cb9-4c9b-8dbc-8bc60c980492/linked_in_profile"
