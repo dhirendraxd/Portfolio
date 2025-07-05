@@ -74,7 +74,7 @@ const achievements: Achievement[] = [
     certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7341260946419417088/"
   },
   {
-    name: "AWS Cloud Practitioner 2025",
+    name: "AWS Cloud Practitioner March 2025",
     description: "Completed AWS foundational cloud certification to deepen cloud expertise.",
     date: "2025",
     certificateLink: "https://www.credly.com/earner/earned/badge/2a76a90c-8cb9-4c9b-8dbc-8bc60c980492"
