@@ -156,7 +156,8 @@ const Resume = () => {
                     <li>Google Cybersecurity Professional Certificate</li>
                     <li>Google Digital Marketing & E-Commerce</li>
                     <li>Google UI/UX Design Certificate</li>
-                    <li>AWS Cloud Practitioner (In Progress)</li>
+                    <li>AWS Cloud Essentials  
+                    </li>
                     <li>NFRS for SMEs – MeroJob</li>
                   </ul>
                 </div>
