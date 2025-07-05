@@ -38,43 +38,83 @@ const skillCategories = {
 
 
 const certifications = [
-  
-  {
-    name: "Introducing Generative AI with AWS",
-    issuer: "Udacity",
-    year: "2025",
-
-  },
-  {
-    name: "असल नागरिक बनौं – Civic Leadership Training (Part 5)",
-    issuer: "Ganeshman Singh Foundation",
-    year: "2025",
-    description: "Completed 10-day civic leadership training focused on ethics, democracy, development, and effective communication."
-  },
   {
     name: "AWS Knowledge: Cloud Essentials",
     issuer: "Amazon Web Services",
     year: "2025",
-    expiration: "2028"
+    certificateLink: "https://aws.amazon.com/certification/cloud-essentials/" // example link; replace if you have exact URL
   },
   {
     name: "Google UI/UX Design Professional Certificate",
     issuer: "Google",
-    year: "2024"
+    year: "2024",
+    certificateLink: "https://www.coursera.org/account/accomplishments/professional-certificates/ui-ux-design" // example
   },
   {
     name: "Google Digital Marketing & E-Commerce Professional Certificate",
     issuer: "Google",
-    year: "2024"
+    year: "2024",
+    certificateLink: "https://www.coursera.org/account/accomplishments/professional-certificates/digital-marketing-e-commerce" // example
   },
   {
     name: "Google Cybersecurity Professional Certificate",
     issuer: "Google",
     year: "2024",
-    description: "Comprehensive training covering threat analysis, network security, and incident response."
+    certificateLink: "https://www.coursera.org/account/accomplishments/professional-certificates/cybersecurity" // example
+  },
+  {
+    name: "Introducing Generative AI with AWS",
+    issuer: "Udacity",
+    year: "2025",
+    credentialId: "15ec95fe-48d9-11f0-a9d2-875efbc54a76",
+    certificateLink: "https://www.udacity.com/certificate/15ec95fe-48d9-11f0-a9d2-875efbc54a76"
+  },
+  {
+    name: "असल नागरिक बनौं – Civic Leadership Training (Part 5)",
+    issuer: "Ganeshman Singh Foundation",
+    year: "2025",
+    certificateLink: "https://ganeshmansinghfoundation.org/certificates/dhirendra"
   }
-  
 ];
+
+// const certifications = [
+  
+//   {
+//     name: "Introducing Generative AI with AWS",
+//     issuer: "Udacity",
+//     year: "2025",
+
+//   },
+//   {
+//     name: "असल नागरिक बनौं – Civic Leadership Training (Part 5)",
+//     issuer: "Ganeshman Singh Foundation",
+//     year: "2025",
+//     description: "Completed 10-day civic leadership training focused on ethics, democracy, development, and effective communication."
+//   },
+//   {
+//     name: "AWS Knowledge: Cloud Essentials",
+//     issuer: "Amazon Web Services",
+//     year: "2025",
+//     expiration: "2028"
+//   },
+//   {
+//     name: "Google UI/UX Design Professional Certificate",
+//     issuer: "Google",
+//     year: "2024"
+//   },
+//   {
+//     name: "Google Digital Marketing & E-Commerce Professional Certificate",
+//     issuer: "Google",
+//     year: "2024"
+//   },
+//   {
+//     name: "Google Cybersecurity Professional Certificate",
+//     issuer: "Google",
+//     year: "2024",
+//     description: "Comprehensive training covering threat analysis, network security, and incident response."
+//   }
+  
+// ];
 
 
 export const AboutSection = () => {
