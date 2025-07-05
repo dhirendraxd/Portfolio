@@ -19,7 +19,8 @@ const hackathons: Achievement[] = [
     githubLink: "https://github.com/dhirendraxd/Codeyatra-Hackathon.git",
     linkedinLink: "https://www.linkedin.com/in/dhirendra-singh-dhami/",
     date: "Feb 9th–11th, 2025",
-    skills: ["React", "Supabase", "OpenAI API"]
+    skills: ["React", "Supabase", "OpenAI API"],
+    certificateLink: "https://www.udacity.com/certificate/15ec95fe-48d9-11f0-a9d2-875efbc54a76" // example
   },
   {
     name: "KEC HackFest 2024",
@@ -29,6 +30,7 @@ const hackathons: Achievement[] = [
     linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
     date: "Feb 16th–17th, 2024",
     skills: ["HTML5", "CSS", "JavaScript", "Vercel"]
+    // no certificateLink here
   },
   {
     name: "KIST HackFest 2023",
@@ -38,12 +40,14 @@ const hackathons: Achievement[] = [
     linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
     date: "Dec 6th–8th, 2023",
     skills: ["React", "Next.js", "Supabase"]
+    // no certificateLink here
   },
   {
     name: "PublicBodies Datathon 2025",
     description: "Collaborated in exploring and validating public data to promote transparency and accountability.",
     date: "Jan 2025",
     projectLink: "https://openknowledge.np/datathon2025"
+    // no certificateLink here
   }
 ];
 
@@ -130,6 +134,17 @@ export const AchievementsSection = () => {
                         title="LinkedIn"
                       >
                         <Linkedin className="w-5 h-5 text-white hover:text-blue-400" />
+                      </a>
+                    )}
+                    {project.certificateLink && (
+                      <a
+                        href={project.certificateLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-xs text-blue-400 hover:underline"
+                      >
+                        <Award className="w-4 h-4 mr-1" />
+                        View Certificate
                       </a>
                     )}
                   </div>
