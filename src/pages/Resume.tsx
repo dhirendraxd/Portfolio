@@ -27,7 +27,7 @@ const Resume = () => {
 
           <div className="space-y-8">
 
-            {/* Summary */}
+     
             <section className="card">
               <h2 className="text-2xl font-bold mb-4 text-blue-300">Summary</h2>
               <p className="text-gray-300 leading-relaxed">
@@ -51,17 +51,6 @@ const Resume = () => {
                   </ul>
                 </div>
 
-                {/* <div>
-                  <h3 className="text-xl font-semibold">College Representative</h3>
-                  <p className="text-gray-400">AWS Cloud Club - Nepal • Mar 2025 – Present</p>
-                  <ul className="list-disc list-inside mt-2 space-y-1">
-                    <li>Representing AWS Cloud Club at college and promoting cloud technology awareness.</li>
-                    <li>Organizing cloud-focused workshops and events for student engagement.</li>
-                  </ul>
-                </div>
-              </div> */}
-
-              {/* Volunteer Experience */}
               <h2 className="text-2xl font-bold mt-12 mb-4 text-blue-300">Volunteer Experience</h2>
               <div className="space-y-4 text-gray-300">
 
@@ -102,7 +91,6 @@ const Resume = () => {
               </div>
             </section>
 
-            {/* Projects */}
             <section className="card">
               <h2 className="text-2xl font-bold mb-4 text-blue-300">Projects</h2>
               <ul className="list-disc list-inside text-gray-300 space-y-4">
@@ -121,7 +109,6 @@ const Resume = () => {
               </ul>
             </section>
 
-            {/* Hackathons */}
             <section className="card">
               <h2 className="text-2xl font-bold mb-4 text-blue-300">Hackathons</h2>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
@@ -132,7 +119,7 @@ const Resume = () => {
               </ul>
             </section>
 
-            {/* Skills */}
+
             <section className="card">
               <h2 className="text-2xl font-bold mb-4 text-blue-300">Technical Skills</h2>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
@@ -145,7 +132,7 @@ const Resume = () => {
               </ul>
             </section>
 
-            {/* Education & Certifications */}
+          
             <section className="card">
               <h2 className="text-2xl font-bold mb-4 text-blue-300">Education & Certifications</h2>
               <div className="space-y-4 text-gray-300">
