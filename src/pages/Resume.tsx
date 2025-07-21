@@ -51,7 +51,7 @@ const Resume = () => {
                   </ul>
                 </div>
 
-                <div>
+                {/* <div>
                   <h3 className="text-xl font-semibold">College Representative</h3>
                   <p className="text-gray-400">AWS Cloud Club - Nepal • Mar 2025 – Present</p>
                   <ul className="list-disc list-inside mt-2 space-y-1">
@@ -59,12 +59,21 @@ const Resume = () => {
                     <li>Organizing cloud-focused workshops and events for student engagement.</li>
                   </ul>
                 </div>
-              </div>
+              </div> */}
 
               {/* Volunteer Experience */}
               <h2 className="text-2xl font-bold mt-12 mb-4 text-blue-300">Volunteer Experience</h2>
               <div className="space-y-4 text-gray-300">
 
+                  <div>
+                    <h3 className="text-xl font-semibold">College Representative</h3>
+                    <p className="text-gray-400">AWS Cloud Club - Nepal • Mar 2025 – Present</p>
+                    <ul className="list-disc list-inside mt-2 space-y-1">
+                      <li>Representing AWS Cloud Club at college and promoting cloud technology awareness.</li>
+                      <li>Organizing cloud-focused workshops and events for student engagement.</li>
+                    </ul>
+                  </div>
+                </div>
                 <div>
                   <h3 className="text-xl font-semibold">Volunteer – Hospitality & Guest Handling</h3>
                   <p className="text-gray-400">Nepal International Film Festival (NIFF) • Mar 2024</p>
@@ -104,7 +113,7 @@ const Resume = () => {
                   </a>
                 </li>
                 <li>
-                  <strong>VolunteerHub</strong> – A web app to recruit volunteers and manage stipends for events. Used in hackathon.
+                  <strong>Impactify</strong> – A web app to recruit volunteers and manage stipends for events. Used in hackathon.
                 </li>
                 <li>
                   <strong>FreshMart</strong> – Marketplace for local farmers to sell fresh produce. Solo dev project.
