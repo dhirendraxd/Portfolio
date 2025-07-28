@@ -131,7 +131,7 @@ export const AboutSection = () => {
               <div className="card backdrop-blur-sm bg-slate-800/30 p-6">
                 <h3 className="text-2xl font-bold mb-4">Background</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  I'm Dhirendra Singh Dhami, a cybersecurity enthusiast focused on securing digital environments and building meaningful technology. I am equally passionate about civic leadership, social entrepreneurship, and youth advocacy. I actively engage in initiatives that drive sustainability, digital rights, and community development.
+                  I'm Dhirendra Singh Dhami — a cybersecurity enthusiast passionate about secure tech, civic leadership, and youth advocacy. I actively contribute to initiatives in sustainability, digital rights, and community development.
                 </p>
               </div>
             </div>
