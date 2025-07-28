@@ -47,6 +47,7 @@ const certifications = [
   {
     name: "Sustainability Mentorship Program 2025",
     issuer: "Sustainability Solutions Nepal",
+
     year: "Aug 2025 -  Present",
     certificateLink: "#"
   },

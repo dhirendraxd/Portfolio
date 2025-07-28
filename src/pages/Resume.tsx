@@ -137,7 +137,7 @@ const Resume = () => {
               <h2 className="text-2xl font-bold mb-4 text-blue-300">Education & Certifications</h2>
               <div className="space-y-4 text-gray-300">
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Bachelor's in Information Management</h3>
+                  <h3 className="text-xl font-bold mb-2">Bachelor's in Information Technology Management</h3>
                   <p>KIST College & SS | 2023 –  2027</p>
                 </div>
                 <div>
