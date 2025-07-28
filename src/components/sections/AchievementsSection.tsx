@@ -30,7 +30,7 @@ const hackathons: Achievement[] = [
 
   },
   {
-    name: "KEC HackFest 2024",
+    name: "KEC Hack-a-LITE 2024",
     description: "Built a volunteer recruitment platform using HTML5, CSS, JavaScript, and deployed it on Vercel.",
     projectLink: "https://github.com/KEC-Hack-a-LITE/NewBie.git",
     githubLink: "https://github.com/dhirendraxd",

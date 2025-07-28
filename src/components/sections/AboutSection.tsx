@@ -1,3 +1,4 @@
+import { useState } from "react"; // Make sure this is at the top
 import { FileText, Award, Globe, Megaphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
