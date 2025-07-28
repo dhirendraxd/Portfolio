@@ -97,9 +97,9 @@ const Resume = () => {
               <ul className="list-disc list-inside text-gray-300 space-y-4">
                 <li>
                   <strong>DevBus</strong> – AI-powered tool for job readiness. Built with React, Supabase, OpenAI API.
-                  <a href="https://github.com/dhirendraxd/Codeyatra-Hackathon.git" target="_blank" rel="noopener noreferrer" className="ml-2 text-blue-400 inline-flex items-center hover:underline">
+                  {/* <a href="https://github.com/dhirendraxd/Codeyatra-Hackathon.git" target="_blank" rel="noopener noreferrer" className="ml-2 text-blue-400 inline-flex items-center hover:underline">
                     GitHub <ExternalLink size={16} className="ml-1" />
-                  </a>
+                  </a> */}
                 </li>
                 <li>
                   <strong>Impactify</strong> – A web app to recruit volunteers and manage stipends for events. Used in hackathon.
