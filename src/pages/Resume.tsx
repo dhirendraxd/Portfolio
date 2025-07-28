@@ -143,20 +143,15 @@ const Resume = () => {
                 <div>
                   <h3 className="text-xl font-bold mb-2">Certifications</h3>
                   <ul className="list-disc list-inside space-y-2">
-                    <li>
-                      Introducing Generative AI with AWS 
-
-                    </li>
-                    <li>
-                      Civic Leadership Training (Part 5) 
-                    </li>
-                    <li>Google Cybersecurity Professional Certificate</li>
-                    <li>Google Digital Marketing & E-Commerce</li>
-                    <li>Google UI/UX Design Certificate</li>
-                    <li>AWS Cloud Essentials  
-                    </li>
-                    <li>NFRS for SMEs – MeroJob</li>
+                    <li>Introducing Generative AI with AWS – Exploring AI's role in tech innovation</li>
+                    <li>Civic Leadership Training (Part 5) – Strengthening leadership for social impact</li>
+                    <li>Google Cybersecurity Professional Certificate – Solid foundation in digital security</li>
+                    <li>Google Digital Marketing & E-Commerce – Bridging marketing and technology</li>
+                    <li>Google UI/UX Design Certificate – User-centered digital design expertise</li>
+                    <li>AWS Cloud Essentials – Cloud fundamentals for scalable solutions</li>
+                    <li>NFRS for SMEs – Financial standards knowledge for business tech integration</li>
                   </ul>
+
                 </div>
               </div>
             </section>
