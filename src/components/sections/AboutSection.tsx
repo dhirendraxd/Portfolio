@@ -1,5 +1,5 @@
-import { useState } from "react"; // Make sure this is at the top
-import { FileText, Award, Globe, Megaphone } from 'lucide-react';
+import { useState } from "react";
+import { FileText, Award, Megaphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const skillCategories = {
@@ -50,17 +50,10 @@ const certifications = [
     year: "Aug 2025 -  Present",
     certificateLink: "#"
   },
-
-  // {
-  //   name: "Traning Of Trainers (ToT) - Climate Justice",
-  //   description: "Completed ToT on climate justice.",
-  //   date: "July 2025"
-
-   
   {
     name: "Traning Of Trainers (ToT) - Climate Justice",
     issuer: "Power Shift Nepal",
-    year: "July 2025 ",
+    year: "July 2025",
     certificateLink: "#"
   },
   {
@@ -118,6 +111,105 @@ const certifications = [
     certificateLink: "https://www.coursera.org/account/accomplishments/specialization/IVM70IZXSS6H"
   }
 ];
+
+const CertificationList = () => {
+  const [showAll, setShowAll] = useState(false);
+
+  const toggleShow = () => {
+    setShowAll(prev => !prev);
+  };
+
+  const displayedCerts = showAll ? certifications : certifications.slice(0, 5);
+
+  return (
+    <>
+      <div className="space-y-4">
+        {displayedCerts.map(cert => (
+          <div
+            key={cert.name}
+            className="card backdrop-blur-sm bg-slate-800/30 p-6 hover:border-blue-500/50 transition-all flex items-center justify-between"
+          >
+            <div>
+              <h4 className="font-bold text-blue-300">{cert.name}</h4>
+              <p className="text-sm text-gray-400 mt-1">
+                {cert.issuer} • {cert.year}
+              </p>
+            </div>
+            {cert.certificateLink && (
+              <a
+                href={cert.certificateLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-blue-400 hover:text-blue-600 transition-colors"
+                title="View Certificate"
+              >
+                <Award className="mr-1" size={18} />
+                Certificate
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* <div className="flex flex-col items-center mt-6 space-y-3">
+        <button
+          onClick={toggleShow}
+          className="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-blue-1450/40 text-blue-300 hover:bg-blue-600 transition-colors"
+          aria-label={showAll ? "Show Less Certifications" : "Show More Certifications"}
+        >
+          {showAll ? 'Show Less' : 'Show More'}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={`h-5 w-5 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={0}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        {!showAll && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-8 w-8 text-blue-400/70 backdrop-blur-sm bg-slate-800/30 rounded-full p-1 animate-bounce cursor-pointer select-none"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+            aria-hidden="true"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        )}
+      </div> */}
+      <div className="flex items-center mt-6 space-x-2 justify-center">
+        <button
+          onClick={toggleShow}
+          className="text-blue-500 font-medium focus:outline-none"
+          aria-label={showAll ? "Show Less Certifications" : "Show More Certifications"}
+        >
+          {showAll ? 'Show Less' : 'Show More'}
+        </button>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          onClick={toggleShow}
+          className={`h-6 w-6 text-blue-500 cursor-pointer transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+
+    </>
+  );
+};
 
 export const AboutSection = () => {
   return (
@@ -200,33 +292,7 @@ export const AboutSection = () => {
                 <Award className="mr-2 text-blue-400" size={24} />
                 Certifications
               </h3>
-              <div className="space-y-4">
-                {certifications.map((cert) => (
-                  <div
-                    key={cert.name}
-                    className="card backdrop-blur-sm bg-slate-800/30 p-6 hover:border-blue-500/50 transition-all flex items-center justify-between"
-                  >
-                    <div>
-                      <h4 className="font-bold text-blue-300">{cert.name}</h4>
-                      <p className="text-sm text-gray-400 mt-1">
-                        {cert.issuer} • {cert.year}
-                      </p>
-                    </div>
-                    {cert.certificateLink && (
-                      <a
-                        href={cert.certificateLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-blue-400 hover:text-blue-600 transition-colors"
-                        title="View Certificate"
-                      >
-                        <Award className="mr-1" size={18} />
-                        Certificate
-                      </a>
-                    )}
-                  </div>
-                ))}
-              </div>
+              <CertificationList />
             </div>
           </div>
         </div>
