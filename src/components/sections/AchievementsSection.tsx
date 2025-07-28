@@ -59,6 +59,11 @@ const achievements: Achievement[] = [
     date: "March 2025 - Present"
   },
   {
+    name: "Traning Of Trainers (ToT) - Climate Justice",
+    description: "Completed ToT on climate justice.",
+    date: "July 2025"
+  },
+  {
     name: "Civic Leadership Training (Part 5)",
     description: "Completed a 10-day intensive training focused on ethics, democracy, development, and communication.",
     date: "Jun 2025",

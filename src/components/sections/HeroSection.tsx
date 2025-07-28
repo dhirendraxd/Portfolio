@@ -1,4 +1,12 @@
-import { Github, Twitter, Linkedin, Mail, ChevronDown, FileText } from 'lucide-react';
+import {
+  Github,
+  Twitter,
+  Linkedin,
+  Mail,
+  FileText,
+  ChevronDown,
+  Globe
+} from 'lucide-react';
 import {
   Tooltip,
   TooltipContent,
@@ -40,19 +48,23 @@ export const HeroSection = () => {
       <div className="container mx-auto text-center relative z-10">
         <div className="space-y-6 mb-12">
           <h1 className="text-5xl md:text-7xl font-bold animate-fade-in">
-            Hi, I am 
+            Hi, I am
             <br />
             <span className="text-blue-400 inline-block mt-2">Dhirendra</span>
           </h1>
+          <h2 className="text-lg md:text-xl text-blue-300 font-medium animate-fade-in">
+            Cybersecurity • Advocacy • Sustainability
+          </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto animate-fade-in opacity-90">
-            Transforming ideas into elegant, secure, and efficient solutions
+            Empowering communities through secure tech, ethical AI, and sustainable innovation
           </p>
         </div>
-        <div className="flex justify-center space-x-4 mb-16">
+        <div className="flex justify-center flex-wrap gap-4 mb-16">
           <SocialLink href="https://github.com/dhirendraxd" icon={Github} label="GitHub" />
           <SocialLink href="https://x.com/dhirendra_jsx" icon={Twitter} label="Twitter" />
           <SocialLink href="https://www.linkedin.com/in/dhirendrasinghdhami/" icon={Linkedin} label="LinkedIn" />
           <SocialLink href="mailto:dhirendraxd@gmail.com" icon={Mail} label="Email" />
+          {/* <SocialLink href="https://dhiren.foo/" icon={Globe} label="Portfolio" /> */}
           <SocialLink href="/resume" icon={FileText} label="Resume" />
         </div>
       </div>

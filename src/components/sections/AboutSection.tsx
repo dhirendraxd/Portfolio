@@ -1,4 +1,4 @@
-import { FileText, Award } from 'lucide-react';
+import { FileText, Award, Globe, Megaphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const skillCategories = {
@@ -31,15 +31,41 @@ const skillCategories = {
     'Social Media Management',
     'Email Marketing',
     'Google Analytics'
+  ],
+  'Advocacy & Social Leadership': [
+    'Civic Engagement',
+    'Policy Awareness',
+    'Community Mobilization',
+    'Youth Advocacy',
+    'Climate Action',
+    'Ethical AI & Digital Rights'
   ]
 };
 
 const certifications = [
   {
+    name: "Sustainability Mentorship Program 2025",
+    issuer: "Sustainability Solutions Nepal",
+    year: "Aug 2025 -  Present",
+    certificateLink: "#"
+  },
+
+  // {
+  //   name: "Traning Of Trainers (ToT) - Climate Justice",
+  //   description: "Completed ToT on climate justice.",
+  //   date: "July 2025"
+
+   
+  {
+    name: "Traning Of Trainers (ToT) - Climate Justice",
+    issuer: "Power Shift Nepal",
+    year: "July 2025 ",
+    certificateLink: "#"
+  },
+  {
     name: "Introducing Generative AI with AWS",
     issuer: "Udacity",
     year: "2025",
-    credentialId: "15ec95fe-48d9-11f0-a9d2-875efbc54a76",
     certificateLink: "https://www.udacity.com/certificate/e/15ec95fe-48d9-11f0-a9d2-875efbc54a76"
   },
   {
@@ -53,6 +79,18 @@ const certifications = [
     issuer: "Ganeshman Singh Foundation",
     year: "2025",
     certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7341260946419417088/"
+  },
+  {
+    name: "Sustainability Mentorship Program 2025",
+    issuer: "Sustainability Solutions Nepal",
+    year: "Aug 2025 -  Present",
+    certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:xxxxxxxx"
+  },
+  {
+    name: "Digital Security Training Asia Pacific",
+    issuer: "Digital Rights Nepal (DRN)",
+    year: "2024",
+    certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:xxxxxxxx"
   },
   {
     name: "AWS Cloud Essentials",
@@ -77,8 +115,7 @@ const certifications = [
     issuer: "Google",
     year: "2024",
     certificateLink: "https://www.coursera.org/account/accomplishments/specialization/IVM70IZXSS6H"
-  },
-  
+  }
 ];
 
 export const AboutSection = () => {
@@ -86,17 +123,20 @@ export const AboutSection = () => {
     <section id="about" className="section-padding opacity-0">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-12">
+          {/* Left Column */}
           <div className="space-y-8">
+            {/* About Me */}
             <div>
               <h2 className="section-title">About Me</h2>
-              <div className="card backdrop-blur-sm bg-slate-800/30">
+              <div className="card backdrop-blur-sm bg-slate-800/30 p-6">
                 <h3 className="text-2xl font-bold mb-4">Background</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  I'm Dhirendra Singh Dhami, a cybersecurity enthusiast focused on securing digital environments and driving innovative solutions. I’m also passionate about community leadership and contributing to events that foster learning and collaboration.
+                  I'm Dhirendra Singh Dhami, a cybersecurity enthusiast focused on securing digital environments and building meaningful technology. I am equally passionate about civic leadership, social entrepreneurship, and youth advocacy. I actively engage in initiatives that drive sustainability, digital rights, and community development.
                 </p>
               </div>
             </div>
 
+            {/* Skills */}
             <div>
               <h3 className="text-2xl font-bold mb-6 flex items-center">
                 <Award className="mr-2 text-blue-400" size={24} />
@@ -125,7 +165,9 @@ export const AboutSection = () => {
             </div>
           </div>
 
+          {/* Right Column */}
           <div className="space-y-8">
+            {/* Resume */}
             <div className="flex flex-col items-start">
               <h2 className="section-title">Resume</h2>
               <Link
@@ -137,6 +179,21 @@ export const AboutSection = () => {
               </Link>
             </div>
 
+            {/* Social Impact & Advocacy */}
+            <div>
+              <h3 className="text-2xl font-bold mb-6 flex items-center">
+                <Megaphone className="mr-2 text-green-400" size={24} />
+                Social Impact & Advocacy
+              </h3>
+              <div className="card backdrop-blur-sm bg-slate-800/30 p-6 space-y-2">
+                <p className="text-gray-300">• Trained in Civic Leadership & Climate Justice </p>
+                <p className="text-gray-300">• Mentee at Sustainability Mentorship Program 2025</p>
+                <p className="text-gray-300">• Engaged in ethical AI and digital rights awareness</p>
+                <p className="text-gray-300">• Active in volunteerism, youth advocacy, hackathons, and community events </p>
+              </div>
+            </div>
+
+            {/* Certifications */}
             <div>
               <h3 className="text-2xl font-bold mb-6 flex items-center">
                 <Award className="mr-2 text-blue-400" size={24} />
