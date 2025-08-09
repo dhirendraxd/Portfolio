@@ -20,14 +20,13 @@ const hackathons: Achievement[] = [
     linkedinLink: "https://www.linkedin.com/in/dhirendra-singh-dhami/",
     date: "Feb 9th–11th, 2025",
     skills: ["React", "Supabase", "OpenAI API"],
-    certificateLink: "https://www.udacity.com/certificate/15ec95fe-48d9-11f0-a9d2-875efbc54a76" // example
+    certificateLink: "https://www.udacity.com/certificate/15ec95fe-48d9-11f0-a9d2-875efbc54a76"
   },
   {
     name: "PublicBodies Datathon 2025",
     description: "Collaborated in exploring and validating public data to promote transparency and accountability.",
     date: "Jan 2025",
     projectLink: "https://www.linkedin.com/feed/update/urn:li:activity:7283845541002665984/",
-
   },
   {
     name: "KEC Hack-a-LITE 2024",
@@ -37,7 +36,6 @@ const hackathons: Achievement[] = [
     linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
     date: "Feb 16th–17th, 2024",
     skills: ["HTML5", "CSS", "JavaScript", "Vercel"]
-
   },
   {
     name: "KIST HackFest 2023",
@@ -47,9 +45,7 @@ const hackathons: Achievement[] = [
     linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
     date: "Dec 6th–8th, 2023",
     skills: ["HTML", "CSS", "XAMPP"]
-
   },
-
 ];
 
 const achievements: Achievement[] = [
@@ -74,7 +70,6 @@ const achievements: Achievement[] = [
     description: "Completed AWS foundational cloud certification to deepen cloud expertise.",
     date: "March2025",
     certificateLink: "https://www.credly.com/earner/earned/badge/2a76a90c-8cb9-4c9b-8dbc-8bc60c980492"
-
   },
   {
     name: "Volunteer - Nepal International Film Festival 2025",
@@ -86,7 +81,6 @@ const achievements: Achievement[] = [
     description: "Completed Google’s cybersecurity training covering networking, Linux, and incident response.",
     date: "Oct 2024"
   },
-
 ];
 
 export const AchievementsSection = () => {
@@ -162,30 +156,37 @@ export const AchievementsSection = () => {
             </div>
           </div>
 
-          {/* Notable Achievements */}
+          {/* Highlights & Roles */}
           <div className="card">
-            <h3 className="text-2xl font-bold mb-6">Notable Achievements</h3>
+            <h3 className="text-2xl font-bold mb-6">Highlights & Roles</h3>
             <div className="space-y-6">
-              {achievements.map((cert) => (
-                <div key={cert.name.trim()} className="p-6 glass rounded-lg break-words">
-                  <div className="flex justify-between items-start">
-                    <h4 className="font-bold text-blue-300">{cert.name.trim()}</h4>
-                    <span className="text-xs text-gray-400">{cert.date}</span>
+              {achievements
+                .filter(cert =>
+                  cert.certificateLink ||
+                  cert.name.toLowerCase().includes("volunteer") ||
+                  cert.name.toLowerCase().includes("representative") ||
+                  cert.name.toLowerCase().includes("training")
+                )
+                .map((cert) => (
+                  <div key={cert.name.trim()} className="p-6 glass rounded-lg break-words">
+                    <div className="flex justify-between items-start">
+                      <h4 className="font-bold text-blue-300">{cert.name.trim()}</h4>
+                      <span className="text-xs text-gray-400">{cert.date}</span>
+                    </div>
+                    <p className="text-sm text-gray-300 mt-1">{cert.description}</p>
+                    {cert.certificateLink && (
+                      <a
+                        href={cert.certificateLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center mt-2 text-xs text-blue-400 hover:underline"
+                      >
+                        <Award className="w-4 h-4 mr-1" />
+                        View Certificate
+                      </a>
+                    )}
                   </div>
-                  <p className="text-sm text-gray-300 mt-1">{cert.description}</p>
-                  {cert.certificateLink && (
-                    <a
-                      href={cert.certificateLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center mt-2 text-xs text-blue-400 hover:underline"
-                    >
-                      <Award className="w-4 h-4 mr-1" />
-                      View Certificate
-                    </a>
-                  )}
-                </div>
-              ))}
+                ))}
             </div>
           </div>
 
