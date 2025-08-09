@@ -55,11 +55,7 @@ const hackathons: Achievement[] = [
 ];
 
 const achievements: Achievement[] = [
-  {
-    name: "General Member – Rotaract Club of Kirtipur",
-    description: "Actively participating in community service and club activities.",
-    date: "July 2025 - Present",
-  },
+  
   {
     name: "AWS Cloud Club College Representative",
     description:
@@ -67,8 +63,8 @@ const achievements: Achievement[] = [
     date: "March 2025 - Present",
   },
   {
-    name: "Traning Of Trainers (ToT) - Climate Justice",
-    description: "Completed ToT on climate justice.",
+    name: "Training Of Trainers (ToT) - Climate Justice", // typo fixed here
+    description: "Completed ToT on climate justice .",
     date: "July 2025",
   },
   {
@@ -83,9 +79,7 @@ const achievements: Achievement[] = [
     name: "AWS Cloud Essentials",
     description:
       "Completed AWS foundational cloud certification to deepen cloud expertise.",
-    date: "March 2025",
-    certificateLink:
-      "https://www.credly.com/earner/earned/badge/2a76a90c-8cb9-4c9b-8dbc-8bc60c980492",
+    date: "July 2025 - presnet "
   },
   {
     name: "Volunteer - Nepal International Film Festival 2025",
@@ -96,14 +90,13 @@ const achievements: Achievement[] = [
   {
     name: "Volunteer - TEDxBaneshwor 2nd Edition 2024",
     description:
-      "Completed Google’s cybersecurity training covering networking, Linux, and incident response.",
-    date: "Oct 2024",
+      " Assisted in logistics and guest experience for the independently organized TEDx event.",
+          date: "Oct 2024",
   },
 ];
-
 export const AchievementsSection = () => {
   return (
-    <section id="achievements" className="section-padding opacity-0">
+    <section id="achievements" className="section-padding"> {/* Removed opacity-0 */}
       <div className="container mx-auto px-4">
         <h2 className="section-title">Hackathons & Achievements</h2>
         <div className="grid lg:grid-cols-2 gap-8">
