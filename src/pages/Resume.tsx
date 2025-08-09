@@ -58,8 +58,8 @@ const Resume = () => {
                     <h3 className="text-xl font-semibold">General Member</h3>
                     <p className="text-gray-400">Rotaract Club of Kirtipur • July 2025 – Present</p>
                     <ul className="list-disc list-inside mt-2 space-y-1">
-                      <li>Representing AWS Cloud Club at college and promoting cloud technology awareness.</li>
-                      <li>Organizing cloud-focused workshops and events for student engagement.</li>
+                      <li>Participating in club activities and initiatives.</li>
+                      <li>Contributing to community service projects and events.</li>
                     </ul>
                   </div>
                   <div>
