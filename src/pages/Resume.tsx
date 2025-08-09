@@ -55,7 +55,7 @@ const Resume = () => {
               <h2 className="text-2xl font-bold mt-12 mb-4 text-blue-300">Volunteer Experience</h2>
               <div className="space-y-4 text-gray-300">
                 <div>
-                    <h3 className="text-xl font-semibold">College Representative</h3>
+                    <h3 className="text-xl font-semibold">General Member</h3>
                     <p className="text-gray-400">Rotaract Club of Kirtipur • July 2025 – Present</p>
                     <ul className="list-disc list-inside mt-2 space-y-1">
                       <li>Representing AWS Cloud Club at college and promoting cloud technology awareness.</li>
