@@ -81,7 +81,6 @@ const achievements: Achievement[] = [
     certificateLink:
       "https://www.linkedin.com/feed/update/urn:li:activity:7341260946419417088/",
   },
-  
   {
     name: "Volunteer - Nepal International Film Festival 2025",
     description:
