@@ -96,7 +96,7 @@ const achievements: Achievement[] = [
 ];
 export const AchievementsSection = () => {
   return (
-    <section id="achievements" className="section-padding"> {/* Removed opacity-0 */}
+    <section id="achievements" className="section-padding"> 
       <div className="container mx-auto px-4">
         <h2 className="section-title">Hackathons & Achievements</h2>
         <div className="grid lg:grid-cols-2 gap-8">
