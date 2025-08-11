@@ -2,7 +2,6 @@
 import { useEffect } from 'react';
 import { HeroSection } from '../components/sections/HeroSection';
 import { AboutSection } from '../components/sections/AboutSection';
-// import { AchievementsSection } from '../components/sections/AchievementsSection';
 import { AchievementsSection } from '../components/sections/AchievementsSection';
 import { ContactSection } from '../components/sections/ContactSection';
 
@@ -36,5 +35,4 @@ const Index = () => {
     </div>
   );
 };
-
 export default Index;
