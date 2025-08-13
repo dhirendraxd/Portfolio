@@ -102,7 +102,7 @@ const achievements: Achievement[] = [
     date: "July 2025 - Present",
   },
   {
-    name: "AWS Cloud Club College Representative",
+    name: "College Representative - AWS Cloud Club ",
     description:
       "Selected as a CR for AWS Cloud Club Nepal to foster cloud learning and community growth.",
     date: "March 2025 - Present",
