@@ -22,7 +22,7 @@ const hackathons: Achievement[] = [
     date: "Feb 9th–11th, 2025",
     skills: ["React", "Supabase", "OpenAI API"],
     certificateLink:
-      "https://www.udacity.com/certificate/15ec95fe-48d9-11f0-a9d2-875efbc54a76",
+      "https://www.linkedin.com/in/dhirendrasinghdhami/details/certifications/1751704105257/single-media-viewer/?profileId=ACoAAEVZbWQBEx6E3nH2U3a7L_HTQb__PZHy0rQ",
   },
   {
     name: "PublicBodies Datathon 2025",
@@ -34,7 +34,7 @@ const hackathons: Achievement[] = [
     projectLink:
       "https://www.linkedin.com/feed/update/urn:li:activity:7283845541002665984/",
       certificateLink:
-      "https://www.udacity.com/certificate/15ec95fe-48d9-11f0-a9d2-875efbc54a76"
+      "https://www.linkedin.com/in/dhirendrasinghdhami/details/certifications/1736609503888/single-media-viewer/?profileId=ACoAAEVZbWQBEx6E3nH2U3a7L_HTQb__PZHy0rQ"
   },
   {
     name: "KEC Hack-a-LITE 2024",
@@ -46,7 +46,7 @@ const hackathons: Achievement[] = [
     date: "Feb 16th–17th, 2024",
     skills: ["HTML5", "CSS", "JavaScript", "Vercel"],
     certificateLink:
-      "https://www.udacity.com/certificate/15ec95fe-48d9-11f0-a9d2-875efbc54a76"
+      "https://www.linkedin.com/in/dhirendrasinghdhami/details/certifications/1728623078271/single-media-viewer/?profileId=ACoAAEVZbWQBEx6E3nH2U3a7L_HTQb__PZHy0rQ"
   },
   {
     name: "KIST HackFest 2023",
@@ -58,7 +58,7 @@ const hackathons: Achievement[] = [
     date: "Dec 6th–8th, 2023",
     skills: ["HTML", "CSS", "XAMPP"],
     certificateLink:
-      "https://www.udacity.com/certificate/15ec95fe-48d9-11f0-a9d2-875efbc54a76"
+      "https://www.linkedin.com/in/dhirendrasinghdhami/details/certifications/1728622265048/single-media-viewer/?profileId=ACoAAEVZbWQBEx6E3nH2U3a7L_HTQb__PZHy0rQ"
   },
 ];
 
