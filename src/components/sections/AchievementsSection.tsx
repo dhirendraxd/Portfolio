@@ -29,8 +29,12 @@ const hackathons: Achievement[] = [
     description:
       "Collaborated in exploring and validating public data to promote transparency and accountability.",
     date: "Jan 2025",
+    githubLink: "https://github.com/dhirendraxd",
+    linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
     projectLink:
       "https://www.linkedin.com/feed/update/urn:li:activity:7283845541002665984/",
+      certificateLink:
+      "https://www.udacity.com/certificate/15ec95fe-48d9-11f0-a9d2-875efbc54a76"
   },
   {
     name: "KEC Hack-a-LITE 2024",
@@ -41,6 +45,8 @@ const hackathons: Achievement[] = [
     linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
     date: "Feb 16th–17th, 2024",
     skills: ["HTML5", "CSS", "JavaScript", "Vercel"],
+    certificateLink:
+      "https://www.udacity.com/certificate/15ec95fe-48d9-11f0-a9d2-875efbc54a76"
   },
   {
     name: "KIST HackFest 2023",
@@ -51,6 +57,8 @@ const hackathons: Achievement[] = [
     linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
     date: "Dec 6th–8th, 2023",
     skills: ["HTML", "CSS", "XAMPP"],
+    certificateLink:
+      "https://www.udacity.com/certificate/15ec95fe-48d9-11f0-a9d2-875efbc54a76"
   },
 ];
 

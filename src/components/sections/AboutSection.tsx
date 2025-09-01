@@ -49,13 +49,13 @@ const certifications = [
     issuer: "Sustainability Solutions Nepal",
 
     year: "Aug 2025 -  Present",
-    certificateLink: "#"
+    certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7367542595113181184/"
   },
   {
     name: "Traning Of Trainers (ToT) - Climate Justice",
     issuer: "Power Shift Nepal",
     year: "July 2025",
-    certificateLink: "#"
+    certificateLink: "https://www.linkedin.com/in/dhirendrasinghdhami/details/certifications/1753701613080/single-media-viewer/?profileId=ACoAAEVZbWQBEx6E3nH2U3a7L_HTQb__PZHy0rQ"
   },
   {
     name: "Introducing Generative AI with AWS",
@@ -75,17 +75,12 @@ const certifications = [
     year: "2025",
     certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7341260946419417088/"
   },
-  {
-    name: "Sustainability Mentorship Program 2025",
-    issuer: "Sustainability Solutions Nepal",
-    year: "Aug 2025 -  Present",
-    certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:xxxxxxxx"
-  },
+  
   {
     name: "Digital Security Training Asia Pacific",
     issuer: "Digital Rights Nepal (DRN)",
     year: "2024",
-    certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:xxxxxxxx"
+    certificateLink: "https://www.linkedin.com/in/dhirendrasinghdhami/details/certifications/1734524799902/single-media-viewer/?profileId=ACoAAEVZbWQBEx6E3nH2U3a7L_HTQb__PZHy0rQ"
   },
   {
     name: "AWS Cloud Essentials",
