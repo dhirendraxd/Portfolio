@@ -3,7 +3,7 @@
 Welcome to the repository for my personal **portfolio website**! This site showcases my work, skills, and experiences in UI/UX, cybersecurity, digital marketing, and web development.
 
 ## 🌐 Live Demo
-[Visit My Portfolio](https://dhiren.foo)
+[Visit My Portfolio](https://www.dhirendrasinghdhami.com.np/)
 
 
 ## 🛠️ Tech Stack
