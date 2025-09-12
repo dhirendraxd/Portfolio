@@ -13,9 +13,9 @@ export const particleConfigs = {
       }
     },
     particles: {
-      color: { value: ["#64748b", "#475569", "#334155"] },
+      color: { value: ["#ffffff", "#f8fafc", "#f1f5f9"] },
       links: {
-        color: "#64748b",
+        color: "#ffffff",
         distance: 100,
         enable: true,
         opacity: 0.1,
@@ -34,10 +34,17 @@ export const particleConfigs = {
       shape: { 
         type: ["circle", "polygon"],
         options: {
-          polygon: { sides: 6 } // Hexagon for tech/network nodes
+          polygon: { sides: 6 }, // Hexagon for tech/network nodes
+          circle: {} // Circular particles will be smaller
         }
       },
-      size: { value: { min: 1, max: 2 } }
+      size: { 
+        value: { min: 1.5, max: 1.5 },
+        // Make only circle particles smaller
+        animation: {
+          enable: false
+        }
+      }
     },
     detectRetina: true
   },
@@ -55,9 +62,9 @@ export const particleConfigs = {
       }
     },
     particles: {
-      color: { value: ["#94a3b8", "#64748b", "#475569"] },
+      color: { value: ["#ffffff", "#f8fafc", "#f1f5f9"] },
       links: {
-        color: "#94a3b8",
+        color: "#ffffff",
         distance: 80,
         enable: true,
         opacity: 0.15,
@@ -76,10 +83,17 @@ export const particleConfigs = {
       shape: { 
         type: ["circle", "star"],
         options: {
-          star: { sides: 5 } // 5-pointed stars for community/advocacy
+          star: { sides: 5 }, // 5-pointed stars for community/advocacy
+          circle: {} // Circular particles will be smaller
         }
       },
-      size: { value: { min: 1, max: 3 } }
+      size: { 
+        value: { min: 0.5, max: 2 },
+        // Make only circle particles smaller
+        animation: {
+          enable: false
+        }
+      }
     },
     detectRetina: true
   },
@@ -97,9 +111,9 @@ export const particleConfigs = {
       }
     },
     particles: {
-      color: { value: ["#6b7280", "#9ca3af", "#d1d5db"] },
+      color: { value: ["#ffffff", "#f8fafc", "#f1f5f9"] },
       links: {
-        color: "#9ca3af",
+        color: "#ffffff",
         distance: 60,
         enable: true,
         opacity: 0.08,
@@ -118,10 +132,17 @@ export const particleConfigs = {
       shape: { 
         type: ["circle", "polygon"],
         options: {
-          polygon: { sides: 3 } // Triangles for growth/sustainability
+          polygon: { sides: 3 }, // Triangles for growth/sustainability
+          circle: {} // Circular particles will be smaller
         }
       },
-      size: { value: { min: 1, max: 2 } }
+      size: { 
+        value: { min: 0.5, max: 1.5 },
+        // Make only circle particles smaller
+        animation: {
+          enable: false
+        }
+      }
     },
     detectRetina: true
   },
@@ -139,9 +160,9 @@ export const particleConfigs = {
       }
     },
     particles: {
-      color: { value: ["#e2e8f0", "#cbd5e1", "#94a3b8"] },
+      color: { value: ["#ffffff", "#f8fafc", "#f1f5f9"] },
       links: {
-        color: "#e2e8f0",
+        color: "#ffffff",
         distance: 150,
         enable: true,
         opacity: 0.05,
@@ -158,7 +179,7 @@ export const particleConfigs = {
       number: { value: 8 },
       opacity: { value: 0.2 },
       shape: { type: "circle" },
-      size: { value: { min: 1, max: 2 } }
+      size: { value: { min: 0.5, max: 1 } }
     },
     detectRetina: true
   }
