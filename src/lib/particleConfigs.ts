@@ -88,7 +88,7 @@ export const particleConfigs = {
         }
       },
       size: { 
-        value: { min: 0.5, max: 2 },
+        value: { min: 1.5, max: 1.5 },
         // Make only circle particles smaller
         animation: {
           enable: false
@@ -137,7 +137,7 @@ export const particleConfigs = {
         }
       },
       size: { 
-        value: { min: 0.5, max: 1.5 },
+        value: { min: 1.5, max: 1.5 },
         // Make only circle particles smaller
         animation: {
           enable: false
@@ -179,7 +179,7 @@ export const particleConfigs = {
       number: { value: 8 },
       opacity: { value: 0.2 },
       shape: { type: "circle" },
-      size: { value: { min: 0.5, max: 1 } }
+      size: { value: { min: 1.5, max: 1.5 } }
     },
     detectRetina: true
   }
