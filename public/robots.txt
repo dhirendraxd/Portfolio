@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://dhirendra.dev/sitemap.xml
+Sitemap: https://dhirendrasinghdhami.com.np/sitemap.xml
 
 # Block access to private files
 Disallow: /src/
