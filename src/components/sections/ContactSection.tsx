@@ -9,10 +9,20 @@ import {
 } from "@/components/ui/tooltip";
 import { initEmailJS, sendEmail } from "@/lib/emailjs";
 import { ThemedParticles } from "@/components/ThemedParticles";
+import {
+  validateEmail,
+  validateMessage,
+  sanitizeInput,
+  rateLimiter,
+  getUserIdentifier,
+  detectSuspiciousActivity,
+  initializeFormSecurity,
+  logSecurityEvent
+} from "@/lib/security";
 
 interface SocialLinkProps {
   href: string;
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<{ size?: string | number }>;
   label: string;
 }
 
@@ -41,38 +51,47 @@ const SocialLink = ({ href, icon: Icon, label }: SocialLinkProps) => (
 export const ContactSection = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [name, setName] = useState('');
+  const [honeypot, setHoneypot] = useState(''); // Anti-bot honeypot
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errors, setErrors] = useState<{email?: string; message?: string}>({});
+  const [rateLimitExceeded, setRateLimitExceeded] = useState(false);
+  const [errors, setErrors] = useState<{email?: string; message?: string; name?: string}>({});
   const { toast } = useToast();
 
-  // Form validation
+  // Secure form validation
   const validateForm = () => {
-    const newErrors: {email?: string; message?: string} = {};
+    const newErrors: {email?: string; message?: string; name?: string} = {};
     
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!emailRegex.test(email)) {
-      newErrors.email = 'Please enter a valid email address';
+    // Sanitize inputs
+    const sanitizedEmail = sanitizeInput(email);
+    const sanitizedMessage = sanitizeInput(message);
+    const sanitizedName = sanitizeInput(name);
+    
+    // Validate email
+    const emailValidation = validateEmail(sanitizedEmail);
+    if (!emailValidation.isValid) {
+      newErrors.email = emailValidation.error;
     }
     
-    // Message validation
-    if (!message.trim()) {
-      newErrors.message = 'Message is required';
-    } else if (message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters long';
-    } else if (message.trim().length > 1000) {
-      newErrors.message = 'Message must be less than 1000 characters';
+    // Validate message
+    const messageValidation = validateMessage(sanitizedMessage);
+    if (!messageValidation.isValid) {
+      newErrors.message = messageValidation.error;
+    }
+    
+    // Name is optional but if provided, validate it
+    if (sanitizedName && sanitizedName.length < 2) {
+      newErrors.name = 'Name must be at least 2 characters';
     }
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  // Initialize EmailJS when component mounts
+  // Initialize EmailJS and security when component mounts
   useEffect(() => {
     initEmailJS();
+    initializeFormSecurity();
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -80,6 +99,44 @@ export const ContactSection = () => {
     
     // Clear previous errors
     setErrors({});
+    setRateLimitExceeded(false);
+    
+    // Check rate limiting
+    const userIdentifier = getUserIdentifier();
+    if (!rateLimiter.isAllowed(userIdentifier)) {
+      const remainingTime = Math.ceil(rateLimiter.getRemainingTime(userIdentifier) / 1000);
+      setRateLimitExceeded(true);
+      logSecurityEvent('Rate limit exceeded', { identifier: userIdentifier });
+      toast({
+        title: "Too many attempts ⚠️",
+        description: `Please wait ${remainingTime} seconds before trying again.`,
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    // Sanitize inputs
+    const sanitizedEmail = sanitizeInput(email);
+    const sanitizedMessage = sanitizeInput(message);
+    const sanitizedName = sanitizeInput(name);
+    
+    // Check for suspicious activity
+    const formData = {
+      email: sanitizedEmail,
+      message: sanitizedMessage,
+      name: sanitizedName,
+      honeypot: honeypot
+    };
+    
+    if (detectSuspiciousActivity(formData)) {
+      logSecurityEvent('Suspicious form submission detected', formData);
+      toast({
+        title: "Submission blocked ⚠️",
+        description: "Your submission appears automated. Please try again.",
+        variant: "destructive",
+      });
+      return;
+    }
     
     // Validate form
     if (!validateForm()) {
@@ -89,18 +146,25 @@ export const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      // Prepare template parameters for EmailJS
+      // Prepare template parameters for EmailJS with sanitized data
       const templateParams = {
-        from_name: 'Portfolio Visitor',
-        from_email: email.trim(),
-        message: message.trim(),
+        from_name: sanitizedName || 'Portfolio Visitor',
+        from_email: sanitizedEmail,
+        message: sanitizedMessage,
         to_name: 'Dhirendra Singh Dhami',
-        reply_to: email.trim(),
+        reply_to: sanitizedEmail,
+        // Add timestamp for security logging
+        submitted_at: new Date().toISOString(),
       };
 
       const result = await sendEmail(templateParams);
 
       if (result.success) {
+        logSecurityEvent('Successful form submission', { 
+          email: sanitizedEmail,
+          messageLength: sanitizedMessage.length 
+        });
+        
         toast({
           title: "Message sent successfully! ✅",
           description: "Thank you for reaching out. I'll get back to you within 24 hours.",
@@ -109,12 +173,18 @@ export const ContactSection = () => {
         // Reset form
         setEmail('');
         setMessage('');
+        setName('');
+        setHoneypot('');
         setErrors({});
       } else {
         throw new Error('Failed to send email');
       }
     } catch (error) {
       console.error('Error sending email:', error);
+      logSecurityEvent('Email sending failed', { 
+        error: error instanceof Error ? error.message : 'Unknown error' 
+      });
+      
       toast({
         title: "Failed to send message ❌",
         description: "Please try again or contact me directly at dhirendraxd@gmail.com",
@@ -154,7 +224,55 @@ export const ContactSection = () => {
             {/* Contact Form */}
             <div className="card backdrop-blur-sm bg-slate-800/30 p-8">
               <h3 className="text-2xl font-bold mb-8 text-center">Send a Message</h3>
+              
+              {rateLimitExceeded && (
+                <div className="mb-4 p-3 bg-red-900/50 border border-red-500 rounded-lg text-red-200 text-sm">
+                  ⚠️ Too many attempts. Please wait before trying again.
+                </div>
+              )}
+              
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot field - hidden from users but visible to bots */}
+                <div className="hidden">
+                  <label htmlFor="honeypot">Leave this field empty</label>
+                  <input
+                    type="text"
+                    id="honeypot"
+                    name="honeypot"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                    Your Name <span className="text-gray-500">(optional)</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                      if (errors.name) {
+                        setErrors(prev => ({ ...prev, name: undefined }));
+                      }
+                    }}
+                    maxLength={50}
+                    className={`w-full p-3 rounded-lg bg-slate-700/50 border text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 transition-colors ${
+                      errors.name 
+                        ? 'border-red-500 focus:ring-red-400' 
+                        : 'border-slate-600 focus:ring-blue-400'
+                    }`}
+                    placeholder="Your name"
+                  />
+                  {errors.name && (
+                    <p className="text-red-400 text-xs mt-1">{errors.name}</p>
+                  )}
+                </div>
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                     Your Email <span className="text-red-400">*</span>
@@ -171,12 +289,14 @@ export const ContactSection = () => {
                       }
                     }}
                     required
+                    maxLength={254}
                     className={`w-full p-3 rounded-lg bg-slate-700/50 border text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 transition-colors ${
                       errors.email 
                         ? 'border-red-500 focus:ring-red-400' 
                         : 'border-slate-600 focus:ring-blue-400'
                     }`}
                     placeholder="your.email@example.com"
+                    autoComplete="email"
                   />
                   {errors.email && (
                     <p className="text-red-400 text-xs mt-1">{errors.email}</p>
@@ -217,22 +337,25 @@ export const ContactSection = () => {
 
                 <button
                   type="submit"
-                  disabled={isSubmitting || !email.trim() || !message.trim()}
+                  disabled={isSubmitting || rateLimitExceeded || !email.trim() || !message.trim()}
                   className="w-full py-3 px-6 rounded-lg bg-blue-500 hover:bg-blue-600 disabled:bg-gray-600 text-white font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-blue-500/25"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center justify-center gap-2">
                       <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                      Sending Message...
+                      Sending Secure Message...
                     </div>
+                  ) : rateLimitExceeded ? (
+                    'Please Wait...'
                   ) : (
-                    'Send Message'
+                    'Send Secure Message'
                   )}
                 </button>
               </form>
 
               <p className="text-xs text-gray-400 mt-4 text-center">
-                Your message will be sent directly to my email. I'll respond as soon as possible!
+                🔒 Your message is secured with input validation, rate limiting, and anti-bot protection.
+                <br />I'll respond as soon as possible!
               </p>
             </div>
           </div>

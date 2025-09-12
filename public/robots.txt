@@ -1,7 +1,31 @@
 User-agent: *
 Allow: /
+Disallow: /*.json$
+Disallow: /*.log$
+Disallow: /*.config$
+Disallow: /.htaccess
+Disallow: /SECURITY_AUDIT.md
+Disallow: /admin/
+Disallow: /private/
+Disallow: /backup/
+Disallow: /temp/
 
-# Sitemap
+# Block common vulnerability scanners
+User-agent: sqlmap
+Disallow: /
+
+User-agent: Nikto
+Disallow: /
+
+User-agent: w3af
+Disallow: /
+
+User-agent: Nessus
+Disallow: /
+
+User-agent: OpenVAS
+Disallow: /
+
 Sitemap: https://dhirendrasinghdhami.com.np/sitemap.xml
 
 # Block access to private files
