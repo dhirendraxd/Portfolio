@@ -52,13 +52,13 @@ export const HeroSection = () => {
           <h1 className="text-5xl md:text-7xl font-bold animate-fade-in">
             Hi, I am
             <br />
-            <span className="text-blue-400 inline-block mt-2">Dhirendra</span>
+            <span className="text-blue-400 inline-block mt-2">Dhirendra Singh Dhami</span>
           </h1>
           <h2 className="text-lg md:text-xl text-blue-300 font-medium animate-fade-in">
-            Cybersecurity • Advocacy • Sustainability
+            Cybersecurity Expert • Digital Advocate • Sustainability Leader
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto animate-fade-in opacity-90">
-            Empowering communities through secure tech, ethical AI, and sustainable innovation
+            Dhirendra specializes in cybersecurity solutions, ethical AI development, and sustainable technology innovation for secure digital transformation
           </p>
         </div>
         <div className="flex justify-center flex-wrap gap-4 mb-16">
