@@ -1,4 +1,6 @@
 // Subtle, professional particle configurations for portfolio sections  
+// Particle count tuning multiplier (adjust here for global density changes)
+const PARTICLE_DENSITY_MULTIPLIER = 10.3; // ~30% increase
 export const particleConfigs = {
   // Cybersecurity & Tech particles: Minimal network nodes, professional tech theme
   cybersecurity: {
@@ -29,7 +31,7 @@ export const particleConfigs = {
         speed: 0.8,
         straight: false
       },
-      number: { value: 15 },
+  number: { value: Math.round(30 * PARTICLE_DENSITY_MULTIPLIER) },
       opacity: { value: 0.3 },
       shape: { 
         type: ["circle", "polygon"],
@@ -78,7 +80,7 @@ export const particleConfigs = {
         speed: 0.6,
         straight: false
       },
-      number: { value: 12 },
+  number: { value: Math.round(12 * PARTICLE_DENSITY_MULTIPLIER) },
       opacity: { value: 0.4 },
       shape: { 
         type: ["circle", "star"],
@@ -127,7 +129,7 @@ export const particleConfigs = {
         speed: 0.4,
         straight: false
       },
-      number: { value: 10 },
+  number: { value: Math.round(10 * PARTICLE_DENSITY_MULTIPLIER) },
       opacity: { value: 0.25 },
       shape: { 
         type: ["circle", "polygon"],
@@ -176,7 +178,7 @@ export const particleConfigs = {
         speed: 0.5,
         straight: false
       },
-      number: { value: 8 },
+  number: { value: Math.round(8 * PARTICLE_DENSITY_MULTIPLIER) },
       opacity: { value: 0.2 },
       shape: { type: "circle" },
       size: { value: { min: 1.5, max: 1.5 } }
