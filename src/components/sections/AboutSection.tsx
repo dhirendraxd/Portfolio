@@ -226,9 +226,9 @@ export const AboutSection = () => {
             <div>
               <h2 className="section-title">About Me</h2>
               <div className="card backdrop-blur-sm bg-slate-800/30 p-6">
-                <h3 className="text-2xl font-bold mb-4">About Dhirendra Singh Dhami</h3>
+                  <h3 className="text-2xl font-bold mb-4">Who I Am</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  I'm Dhirendra Singh Dhami, a dedicated cybersecurity expert and web developer specializing in digital security solutions. With deep expertise in cybersecurity fundamentals, ethical AI development, and sustainable technology, Dhirendra focuses on creating secure digital environments while advocating for digital rights and community development. My passion lies in bridging the gap between advanced cybersecurity practices and accessible technology solutions.
+                    I'm passionate about creating secure digital solutions and working on projects that make a positive impact. My interests span cybersecurity, web development, ethical AI, and sustainable technology. I enjoy building secure applications, exploring new technologies, and contributing to digital innovation. When I'm not coding, I advocate for digital rights and community development initiatives.
                 </p>
               </div>
             </div>
