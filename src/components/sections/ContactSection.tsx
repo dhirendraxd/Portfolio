@@ -8,6 +8,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { initEmailJS, sendEmail } from "@/lib/emailjs";
+import { ThemedParticles } from "@/components/ThemedParticles";
 
 interface SocialLinkProps {
   href: string;
@@ -125,8 +126,9 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding opacity-0">
-      <div className="container mx-auto">
+    <section id="contact" className="section-padding opacity-0 relative">
+      <ThemedParticles theme="sustainability" />
+      <div className="container mx-auto relative z-10">
         <h2 className="section-title text-center mb-16">Get in Touch</h2>
 
         <div className="max-w-5xl mx-auto">

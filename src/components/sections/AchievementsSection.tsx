@@ -1,4 +1,5 @@
 import { Github, Linkedin, Award } from "lucide-react";
+import { ThemedParticles } from "@/components/ThemedParticles";
 
 interface Achievement {
   name: string;
@@ -144,8 +145,9 @@ const achievements: Achievement[] = [
 
 export const AchievementsSection = () => {
   return (
-    <section id="achievements" className="section-padding">
-      <div className="container mx-auto px-4">
+    <section id="achievements" className="section-padding relative">
+      <ThemedParticles theme="advocacy" />
+      <div className="container mx-auto px-4 relative z-10">
         <h2 className="section-title">Hackathons & Achievements</h2>
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Hackathon Projects */}

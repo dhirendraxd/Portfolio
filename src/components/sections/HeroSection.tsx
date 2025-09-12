@@ -13,6 +13,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { ThemedParticles } from "@/components/ThemedParticles";
 
 interface SocialLinkProps {
   href: string;
@@ -44,6 +45,7 @@ const SocialLink = ({ href, icon: Icon, label }: SocialLinkProps) => (
 export const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center section-padding relative overflow-hidden">
+      <ThemedParticles theme="hero" />
       <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 via-transparent to-transparent pointer-events-none" />
       <div className="container mx-auto text-center relative z-10">
         <div className="space-y-6 mb-12">

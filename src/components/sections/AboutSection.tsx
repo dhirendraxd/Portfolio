@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FileText, Award, Megaphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ThemedParticles } from "@/components/ThemedParticles";
 
 const skillCategories = {
   'Cyber Security': [
@@ -209,8 +210,9 @@ const CertificationList = () => {
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="section-padding opacity-0">
-      <div className="container mx-auto">
+    <section id="about" className="section-padding opacity-0 relative">
+      <ThemedParticles theme="cybersecurity" />
+      <div className="container mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-12">
           {/* Left Column */}
           <div className="space-y-8">
