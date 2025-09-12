@@ -44,8 +44,10 @@ const SocialLink = ({ href, icon: Icon, label }: SocialLinkProps) => (
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center section-padding relative overflow-hidden">
-      <ThemedParticles theme="hero" />
+    <section id="home" className="hero-section section-padding relative overflow-hidden">
+      <div className="particle-container">
+        <ThemedParticles theme="hero" />
+      </div>
       <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 via-transparent to-transparent pointer-events-none" />
       <div className="container mx-auto text-center relative z-10">
         <div className="space-y-6 mb-12">
@@ -57,7 +59,7 @@ export const HeroSection = () => {
           <h2 className="text-lg md:text-xl text-blue-300 font-medium animate-fade-in">
             Cybersecurity Expert • Digital Advocate • Sustainability Leader
           </h2>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto animate-fade-in opacity-90">
+          <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto animate-fade-in">
             Dhirendra specializes in cybersecurity solutions, ethical AI development, and sustainable technology innovation for secure digital transformation
           </p>
         </div>

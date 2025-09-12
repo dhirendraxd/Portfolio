@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { FileText, Award, Megaphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ThemedParticles } from "@/components/ThemedParticles";
+
+// Lazy load particles for better performance
+const ThemedParticles = lazy(() => import("@/components/ThemedParticles").then(module => ({
+  default: module.ThemedParticles
+})));
 
 const skillCategories = {
   'Cyber Security': [
@@ -211,7 +215,9 @@ const CertificationList = () => {
 export const AboutSection = () => {
   return (
     <section id="about" className="section-padding opacity-0 relative">
-      <ThemedParticles theme="cybersecurity" />
+      <Suspense fallback={<div className="absolute inset-0" />}>
+        <ThemedParticles theme="cybersecurity" />
+      </Suspense>
       <div className="container mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-12">
           {/* Left Column */}

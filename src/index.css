@@ -77,3 +77,34 @@
 .skill-tag {
   @apply px-4 py-2 rounded-full text-sm font-medium text-blue-300;
 }
+
+/* Performance Optimizations */
+.particle-container {
+  @apply absolute inset-0 pointer-events-none;
+  contain: layout style paint;
+}
+
+/* Prevent layout shifts */
+.section-padding {
+  min-height: 100vh;
+  contain: layout;
+}
+
+/* Improve font rendering */
+* {
+  font-display: swap;
+}
+
+/* Reduce reflows */
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Critical CSS for layout stability */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
