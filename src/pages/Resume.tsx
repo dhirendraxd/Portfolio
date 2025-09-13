@@ -103,10 +103,12 @@ const Resume = () => {
               <h2 className="text-2xl font-bold mb-4 text-blue-300">Projects</h2>
               <ul className="list-disc list-inside text-gray-300 space-y-4">
                 <li>
+                  <strong>University Finder</strong> – AI web app recommending universities, built with React and  API.
+                </li>
+                <li>
+                
                   <strong>DevBus</strong> – AI-powered tool for job readiness. Built with React, Supabase, OpenAI API.
-                  {/* <a href="https://github.com/dhirendraxd/Codeyatra-Hackathon.git" target="_blank" rel="noopener noreferrer" className="ml-2 text-blue-400 inline-flex items-center hover:underline">
-                    GitHub <ExternalLink size={16} className="ml-1" />
-                  </a> */}
+                  
                 </li>
                 <li>
                   <strong>Impactify</strong> – A web app to recruit volunteers and manage stipends for events. Used in hackathon.
@@ -120,6 +122,7 @@ const Resume = () => {
             <section className="card">
               <h2 className="text-2xl font-bold mb-4 text-blue-300">Hackathons</h2>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <li>KIST HackFest 2025 – AI-Powered University Recommendation Web App</li>
                 <li>CodeYatra 2025 – AI Job Tool (DevBus)</li>
                 <li>KEC Hack-a-LITE 2024 – Volunteer Management App</li>
                 <li>KIST HackFest 2023 – Solo Project on Farmer Marketplace</li>
@@ -144,13 +147,22 @@ const Resume = () => {
             <section className="card">
               <h2 className="text-2xl font-bold mb-4 text-blue-300">Education & Certifications</h2>
               <div className="space-y-4 text-gray-300">
+                {/*  lets put aspire leaderhip in here as well */}
+                
+                
                 <div>
+                  <h3 className="text-xl font-bold mb-2">Aspire Leadership Program </h3>
+                  <p>Aspire Institute | Augutst 2025 - Present </p>
+                                   <h3> 
+                    
+                  </h3>
                   <h3 className="text-xl font-bold mb-2">Bachelor's in Information Technology Management</h3>
                   <p>KIST College & SS | 2023 –  2027</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">Certifications</h3>
                   <ul className="list-disc list-inside space-y-2">
+                    <li> Internet Governance – Understanding the global policy framework</li>
                     <li>Introducing Generative AI with AWS – Exploring AI's role in tech innovation</li>
                     <li>Civic Leadership Training (Part 5) – Strengthening leadership for social impact</li>
                     <li>Google Cybersecurity Professional Certificate – Solid foundation in digital security</li>
