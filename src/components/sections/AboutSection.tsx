@@ -49,13 +49,21 @@ const skillCategories = {
 };
 
 const certifications = [
-  {
+  
+    {
     name: "Sustainability Mentorship Program 2025",
     issuer: "Sustainability Solutions Nepal",
 
     year: "Aug 2025 -  Present",
     certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7367542595113181184/"
+  },{
+    name: "Internet Governance",
+    issuer: "Internet Society ",
+
+    year: "Aug 2025 ",
+    certificateLink: "https://certificates.isoc.org/1c2fa81f-c045-43a0-b67f-f2967796fbf7#acc.3JfbBoUL"
   },
+
   {
     name: "Traning Of Trainers (ToT) - Climate Justice",
     issuer: "Power Shift Nepal",

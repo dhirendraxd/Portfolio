@@ -13,6 +13,18 @@ interface Achievement {
 }
 
 const hackathons: Achievement[] = [
+   {
+    name: "CodeYatra Hackathon 2025",
+    description:
+      "Developed an innovative solution addressing real-world challenges in a competitive 36-hour hackathon.",
+    projectLink: "https://devpost.com/software/devbus#updates",
+    githubLink: "https://github.com/dhirendraxd/Codeyatra-Hackathon.git",
+    linkedinLink: "https://www.linkedin.com/in/dhirendra-singh-dhami/",
+    date: "August  2025",
+    skills: ["React", "Supabase", "OpenAI API"],
+    certificateLink:
+      "https://www.linkedin.com/feed/update/urn:li:activity:7361770720659443713/",
+  },
   {
     name: "CodeYatra Hackathon 2025",
     description:
