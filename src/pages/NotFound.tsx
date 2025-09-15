@@ -5,10 +5,28 @@ const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
+    document.title = "404 - Page Not Found | Dhirendra Singh Dhami";
+    
+    // Add noindex meta tag for 404 pages
+    const noindexMeta = document.createElement('meta');
+    noindexMeta.name = 'robots';
+    noindexMeta.content = 'noindex, nofollow';
+    noindexMeta.setAttribute('data-404', 'true');
+    document.head.appendChild(noindexMeta);
+    
     console.error(
       "404 Error: User attempted to access non-existent route:",
       location.pathname
     );
+    
+    // Return cleanup function
+    return () => {
+      document.title = 'Dhirendra Singh Dhami - Portfolio & Digital Projects';
+      const noindexMetaTag = document.querySelector('meta[data-404]');
+      if (noindexMetaTag) {
+        noindexMetaTag.remove();
+      }
+    };
   }, [location.pathname]);
 
   return (

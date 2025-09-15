@@ -1,7 +1,94 @@
 import { ChevronLeft, Download, FileText, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Resume = () => {
+  useEffect(() => {
+    // Update document title for SEO
+    document.title = 'Resume - Dhirendra Singh Dhami | Cybersecurity & Web Development';
+    
+    // Add meta description for this page
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 
+        'Professional resume of Dhirendra Singh Dhami. Experience in cybersecurity, web development, SEO, and digital innovation. Download CV and view complete work history.'
+      );
+    }
+
+    // Add canonical URL
+    const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
+    canonicalLink.setAttribute('rel', 'canonical');
+    canonicalLink.setAttribute('href', 'https://dhirendrasinghdhami.com.np/resume');
+    if (!document.querySelector('link[rel="canonical"]')) {
+      document.head.appendChild(canonicalLink);
+    }
+
+    // Add structured data for resume page
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dhirendra Singh Dhami",
+      "jobTitle": "SEO Specialist & Cybersecurity Enthusiast", 
+      "url": "https://dhirendrasinghdhami.com.np/resume",
+      "sameAs": [
+        "https://github.com/dhirendraxd",
+        "https://x.com/dhirendra_jsx", 
+        "https://www.linkedin.com/in/dhirendrasinghdhami/"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Bachelor of Information Management",
+          "educationalLevel": "Bachelor's Degree"
+        }
+      ],
+      "workExample": [
+        {
+          "@type": "CreativeWork",
+          "name": "Personal Portfolio Website",
+          "description": "Secure, performant portfolio built with React, TypeScript, and modern SEO practices",
+          "url": "https://dhirendrasinghdhami.com.np"
+        }
+      ]
+    };
+
+    // Remove existing resume structured data if any
+    const existingScript = document.querySelector('script[data-resume-ld]');
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    // Add new structured data
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.setAttribute('data-resume-ld', 'true');
+    script.textContent = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    // Cleanup function to reset title on unmount
+    return () => {
+      document.title = 'Dhirendra Singh Dhami - Portfolio & Digital Projects';
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute('content', 
+          'Hi, I\'m Dhirendra Singh Dhami. I create secure digital solutions and work on cybersecurity, web development, and sustainable tech projects. Passionate about ethical AI and digital innovation.'
+        );
+      }
+      
+      // Remove resume-specific structured data
+      const resumeScript = document.querySelector('script[data-resume-ld]');
+      if (resumeScript) {
+        resumeScript.remove();
+      }
+      
+      // Reset canonical URL
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) {
+        canonical.setAttribute('href', 'https://dhirendrasinghdhami.com.np/');
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 py-20">
       <div className="container mx-auto px-4">
