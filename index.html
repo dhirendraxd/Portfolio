@@ -45,6 +45,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     
+    <!-- Critical CSS for faster initial render -->
+    <style>
+      /* Critical above-the-fold styles */
+      html { font-family: system-ui, -apple-system, sans-serif; }
+      body { margin: 0; background: linear-gradient(135deg, #0f172a, #1e293b); min-height: 100vh; }
+      #root { min-height: 100vh; }
+      .loading { display: flex; align-items: center; justify-content: center; min-height: 100vh; color: #60a5fa; }
+      /* Prevent layout shift */
+      .hero-container { min-height: 100vh; position: relative; }
+      .glass { backdrop-filter: blur(10px); }
+    </style>
+    
     <!-- Resource Hints for Performance -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -54,11 +66,17 @@
     <link rel="preload" href="/src/main.tsx" as="script" crossorigin>
     <link rel="modulepreload" href="/src/main.tsx">
     
-    <!-- Fonts - Optimized Loading -->
+    <!-- Fonts - Critical Loading Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Preload only critical font weights -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/spacemono/v13/i7dPIFZifjKcF5UAWdDRYEF8RQ.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Load fonts with display=swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -100,8 +118,24 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Fast loading indicator -->
+      <div class="loading">
+        <div style="text-align: center;">
+          <div style="width: 40px; height: 40px; border: 3px solid rgba(96, 165, 250, 0.3); border-top: 3px solid #60a5fa; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px;"></div>
+          <p style="color: #60a5fa; margin: 0;">Loading Portfolio...</p>
+        </div>
+      </div>
+    </div>
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Inline spinner animation -->
+    <style>
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
   </body>
 </html>

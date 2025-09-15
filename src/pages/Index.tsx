@@ -5,6 +5,11 @@ import { AboutSection } from '../components/sections/AboutSection';
 import { AchievementsSection } from '../components/sections/AchievementsSection';
 import { ContactSection } from '../components/sections/ContactSection';
 
+// Lazy load performance monitor in development
+if (process.env.NODE_ENV === 'development') {
+  import('../lib/performance');
+}
+
 const Index = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(

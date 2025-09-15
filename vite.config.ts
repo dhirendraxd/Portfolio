@@ -56,25 +56,34 @@ export default defineConfig(({ mode }) => ({
     },
     // Security: Disable source maps in production
     sourcemap: false,
-    // Minimize bundle size with enhanced security
+    // Minimize bundle size with enhanced security and performance
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true, // Remove console logs in production
         drop_debugger: true, // Remove debugger statements
         pure_funcs: ['console.info', 'console.debug', 'console.warn'], // Remove specific console methods
-        passes: 2, // Run compression twice for better results
+        passes: 3, // Run compression 3x for better results
+        unsafe_arrows: true, // Optimize arrow functions
+        unsafe_methods: true, // Optimize method calls
+        hoist_funs: true, // Hoist function declarations
+        keep_fargs: false, // Remove unused function arguments
       },
       mangle: {
         safari10: true, // Handle Safari 10+ bug
+        toplevel: true, // Mangle top-level names
       },
       format: {
         comments: false, // Remove all comments for security
+        ascii_only: true, // Ensure ASCII output
       },
     },
-    // Security configurations
-    chunkSizeWarningLimit: 1000,
+    // Performance optimizations
+    target: 'es2020', // Modern JS target for better performance
+    chunkSizeWarningLimit: 800, // Smaller chunks for better loading
     reportCompressedSize: false, // Don't report sizes for security
     emptyOutDir: true,
+    cssCodeSplit: true, // Split CSS for better caching
+    assetsInlineLimit: 4096, // Inline small assets as base64
   },
 }));
