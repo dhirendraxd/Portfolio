@@ -5,6 +5,7 @@ export type Json =
   | null
   | { [key: string]: Json | undefined }
   | Json[]
+//  this is for tesyihn 
 
 export type Database = {
   public: {
