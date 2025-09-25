@@ -14,6 +14,7 @@ interface ThemedParticlesProps {
 export const ThemedParticles = ({ theme, className = "" }: ThemedParticlesProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isReduced, setIsReduced] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Check for reduced motion preference
@@ -25,6 +26,18 @@ export const ThemedParticles = ({ theme, className = "" }: ThemedParticlesProps)
     mediaQuery.addEventListener('change', handleChange);
     
     return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  // Monitor screen size changes for responsive particles
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile(); // Initial check
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   // Intersection observer for lazy loading with larger threshold
