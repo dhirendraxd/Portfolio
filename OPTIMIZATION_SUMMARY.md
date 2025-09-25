@@ -17,36 +17,15 @@
 - **Impact**: Reduces external blocking requests
 
 ### 2. 🎨 **Particle System Optimization** 
-- Reduced particle density from 10.3x to 0.6x multiplier (94% reduction)
-- Added lazy loading with Suspense for hero particles
-- Enhanced intersection observer with 100px margin
-- **Impact**: Significantly reduces main thread blocking
 
 ### 3. 📦 **Build & Bundle Optimization**
-- Better vendor chunking (separate react-router)
-- Reduced chunk size limit to 600KB  
-- Enhanced treeshaking strategy
-- Reduced asset inline limit to 2KB
-- **Impact**: Smaller initial bundles, better caching
-
-### 4. ⚡ **Enhanced Resource Loading**
 - Improved critical CSS with hero layout styles
 - Added modulepreload for critical components
-- Hardware acceleration for animations
 - Better font preloading strategy
-- **Impact**: Faster first render and reduced layout shifts
 
 ### 5. 🗂️ **Cache Control Improvements**  
-- 1-year caching for immutable assets
-- Separate headers for different file types
-- Optimized Vercel deployment configuration
 - **Impact**: Better repeat visit performance
 
-## 📊 Expected Improvements
-
-| Metric | Before | Expected After | Improvement |
-|--------|--------|----------------|-------------|
-| **Performance Score** | 86/100 | 92-95/100 | +6-9 points |
 | **FCP** | 3.0s | 1.6-2.0s | ~40% faster |
 | **LCP** | 3.0s | 2.0-2.4s | ~30% faster |
 | **Speed Index** | 4.9s | 3.0-3.5s | ~35% faster |
