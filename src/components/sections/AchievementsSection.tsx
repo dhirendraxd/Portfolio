@@ -116,13 +116,7 @@ const hackathons: Achievement[] = [
 //   },
 // ];
 const achievements: Achievement[] = [
-//{
-    // name: "Sustainability Mentorship Program 2025",
-    // issuer: "Sustainability Solutions Nepal",
 
-    // year: "Aug 2025 -  Present",
-    // certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7367542595113181184/"
-  // } 
    {
     name: "Mentee - Sustainability Mentorship ",
     description:
@@ -259,6 +253,7 @@ export const AchievementsSection = () => {
                   (cert) =>
                     cert.certificateLink ||
                     cert.name.toLowerCase().includes("volunteer") ||
+                    cert.name.toLowerCase().includes("mentee") ||
                     cert.name.toLowerCase().includes("representative") ||
                     cert.name.toLowerCase().includes("training") ||
                     cert.name.toLowerCase().includes("member")
