@@ -56,28 +56,53 @@ export const ThemedParticles = ({ theme, className = "" }: ThemedParticlesProps)
     await loadStarShape(engine);
   }, [isVisible]);
 
-  // Memoize and optimize config based on performance preferences
+  // Memoize and optimize config based on device and performance preferences
   const optimizedConfig = useMemo(() => {
     const baseConfig = particleConfigs[theme];
     
     if (isReduced) {
-      // Minimal particles for reduced motion
+      // Static gradient for reduced motion users
       return {
         ...baseConfig,
         particles: {
           ...baseConfig.particles,
-          number: { value: Math.max(3, Math.floor(baseConfig.particles.number.value * 0.2)) },
+          number: { value: 0 },
           move: { ...baseConfig.particles.move, enable: false },
           opacity: { ...baseConfig.particles.opacity, animation: { enable: false } }
         }
       };
     }
 
-    // Performance optimization for low-end devices
-    const devicePixelRatio = window.devicePixelRatio || 1;
+    // Device-specific optimizations
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const devicePixelRatio = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
     const isLowEnd = devicePixelRatio < 2 || navigator.hardwareConcurrency <= 2;
     
+    if (isMobile) {
+      // Mobile optimization: fewer, slower particles
+      return {
+        ...baseConfig,
+        fpsLimit: 30, // Reduced FPS for mobile
+        particles: {
+          ...baseConfig.particles,
+          number: { value: Math.max(2, Math.floor(baseConfig.particles.number.value * 0.3)) },
+          move: {
+            ...baseConfig.particles.move,
+            speed: Math.max(0.3, baseConfig.particles.move.speed * 0.5)
+          },
+          opacity: { value: 0.15 }, // More subtle on mobile
+          links: baseConfig.particles.links ? {
+            ...baseConfig.particles.links,
+            opacity: 0.1,
+            distance: Math.floor(baseConfig.particles.links.distance * 0.7)
+          } : undefined
+        },
+        detectRetina: false
+      };
+    }
+    
     if (isLowEnd) {
+      // Low-end desktop optimization
       return {
         ...baseConfig,
         particles: {
@@ -85,14 +110,22 @@ export const ThemedParticles = ({ theme, className = "" }: ThemedParticlesProps)
           number: { value: Math.floor(baseConfig.particles.number.value * 0.6) },
           move: {
             ...baseConfig.particles.move,
-            speed: Math.max(0.5, baseConfig.particles.move.speed * 0.7)
+            speed: Math.max(0.5, baseConfig.particles.move.speed * 0.8)
           }
         },
         detectRetina: false
       };
     }
 
-    return baseConfig;
+    // High-end desktop: full experience with enhanced visuals
+    return {
+      ...baseConfig,
+      particles: {
+        ...baseConfig.particles,
+        number: { value: Math.floor(baseConfig.particles.number.value * 1.2) }, // 20% more particles
+        opacity: { value: baseConfig.particles.opacity.value * 1.1 }, // Slightly more visible
+      }
+    };
   }, [theme, isReduced]);
 
   if (!isVisible) {

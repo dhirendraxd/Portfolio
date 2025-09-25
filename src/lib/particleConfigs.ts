@@ -1,6 +1,18 @@
 // Subtle, professional particle configurations for portfolio sections  
-// Particle count tuning multiplier (optimized for performance)
-const PARTICLE_DENSITY_MULTIPLIER = 0.6; // Reduced from 10.3 to 0.6 for better performance
+// Responsive particle density based on device capabilities
+const getParticleDensityMultiplier = () => {
+  if (typeof window === 'undefined') return 1.0;
+  
+  const isMobile = window.innerWidth < 768;
+  const isLowEndDevice = navigator.hardwareConcurrency <= 2;
+  const hasReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  if (hasReducedMotion) return 0;
+  if (isMobile || isLowEndDevice) return 0.3; // 70% reduction for mobile/low-end
+  return 1.2; // 20% increase for desktop - bringing back visual appeal
+};
+
+const PARTICLE_DENSITY_MULTIPLIER = getParticleDensityMultiplier();
 export const particleConfigs = {
   // Cybersecurity & Tech particles: Minimal network nodes, professional tech theme
   cybersecurity: {
