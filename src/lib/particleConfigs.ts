@@ -32,7 +32,7 @@ export const particleConfigs = {
         color: "#ffffff",
         distance: 100,
         enable: true,
-        opacity: 0.1,
+        opacity: 0.15, // Increased from 0.1
         width: 0.5
       },
       move: {
@@ -43,8 +43,8 @@ export const particleConfigs = {
         speed: 0.8,
         straight: false
       },
-  number: { value: Math.round(30 * PARTICLE_DENSITY_MULTIPLIER) },
-      opacity: { value: 0.3 },
+  number: { value: Math.round(25 * PARTICLE_DENSITY_MULTIPLIER) }, // Increased base count
+      opacity: { value: 0.35 }, // Increased from 0.3
       shape: { 
         type: ["circle", "polygon"],
         options: {
@@ -92,7 +92,7 @@ export const particleConfigs = {
         speed: 0.6,
         straight: false
       },
-  number: { value: Math.round(12 * PARTICLE_DENSITY_MULTIPLIER) },
+  number: { value: Math.round(15 * PARTICLE_DENSITY_MULTIPLIER) }, // Increased for advocacy
       opacity: { value: 0.4 },
       shape: { 
         type: ["circle", "star"],
@@ -141,7 +141,7 @@ export const particleConfigs = {
         speed: 0.4,
         straight: false
       },
-  number: { value: Math.round(10 * PARTICLE_DENSITY_MULTIPLIER) },
+  number: { value: Math.round(12 * PARTICLE_DENSITY_MULTIPLIER) }, // Increased for sustainability
       opacity: { value: 0.25 },
       shape: { 
         type: ["circle", "polygon"],
@@ -190,8 +190,8 @@ export const particleConfigs = {
         speed: 0.5,
         straight: false
       },
-  number: { value: Math.round(8 * PARTICLE_DENSITY_MULTIPLIER) },
-      opacity: { value: 0.2 },
+  number: { value: Math.round(18 * PARTICLE_DENSITY_MULTIPLIER) }, // Increased for hero section
+      opacity: { value: 0.25 }, // Increased from 0.2 for hero
       shape: { type: "circle" },
       size: { value: { min: 1.5, max: 1.5 } }
     },

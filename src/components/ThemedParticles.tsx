@@ -5,6 +5,7 @@ import { loadPolygonShape } from "tsparticles-shape-polygon";
 import { loadStarShape } from "tsparticles-shape-star";
 import type { Engine } from "tsparticles-engine";
 import { particleConfigs } from "@/lib/particleConfigs";
+import { getDeviceCapabilities, getOptimalParticleConfig } from "@/lib/deviceCapabilities";
 
 interface ThemedParticlesProps {
   theme: 'cybersecurity' | 'advocacy' | 'sustainability' | 'hero';
@@ -72,8 +73,9 @@ export const ThemedParticles = ({ theme, className = "" }: ThemedParticlesProps)
   // Memoize and optimize config based on device and performance preferences
   const optimizedConfig = useMemo(() => {
     const baseConfig = particleConfigs[theme];
+    const capabilities = getDeviceCapabilities();
     
-    if (isReduced) {
+    if (capabilities.hasReducedMotion) {
       // Static gradient for reduced motion users
       return {
         ...baseConfig,
@@ -86,27 +88,25 @@ export const ThemedParticles = ({ theme, className = "" }: ThemedParticlesProps)
       };
     }
 
-    // Device-specific optimizations
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-    const devicePixelRatio = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
-    const isLowEnd = devicePixelRatio < 2 || navigator.hardwareConcurrency <= 2;
+    // Get optimal particle count based on device
+    const optimalCount = getOptimalParticleConfig(baseConfig.particles.number.value, capabilities);
     
-    if (isMobile) {
-      // Mobile optimization: fewer, slower particles
+    if (capabilities.isMobile) {
+      // Mobile optimization: fewer, slower particles, more subtle
       return {
         ...baseConfig,
-        fpsLimit: 30, // Reduced FPS for mobile
+        fpsLimit: 30,
         particles: {
           ...baseConfig.particles,
-          number: { value: Math.max(2, Math.floor(baseConfig.particles.number.value * 0.3)) },
+          number: { value: optimalCount },
           move: {
             ...baseConfig.particles.move,
             speed: Math.max(0.3, baseConfig.particles.move.speed * 0.5)
           },
-          opacity: { value: 0.15 }, // More subtle on mobile
+          opacity: { value: 0.15 },
           links: baseConfig.particles.links ? {
             ...baseConfig.particles.links,
-            opacity: 0.1,
+            opacity: 0.08,
             distance: Math.floor(baseConfig.particles.links.distance * 0.7)
           } : undefined
         },
@@ -114,32 +114,49 @@ export const ThemedParticles = ({ theme, className = "" }: ThemedParticlesProps)
       };
     }
     
-    if (isLowEnd) {
-      // Low-end desktop optimization
+    if (capabilities.isTablet || capabilities.isLowEnd) {
+      // Tablet/low-end optimization
       return {
         ...baseConfig,
+        fpsLimit: 45,
         particles: {
           ...baseConfig.particles,
-          number: { value: Math.floor(baseConfig.particles.number.value * 0.6) },
+          number: { value: optimalCount },
           move: {
             ...baseConfig.particles.move,
-            speed: Math.max(0.5, baseConfig.particles.move.speed * 0.8)
-          }
+            speed: Math.max(0.5, baseConfig.particles.move.speed * 0.7)
+          },
+          opacity: { value: baseConfig.particles.opacity.value * 0.8 },
         },
         detectRetina: false
       };
     }
 
-    // High-end desktop: full experience with enhanced visuals
+    if (capabilities.isHighEnd) {
+      // High-end desktop: enhanced experience
+      return {
+        ...baseConfig,
+        particles: {
+          ...baseConfig.particles,
+          number: { value: optimalCount },
+          opacity: { value: baseConfig.particles.opacity.value * 1.2 },
+          links: baseConfig.particles.links ? {
+            ...baseConfig.particles.links,
+            opacity: baseConfig.particles.links.opacity * 1.3
+          } : undefined
+        }
+      };
+    }
+
+    // Standard desktop: use configured values with optimal count
     return {
       ...baseConfig,
       particles: {
         ...baseConfig.particles,
-        number: { value: Math.floor(baseConfig.particles.number.value * 1.2) }, // 20% more particles
-        opacity: { value: baseConfig.particles.opacity.value * 1.1 }, // Slightly more visible
+        number: { value: optimalCount }
       }
     };
-  }, [theme, isReduced]);
+  }, [theme]);
 
   if (!isVisible) {
     return <div ref={containerRef} className={`absolute inset-0 ${className}`} />;
