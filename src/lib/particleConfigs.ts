@@ -1,6 +1,6 @@
 // Subtle, professional particle configurations for portfolio sections  
-// Particle count tuning multiplier (adjust here for global density changes)
-const PARTICLE_DENSITY_MULTIPLIER = 10.3; // ~30% increase
+// Particle count tuning multiplier (optimized for performance)
+const PARTICLE_DENSITY_MULTIPLIER = 0.6; // Reduced from 10.3 to 0.6 for better performance
 export const particleConfigs = {
   // Cybersecurity & Tech particles: Minimal network nodes, professional tech theme
   cybersecurity: {

@@ -48,11 +48,15 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           // Separate vendor chunks for better caching
           react: ['react', 'react-dom'],
-          particles: ['react-tsparticles', 'tsparticles', 'tsparticles-basic', 'tsparticles-shape-polygon', 'tsparticles-shape-star', 'tsparticles-shape-image'],
-          ui: ['@radix-ui/react-toast', '@radix-ui/react-tooltip', '@radix-ui/react-accordion'],
+          'react-router': ['react-router-dom'],
+          particles: ['react-tsparticles', '@tsparticles/engine', '@tsparticles/basic', '@tsparticles/shape-polygon', '@tsparticles/shape-star', '@tsparticles/react'],
+          ui: ['@radix-ui/react-toast', '@radix-ui/react-tooltip', '@radix-ui/react-accordion', '@radix-ui/react-dialog'],
           icons: ['lucide-react'],
+          forms: ['@emailjs/browser', '@hookform/resolvers'],
         },
       },
+      // Additional optimizations
+      treeshake: 'recommended',
     },
     // Security: Disable source maps in production
     sourcemap: false,
@@ -80,10 +84,12 @@ export default defineConfig(({ mode }) => ({
     },
     // Performance optimizations
     target: 'es2020', // Modern JS target for better performance
-    chunkSizeWarningLimit: 800, // Smaller chunks for better loading
+    chunkSizeWarningLimit: 600, // Smaller chunks for better loading - reduced from 800
     reportCompressedSize: false, // Don't report sizes for security
     emptyOutDir: true,
     cssCodeSplit: true, // Split CSS for better caching
-    assetsInlineLimit: 4096, // Inline small assets as base64
+    assetsInlineLimit: 2048, // Reduced from 4096 for smaller initial bundle
+    // Enable modern build optimizations
+    cssMinify: true,
   },
 }));

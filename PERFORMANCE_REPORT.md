@@ -1,12 +1,14 @@
 # 🚀 PageSpeed Insights Optimization Report
 
-## Previous Performance Issues (83/100)
-- **FCP**: 2.9s (should be <1.8s)
-- **LCP**: 3.1s (should be <2.5s)  
-- **TBT**: 260ms (should be <200ms)
-- **Main-thread work**: 3.9s (high)
-- **JavaScript execution**: 2.0s (high)
-- **20 long tasks** found
+# 🚀 PageSpeed Insights Optimization Report - Updated Sept 25, 2025
+
+## Current Performance Issues (86/100) 
+- **FCP**: 3.0s (should be <1.8s)
+- **LCP**: 3.0s (should be <2.5s)  
+- **TBT**: 0ms (already optimized ✅)
+- **SI**: 4.9s (should be <3.4s)
+- **Main-thread work**: Needs optimization
+- **1 long task** found
 
 ## 🎯 Optimizations Implemented
 

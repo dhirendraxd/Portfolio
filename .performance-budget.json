@@ -1,0 +1,25 @@
+{
+  "budgets": [
+    {
+      "type": "initial",
+      "maximumWarning": "500kb",
+      "maximumError": "1mb"
+    },
+    {
+      "type": "allScript",
+      "maximumWarning": "300kb",
+      "maximumError": "500kb"
+    },
+    {
+      "type": "bundle",
+      "name": "main",
+      "maximumWarning": "400kb",
+      "maximumError": "600kb"
+    },
+    {
+      "type": "any",
+      "maximumWarning": "200kb",
+      "maximumError": "300kb"
+    }
+  ]
+}

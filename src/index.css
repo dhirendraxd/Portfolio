@@ -82,23 +82,31 @@
 .particle-container {
   @apply absolute inset-0 pointer-events-none;
   contain: layout style paint;
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
-/* Prevent layout shifts */
+/* Prevent layout shifts - Critical */
 .section-padding {
   min-height: 100vh;
   contain: layout;
 }
 
-/* Improve font rendering */
+/* Improve font rendering and reduce FOIT */
 * {
   font-display: swap;
 }
 
-/* Reduce reflows */
+/* Reduce reflows and optimize images */
 img, video {
   height: auto;
   max-width: 100%;
+  contain: layout;
+}
+
+/* Hardware acceleration for animations */
+.animate-fade-in {
+  transform: translateZ(0);
+  will-change: opacity, transform;
 }
 
 /* Critical CSS for layout stability */

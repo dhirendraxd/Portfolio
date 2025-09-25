@@ -27,16 +27,17 @@ export const ThemedParticles = ({ theme, className = "" }: ThemedParticlesProps)
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  // Intersection observer for lazy loading
+  // Intersection observer for lazy loading with larger threshold
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          // Add small delay to prevent render blocking
+          setTimeout(() => setIsVisible(true), 100);
           observer.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: '50px' }
+      { threshold: 0.05, rootMargin: '100px' } // Larger margin for earlier loading
     );
 
     if (containerRef.current) {

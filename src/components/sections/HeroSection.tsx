@@ -13,7 +13,12 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { ThemedParticles } from "@/components/ThemedParticles";
+import { lazy, Suspense } from "react";
+
+// Lazy load particles to improve initial load time
+const ThemedParticles = lazy(() => import("@/components/ThemedParticles").then(module => ({
+  default: module.ThemedParticles
+})));
 
 interface SocialLinkProps {
   href: string;
@@ -46,7 +51,9 @@ export const HeroSection = () => {
   return (
     <section id="home" className="hero-section section-padding relative overflow-hidden">
       <div className="particle-container">
-        <ThemedParticles theme="hero" />
+        <Suspense fallback={<div className="absolute inset-0" />}>
+          <ThemedParticles theme="hero" />
+        </Suspense>
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 via-transparent to-transparent pointer-events-none" />
       <div className="container mx-auto text-center relative z-10">
