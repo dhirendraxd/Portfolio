@@ -49,32 +49,42 @@
     <style>
       /* Critical above-the-fold styles */
       html { font-family: system-ui, -apple-system, sans-serif; }
-      body { margin: 0; background: linear-gradient(135deg, #0f172a, #1e293b); min-height: 100vh; }
+      body { margin: 0; background: linear-gradient(135deg, #0f172a, #1e293b); min-height: 100vh; color: #ffffff; }
       #root { min-height: 100vh; }
       .loading { display: flex; align-items: center; justify-content: center; min-height: 100vh; color: #60a5fa; }
       /* Prevent layout shift */
       .hero-container { min-height: 100vh; position: relative; }
       .glass { backdrop-filter: blur(10px); }
+      /* Preload hero section styles */
+      .hero-section { position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+      .particle-container { position: absolute; inset: 0; pointer-events: none; contain: layout style paint; }
+      /* Critical text styles */
+      h1 { font-size: 3rem; font-weight: 700; line-height: 1.1; margin: 0; }
+      @media (min-width: 768px) { h1 { font-size: 4.5rem; } }
     </style>
     
     <!-- Resource Hints for Performance -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://cdn.gpteng.co">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="/src/main.tsx" as="script" crossorigin>
-    <link rel="modulepreload" href="/src/main.tsx">
-    
-    <!-- Fonts - Critical Loading Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Preload only critical font weights -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/spacemono/v13/i7dPIFZifjKcF5UAWdDRYEF8RQ.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Preload critical resources -->
+    <link rel="modulepreload" href="/src/main.tsx">
+    <link rel="modulepreload" href="/src/App.tsx">
+    <link rel="modulepreload" href="/src/pages/Index.tsx">
     
-    <!-- Load fonts with display=swap for better performance -->
+    <!-- Preload critical styles -->
+    <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
+    
+    <!-- Fonts - Critical Loading Optimization -->
+    
+    <!-- Preload only the most critical font weights -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuDyuAZ9hiA.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Load fonts asynchronously with swap for better performance -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
     
@@ -128,7 +138,6 @@
         </div>
       </div>
     </div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
     
     <!-- Inline spinner animation -->
