@@ -144,8 +144,7 @@ const achievements: Achievement[] = [
     description:
       "Completed a 10-day intensive training focused on ethics, democracy, development, and communication.",
     date: "Jun 2025",
-    certificateLink:
-      "https://www.linkedin.com/feed/update/urn:li:activity:7341260946419417088/",
+    
   },
   {
     name: "Volunteer - Nepal International Film Festival 2025",
