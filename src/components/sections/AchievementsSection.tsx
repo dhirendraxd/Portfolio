@@ -116,7 +116,19 @@ const hackathons: Achievement[] = [
 //   },
 // ];
 const achievements: Achievement[] = [
-  {
+//{
+    // name: "Sustainability Mentorship Program 2025",
+    // issuer: "Sustainability Solutions Nepal",
+
+    // year: "Aug 2025 -  Present",
+    // certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7367542595113181184/"
+  // } 
+   {
+    name: "Mentee - Sustainability Mentorship ",
+    description:
+      "Selected as a mentee in the Sustainability Mentorship Program by Sustainability Solutions Nepal.",
+    date: "August 2025 - Present",
+  },{
     name: "Member - Rotaract Club of Kirtipur",
     description:
       "Active member contributing to community service projects and leadership initiatives.",
