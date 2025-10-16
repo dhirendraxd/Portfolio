@@ -234,12 +234,12 @@ const Resume = () => {
             <section className="card">
               <h2 className="text-2xl font-bold mb-4 text-blue-300">Education & Certifications</h2>
               <div className="space-y-4 text-gray-300">
-                {/*  lets put aspire leaderhip in here as well */}
+             
                 
                 
                 <div>
                   <h3 className="text-xl font-bold mb-2">Aspire Leadership Program </h3>
-                  <p>Aspire Institute | Augutst 2025 - Present </p>
+                  <p>Aspire Institute | ALP '25 |Augutst 2025 - October 2025 </p>
                                    <h3> 
                     
                   </h3>
