@@ -116,41 +116,6 @@ public/          # static assets, sitemap, resume, robots
 
 ---
 
-## 🚀 Getting Started
-
-```bash
-git clone https://github.com/dhirendraxd/Portfolio.git
-cd Portfolio
-npm install
-npm run dev
-```
-
-Build for production:
-
-```bash
-npm run build
-```
-
-Preview the build:
-
-```bash
-npm run preview
-```
-
----
-
-## 🧪 Customization Tips
-
-| Goal | Location |
-|------|----------|
-| Particle density | `src/lib/particleConfigs.ts` |
-| SEO meta | `index.html` |
-| Add a section | `src/components/sections/` |
-| Contact form logic | `src/components/sections/ContactSection.tsx` |
-| Security utilities | `src/lib/security.ts` |
-
----
-
 ## 📈 Performance Notes
 
 - Fonts preloaded + swap strategy
