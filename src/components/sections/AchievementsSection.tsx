@@ -1,5 +1,6 @@
-import { Github, Linkedin, Award } from "lucide-react";
+import { Github, Linkedin, Award, ChevronDown, ChevronUp } from "lucide-react";
 import { ThemedParticles } from "@/components/ThemedParticles";
+import { useState } from "react";
 
 interface Achievement {
   name: string;
@@ -161,6 +162,21 @@ const achievements: Achievement[] = [
 ];
 
 export const AchievementsSection = () => {
+  const [showAllHackathons, setShowAllHackathons] = useState(false);
+  const [showAllAchievements, setShowAllAchievements] = useState(false);
+
+  const displayedHackathons = showAllHackathons ? hackathons : hackathons.slice(0, 3);
+  const filteredAchievements = achievements.filter(
+    (cert) =>
+      cert.certificateLink ||
+      cert.name.toLowerCase().includes("volunteer") ||
+      cert.name.toLowerCase().includes("mentee") ||
+      cert.name.toLowerCase().includes("representative") ||
+      cert.name.toLowerCase().includes("training") ||
+      cert.name.toLowerCase().includes("member")
+  );
+  const displayedAchievements = showAllAchievements ? filteredAchievements : filteredAchievements.slice(0, 3);
+
   return (
     <section id="achievements" className="section-padding relative">
       <ThemedParticles theme="advocacy" />
@@ -171,7 +187,7 @@ export const AchievementsSection = () => {
           <div className="card">
             <h3 className="text-2xl font-bold mb-6">Hackathon Projects</h3>
             <div className="space-y-6">
-              {hackathons.map((project) => (
+              {displayedHackathons.map((project) => (
                 <div
                   key={project.name.trim()}
                   className="relative p-6 glass rounded-lg break-words"
@@ -241,24 +257,31 @@ export const AchievementsSection = () => {
                 </div>
               ))}
             </div>
+            {hackathons.length > 3 && (
+              <button
+                onClick={() => setShowAllHackathons(!showAllHackathons)}
+                className="mt-6 w-full flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 transition-colors py-2 glass rounded-lg"
+              >
+                {showAllHackathons ? (
+                  <>
+                    <span>Show Less</span>
+                    <ChevronUp className="w-4 h-4" />
+                  </>
+                ) : (
+                  <>
+                    <span>See More ({hackathons.length - 3} more)</span>
+                    <ChevronDown className="w-4 h-4" />
+                  </>
+                )}
+              </button>
+            )}
           </div>
 
           {/* Highlights & Roles */}
           <div className="card">
             <h3 className="text-2xl font-bold mb-6">Highlights & Roles</h3>
             <div className="space-y-6">
-              {achievements
-                .filter(
-                  (cert) =>
-                    cert.certificateLink ||
-                    cert.name.toLowerCase().includes("volunteer") ||
-                    cert.name.toLowerCase().includes("mentee") ||
-                    cert.name.toLowerCase().includes("representative") ||
-                    cert.name.toLowerCase().includes("training") ||
-                    cert.name.toLowerCase().includes("member")
-                )
-
-                .map((cert) => (
+              {displayedAchievements.map((cert) => (
                   <div
                     key={cert.name.trim()}
                     className="p-6 glass rounded-lg break-words"
@@ -283,6 +306,24 @@ export const AchievementsSection = () => {
                   </div>
                 ))}
             </div>
+            {filteredAchievements.length > 3 && (
+              <button
+                onClick={() => setShowAllAchievements(!showAllAchievements)}
+                className="mt-6 w-full flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 transition-colors py-2 glass rounded-lg"
+              >
+                {showAllAchievements ? (
+                  <>
+                    <span>Show Less</span>
+                    <ChevronUp className="w-4 h-4" />
+                  </>
+                ) : (
+                  <>
+                    <span>See More ({filteredAchievements.length - 3} more)</span>
+                    <ChevronDown className="w-4 h-4" />
+                  </>
+                )}
+              </button>
+            )}
           </div>
         </div>
       </div>
