@@ -354,7 +354,7 @@ export const ContactSection = () => {
               </form>
 
               <p className="text-xs text-gray-400 mt-4 text-center">
-                🔒 Your message is secured with input validation, rate limiting, and anti-bot protection.
+                
                 <br />I'll respond as soon as possible!
               </p>
             </div>
