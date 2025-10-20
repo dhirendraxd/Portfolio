@@ -14,43 +14,7 @@ This document outlines the security vulnerabilities found in the codebase and th
 
 ## 🚨 Critical Issues Found & Fixed
 
-### 1. **Exposed Supabase Credentials** (CRITICAL - FIXED ✅)
-
-**Location:** `src/integrations/supabase/client.ts`
-
-**Issue:**
-- Supabase URL and anon key were hardcoded in the source code
-- These credentials were visible in:
-  - Git repository
-  - Bundled JavaScript files
-  - Browser DevTools
-  - Public GitHub repository
-
-**Fix Applied:**
-- Moved credentials to `.env` file
-- Updated code to use `import.meta.env.VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`
-- Added validation to throw error if environment variables are missing
-- Added `.env` to `.gitignore`
-
-**Before:**
-```typescript
-const SUPABASE_URL = "https://qpfukwkjznwmrpmwobfc.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
-```
-
-**After:**
-```typescript
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
-  throw new Error('Missing Supabase environment variables. Please check your .env file.');
-}
-```
-
----
-
-### 2. **Missing .env Protection** (FIXED ✅)
+### 1. **Missing .env Protection** (FIXED ✅)
 
 **Issue:**
 - No `.env` file existed
@@ -140,7 +104,7 @@ Add CSP headers to your hosting platform (Vercel):
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://qpfukwkjznwmrpmwobfc.supabase.co https://api.emailjs.com;"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.emailjs.com;"
         }
       ]
     }
@@ -148,24 +112,14 @@ Add CSP headers to your hosting platform (Vercel):
 }
 ```
 
-### 3. **Supabase Row Level Security (RLS)**
-
-Ensure RLS is enabled on your Supabase tables:
-```sql
-ALTER TABLE your_table ENABLE ROW LEVEL SECURITY;
-
-CREATE POLICY "Public read access" ON your_table
-  FOR SELECT USING (true);
-```
-
-### 4. **Server-Side Rate Limiting**
+### 3. **Server-Side Rate Limiting**
 
 Consider implementing server-side rate limiting using:
-- Supabase Edge Functions
 - Cloudflare Workers
 - Vercel Edge Functions
+- API Gateway with rate limiting
 
-### 5. **Remove Console Logs in Production**
+### 4. **Remove Console Logs in Production**
 
 Add a build step to strip console logs:
 
@@ -184,15 +138,6 @@ export default defineConfig({
 });
 ```
 
-### 6. **Rotate Exposed Credentials**
-
-**IMPORTANT:** Since your Supabase credentials were committed to Git:
-1. Go to Supabase Dashboard
-2. Navigate to Settings → API
-3. Generate new API keys
-4. Update your `.env` file
-5. Redeploy your application
-
 ---
 
 ## 🔄 Next Steps
@@ -209,18 +154,12 @@ export default defineConfig({
    # Ensure .env is NOT listed (should be ignored)
    ```
 
-3. ⚠️ **Rotate Supabase Keys:**
-   - The old keys were exposed in Git history
-   - Generate new keys from Supabase dashboard
-   - Update `.env` with new keys
-
-4. ✅ **Update hosting platform:**
+3. ✅ **Update hosting platform:**
    - Add environment variables to Vercel/Netlify dashboard
    - Redeploy with new configuration
 
-5. ✅ **Test thoroughly:**
+4. ✅ **Test thoroughly:**
    - Contact form submission
-   - Supabase connections
    - All features work as expected
 
 ---
@@ -230,8 +169,8 @@ export default defineConfig({
 1. ✅ `.gitignore` - Added `.env*` patterns
 2. ✅ `.env` - Created with actual credentials
 3. ✅ `.env.example` - Created template
-4. ✅ `src/integrations/supabase/client.ts` - Moved to env vars
-5. ✅ `src/lib/emailjs.ts` - Added dev-only logging
+4. ✅ `src/lib/emailjs.ts` - Added dev-only logging
+5. ✅ **Removed Supabase** - Not needed for static portfolio
 
 ---
 
@@ -242,8 +181,8 @@ export default defineConfig({
 - [x] `.env.example` created for documentation
 - [x] Environment variable validation added
 - [x] Debug logs restricted to development
-- [ ] **TODO: Rotate Supabase keys** (CRITICAL)
-- [ ] **TODO: Add environment variables to hosting platform**
+- [x] **Removed unused Supabase dependency**
+- [ ] **TODO: Add EmailJS environment variables to hosting platform**
 - [ ] **TODO: Test deployment with new configuration**
 
 ---
@@ -251,7 +190,7 @@ export default defineConfig({
 ## 📚 Resources
 
 - [Vite Environment Variables](https://vitejs.dev/guide/env-and-mode.html)
-- [Supabase Security Best Practices](https://supabase.com/docs/guides/api/securing-your-api)
+- [EmailJS Documentation](https://www.emailjs.com/docs/)
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
 - [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
 
