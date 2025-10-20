@@ -165,7 +165,7 @@ export const AchievementsSection = () => {
   const [showAllHackathons, setShowAllHackathons] = useState(false);
   const [showAllAchievements, setShowAllAchievements] = useState(false);
 
-  const displayedHackathons = showAllHackathons ? hackathons : hackathons.slice(0, 3);
+  const displayedHackathons = showAllHackathons ? hackathons : hackathons.slice(0, 2);
   const filteredAchievements = achievements.filter(
     (cert) =>
       cert.certificateLink ||
@@ -257,7 +257,7 @@ export const AchievementsSection = () => {
                 </div>
               ))}
             </div>
-            {hackathons.length > 3 && (
+            {hackathons.length > 2 && (
               <button
                 onClick={() => setShowAllHackathons(!showAllHackathons)}
                 className="mt-6 w-full flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 transition-colors py-2 glass rounded-lg"
@@ -269,7 +269,7 @@ export const AchievementsSection = () => {
                   </>
                 ) : (
                   <>
-                    <span>See More ({hackathons.length - 3} more)</span>
+                    <span>See More ({hackathons.length - 2} more)</span>
                     <ChevronDown className="w-4 h-4" />
                   </>
                 )}
