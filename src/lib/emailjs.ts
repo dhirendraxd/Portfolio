@@ -7,19 +7,25 @@ export const EMAILJS_CONFIG = {
   PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'your_public_key_here',
 };
 
-// Debug function to check configuration
+// Debug function to check configuration (only in development)
 export const debugEmailJSConfig = () => {
-  console.log('EmailJS Configuration:', {
-    SERVICE_ID: EMAILJS_CONFIG.SERVICE_ID,
-    TEMPLATE_ID: EMAILJS_CONFIG.TEMPLATE_ID,
-    PUBLIC_KEY: EMAILJS_CONFIG.PUBLIC_KEY?.substring(0, 5) + '...' // Only show first 5 chars for security
-  });
+  if (import.meta.env.DEV) {
+    console.log('EmailJS Configuration:', {
+      SERVICE_ID: EMAILJS_CONFIG.SERVICE_ID,
+      TEMPLATE_ID: EMAILJS_CONFIG.TEMPLATE_ID,
+      PUBLIC_KEY: EMAILJS_CONFIG.PUBLIC_KEY?.substring(0, 5) + '...' // Only show first 5 chars for security
+    });
+  }
 };
 
 // Initialize EmailJS
 export const initEmailJS = () => {
+  if (!EMAILJS_CONFIG.PUBLIC_KEY || EMAILJS_CONFIG.PUBLIC_KEY === 'your_public_key_here') {
+    console.error('EmailJS PUBLIC_KEY is not configured. Please set VITE_EMAILJS_PUBLIC_KEY in your .env file.');
+    return;
+  }
   emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
-  debugEmailJSConfig(); // Show config in console for debugging
+  debugEmailJSConfig(); // Show config in console for debugging (dev only)
 };
 
 // Send email using EmailJS
