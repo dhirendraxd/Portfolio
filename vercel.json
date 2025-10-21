@@ -1,4 +1,27 @@
 {
+  "routes": [
+    {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml",
+      "headers": {
+        "Cache-Control": "public, max-age=3600",
+        "Content-Type": "application/xml"
+      }
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/robots.txt",
+      "headers": {
+        "Cache-Control": "public, max-age=3600",
+        "Content-Type": "text/plain"
+      }
+    },
+    {
+      "src": "^/(?!assets|.*\\.).*$",
+      "dest": "/",
+      "status": 200
+    }
+  ],
   "headers": [
     {
       "source": "/assets/:path*.(js|css)",
@@ -21,7 +44,7 @@
         },
         {
           "key": "Referrer-Policy",
-          "value": "no-referrer"
+          "value": "strict-origin-when-cross-origin"
         }
       ]
     },
@@ -59,7 +82,7 @@
         },
         {
           "key": "Referrer-Policy",
-          "value": "no-referrer"
+          "value": "strict-origin-when-cross-origin"
         },
         {
           "key": "Permissions-Policy",

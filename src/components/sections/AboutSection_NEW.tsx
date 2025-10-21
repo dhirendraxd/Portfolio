@@ -97,18 +97,18 @@ export const AboutSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4">
             What I Do
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-2">
             SEO Specialist, Cybersecurity Enthusiast, and Community Advocate —  
             Building secure digital solutions while driving positive social impact.
           </p>
         </div>
 
         {/* Focus Areas Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-16 md:mb-20">
           {focusAreas.map((area, index) => {
             const Icon = area.icon;
             return (

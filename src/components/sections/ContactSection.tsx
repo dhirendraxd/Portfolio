@@ -201,19 +201,19 @@ export const ContactSection = () => {
     <section id="contact" className="section-padding opacity-0 relative py-14">
       <ThemedParticles theme="sustainability" />
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-10 max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">Get in Touch</h2>
-          <p className="text-gray-400 text-sm">
+        <div className="text-center mb-8 md:mb-10 max-w-2xl mx-auto px-2">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3">Get in Touch</h2>
+          <p className="text-gray-400 text-sm md:text-base">
             Have a question or want to collaborate? Reach out through any channel below.
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {/* Social Links */}
-            <div className="bg-slate-900/40 backdrop-blur-sm rounded-lg p-7 hover:bg-slate-900/60 transition-all duration-300">
+            <div className="bg-slate-900/40 backdrop-blur-sm rounded-lg p-6 md:p-7 hover:bg-slate-900/60 transition-all duration-300">
               <h3 className="text-base font-semibold mb-5 text-white">Connect</h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 md:gap-4">
                 {[
                   { href: "https://github.com/dhirendraxd", icon: Github, label: "GitHub" },
                   { href: "https://x.com/dhirendra_jsx", icon: Twitter, label: "Twitter" },
@@ -226,16 +226,16 @@ export const ContactSection = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-slate-900/40 backdrop-blur-sm rounded-lg p-7 hover:bg-slate-900/60 transition-all duration-300">
+            <div className="bg-slate-900/40 backdrop-blur-sm rounded-lg p-6 md:p-7 hover:bg-slate-900/60 transition-all duration-300">
               <h3 className="text-base font-semibold mb-5 text-white">Message</h3>
               
               {rateLimitExceeded && (
-                <div className="mb-3 p-2 bg-red-900/20 border border-red-500/50 rounded-lg text-red-300 text-xs animate-pulse">
+                <div className="mb-4 p-3 md:p-2 bg-red-900/20 border border-red-500/50 rounded-lg text-red-300 text-xs md:text-xs animate-pulse">
                   ⚠️ Too many attempts. Please wait.
                 </div>
               )}
               
-              <form onSubmit={handleSubmit} className="space-y-3">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-3">
                 {/* Honeypot field - hidden from users but visible to bots */}
                 <div className="hidden">
                   <label htmlFor="honeypot">Leave this field empty</label>
@@ -251,7 +251,7 @@ export const ContactSection = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="name" className="block text-xs font-medium text-gray-300 mb-1">
+                  <label htmlFor="name" className="block text-xs font-medium text-gray-300 mb-2 md:mb-1">
                     Name <span className="text-gray-500">(optional)</span>
                   </label>
                   <input
@@ -265,7 +265,7 @@ export const ContactSection = () => {
                       }
                     }}
                     maxLength={50}
-                    className={`w-full p-2 rounded bg-slate-800/50 border text-xs text-white placeholder:text-gray-500 focus:outline-none focus:ring-1 transition-all hover:bg-slate-800/70 ${
+                    className={`w-full p-3 md:p-2 rounded bg-slate-800/50 border text-sm md:text-xs text-white placeholder:text-gray-500 focus:outline-none focus:ring-1 transition-all hover:bg-slate-800/70 ${
                       errors.name 
                         ? 'border-red-500/50 focus:ring-red-400/50 focus:border-red-400/50' 
                         : 'border-slate-700/50 focus:ring-blue-400/50 focus:border-blue-400/50'
@@ -273,12 +273,12 @@ export const ContactSection = () => {
                     placeholder="Name"
                   />
                   {errors.name && (
-                    <p className="text-red-400 text-xs mt-0.5">{errors.name}</p>
+                    <p className="text-red-400 text-xs mt-1 md:mt-0.5">{errors.name}</p>
                   )}
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-xs font-medium text-gray-300 mb-1">
+                  <label htmlFor="email" className="block text-xs font-medium text-gray-300 mb-2 md:mb-1">
                     Email <span className="text-red-400">*</span>
                   </label>
                   <input
@@ -293,7 +293,7 @@ export const ContactSection = () => {
                     }}
                     required
                     maxLength={254}
-                    className={`w-full p-2 rounded bg-slate-800/50 border text-xs text-white placeholder:text-gray-500 focus:outline-none focus:ring-1 transition-all hover:bg-slate-800/70 ${
+                    className={`w-full p-3 md:p-2 rounded bg-slate-800/50 border text-sm md:text-xs text-white placeholder:text-gray-500 focus:outline-none focus:ring-1 transition-all hover:bg-slate-800/70 ${
                       errors.email 
                         ? 'border-red-500/50 focus:ring-red-400/50 focus:border-red-400/50' 
                         : 'border-slate-700/50 focus:ring-blue-400/50 focus:border-blue-400/50'
@@ -302,12 +302,12 @@ export const ContactSection = () => {
                     autoComplete="email"
                   />
                   {errors.email && (
-                    <p className="text-red-400 text-xs mt-0.5">{errors.email}</p>
+                    <p className="text-red-400 text-xs mt-1 md:mt-0.5">{errors.email}</p>
                   )}
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-xs font-medium text-gray-300 mb-1">
+                  <label htmlFor="message" className="block text-xs font-medium text-gray-300 mb-2 md:mb-1">
                     Message <span className="text-red-400">*</span>
                   </label>
                   <textarea
@@ -320,9 +320,9 @@ export const ContactSection = () => {
                       }
                     }}
                     required
-                    rows={3}
+                    rows={4}
                     maxLength={1000}
-                    className={`w-full p-2 rounded bg-slate-800/50 border text-xs text-white placeholder:text-gray-500 focus:outline-none focus:ring-1 resize-none transition-all hover:bg-slate-800/70 ${
+                    className={`w-full p-3 md:p-2 rounded bg-slate-800/50 border text-sm md:text-xs text-white placeholder:text-gray-500 focus:outline-none focus:ring-1 resize-none transition-all hover:bg-slate-800/70 ${
                       errors.message 
                         ? 'border-red-500/50 focus:ring-red-400/50 focus:border-red-400/50' 
                         : 'border-slate-700/50 focus:ring-blue-400/50 focus:border-blue-400/50'
@@ -330,19 +330,19 @@ export const ContactSection = () => {
                     placeholder="Your message..."
                   />
                   {errors.message && (
-                    <p className="text-red-400 text-xs mt-0.5">{errors.message}</p>
+                    <p className="text-red-400 text-xs mt-1 md:mt-0.5">{errors.message}</p>
                   )}
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting || rateLimitExceeded || !email.trim() || !message.trim()}
-                  className="w-full py-2 px-4 rounded bg-blue-500/90 hover:bg-blue-500 disabled:bg-slate-700 text-xs text-white font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-blue-500/20"
+                  className="w-full py-3 md:py-2 px-4 rounded bg-blue-500/90 hover:bg-blue-500 disabled:bg-slate-700 text-sm md:text-xs text-white font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-blue-500/20"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center justify-center gap-1.5">
                       <div className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                      <span className="text-xs">Sending...</span>
+                      <span className="text-sm md:text-xs">Sending...</span>
                     </div>
                   ) : rateLimitExceeded ? (
                     'Please wait'
@@ -352,7 +352,7 @@ export const ContactSection = () => {
                 </button>
               </form>
 
-              <p className="text-xs text-gray-500 mt-2">
+              <p className="text-xs text-gray-500 mt-3 md:mt-2">
                 Response within 24h
               </p>
             </div>
