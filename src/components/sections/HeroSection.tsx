@@ -60,15 +60,15 @@ export const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-transparent to-slate-900/20 pointer-events-none" />
       <div className="container mx-auto text-center relative z-10 px-4">
         <div className="space-y-8 mb-12 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold animate-fade-in leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold animate-fade-in leading-tight">
             Hi, I am
             <br />
-            <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent inline-block mt-3">Dhirendra Singh Dhami</span>
+            <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent inline-block mt-2">Dhirendra Singh Dhami</span>
           </h1>
-            <h2 className="text-lg md:text-2xl text-blue-300 font-medium animate-fade-in tracking-wide">
+            <h2 className="text-base md:text-lg lg:text-xl text-blue-300 font-medium animate-fade-in tracking-wide">
               Digital Creator • Tech Enthusiast • Innovation Advocate
             </h2>
-            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in leading-relaxed">
+            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto animate-fade-in leading-relaxed">
               I create secure digital solutions and work on cybersecurity, web development, and sustainable tech projects. Passionate about ethical AI and digital innovation.
             </p>
         </div>
