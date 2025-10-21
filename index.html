@@ -78,15 +78,9 @@
     <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
     
-    <!-- Fonts - Critical Loading Optimization -->
-    
-    <!-- Preload only the most critical font weights -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuDyuAZ9hiA.woff2" as="font" type="font/woff2" crossorigin>
-    
-    <!-- Load fonts asynchronously with swap for better performance -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Fonts - Optimized for LCP -->
+    <!-- Use font-display=swap to prevent layout shift and improve LCP -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">

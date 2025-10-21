@@ -1,6 +1,11 @@
 {
   "routes": [
     {
+      "src": "^https://www\\.dhirendrasinghdhami\\.com\\.np/(.*)",
+      "dest": "https://dhirendrasinghdhami.com.np/$1",
+      "status": 301
+    },
+    {
       "src": "/sitemap.xml",
       "dest": "/sitemap.xml",
       "headers": {
@@ -53,7 +58,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=31536000"
+          "value": "public, max-age=31536000, immutable"
         },
         {
           "key": "Strict-Transport-Security",
@@ -62,6 +67,10 @@
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/font-woff2; charset=utf-8"
         }
       ]
     },

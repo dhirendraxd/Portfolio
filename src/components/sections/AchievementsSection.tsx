@@ -214,7 +214,7 @@ export const AchievementsSection = () => {
                         href={project.projectLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-white bg-blue-500 hover:bg-blue-600 px-2 py-1 rounded"
+                        className="text-xs text-white bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded font-medium transition-colors duration-200"
                       >
                         View Project
                       </a>
