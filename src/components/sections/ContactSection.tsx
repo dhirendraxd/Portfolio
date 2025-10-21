@@ -32,15 +32,15 @@ const SocialLink = ({ href, icon: Icon, label }: SocialLinkProps) => (
       <TooltipTrigger asChild>
         <a
           href={href}
-          className="group relative aspect-square w-full h-full bg-slate-800/40 border border-slate-700/50 rounded-lg transition-all duration-300 hover:bg-slate-800/60 hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/10 flex flex-col items-center justify-center hover:-translate-y-1"
+          className="group relative aspect-square w-full h-full bg-slate-800/30 rounded-lg transition-all duration-300 hover:bg-slate-700/50 hover:shadow-lg hover:shadow-blue-500/5 flex flex-col items-center justify-center hover:-translate-y-1"
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
         >
-          <div className="text-gray-300 group-hover:text-blue-400 transition-colors duration-300">
+          <div className="text-gray-400 group-hover:text-blue-400 transition-colors duration-300">
             <Icon size={28} />
           </div>
-          <span className="mt-1 text-xs text-gray-400 text-center group-hover:text-gray-300 transition-colors duration-300">{label}</span>
+          <span className="mt-1 text-xs text-gray-500 text-center group-hover:text-gray-300 transition-colors duration-300">{label}</span>
         </a>
       </TooltipTrigger>
       <TooltipContent>
@@ -198,20 +198,22 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding opacity-0 relative py-12">
+    <section id="contact" className="section-padding opacity-0 relative py-14">
       <ThemedParticles theme="sustainability" />
       <div className="container mx-auto relative z-10">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Get in Touch</h2>
+        <div className="text-center mb-10 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">Get in Touch</h2>
+          <p className="text-gray-400 text-sm">
+            Have a question or want to collaborate? Reach out through any channel below.
+          </p>
+        </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
             {/* Social Links */}
-            <div className="card backdrop-blur-sm bg-slate-800/30 p-6 border border-slate-700/30 rounded-lg hover:border-blue-500/20 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-              <h3 className="text-lg font-bold mb-4 text-center">Connect With Me</h3>
-              <p className="text-center mb-4 text-sm text-gray-300">
-                Feel free to reach out through any of these platforms.
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-3 auto-rows-[1fr]">
+            <div className="bg-slate-900/40 backdrop-blur-sm rounded-lg p-7 hover:bg-slate-900/60 transition-all duration-300">
+              <h3 className="text-base font-semibold mb-5 text-white">Connect</h3>
+              <div className="grid grid-cols-2 gap-4">
                 {[
                   { href: "https://github.com/dhirendraxd", icon: Github, label: "GitHub" },
                   { href: "https://x.com/dhirendra_jsx", icon: Twitter, label: "Twitter" },
@@ -224,16 +226,16 @@ export const ContactSection = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="card backdrop-blur-sm bg-slate-800/30 p-6 border border-slate-700/30 rounded-lg hover:border-blue-500/20 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-              <h3 className="text-lg font-bold mb-4 text-center">Send a Message</h3>
+            <div className="bg-slate-900/40 backdrop-blur-sm rounded-lg p-7 hover:bg-slate-900/60 transition-all duration-300">
+              <h3 className="text-base font-semibold mb-5 text-white">Message</h3>
               
               {rateLimitExceeded && (
                 <div className="mb-3 p-2 bg-red-900/20 border border-red-500/50 rounded-lg text-red-300 text-xs animate-pulse">
-                  ⚠️ Too many attempts. Please wait before trying again.
+                  ⚠️ Too many attempts. Please wait.
                 </div>
               )}
               
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-3">
                 {/* Honeypot field - hidden from users but visible to bots */}
                 <div className="hidden">
                   <label htmlFor="honeypot">Leave this field empty</label>
@@ -249,8 +251,8 @@ export const ContactSection = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="name" className="block text-xs font-medium text-gray-300 mb-1.5">
-                    Your Name <span className="text-gray-500">(optional)</span>
+                  <label htmlFor="name" className="block text-xs font-medium text-gray-300 mb-1">
+                    Name <span className="text-gray-500">(optional)</span>
                   </label>
                   <input
                     type="text"
@@ -263,12 +265,12 @@ export const ContactSection = () => {
                       }
                     }}
                     maxLength={50}
-                    className={`w-full p-2 rounded-lg bg-slate-700/50 border text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 transition-all hover:bg-slate-700/70 ${
+                    className={`w-full p-2 rounded bg-slate-800/50 border text-xs text-white placeholder:text-gray-500 focus:outline-none focus:ring-1 transition-all hover:bg-slate-800/70 ${
                       errors.name 
-                        ? 'border-red-500 focus:ring-red-400' 
-                        : 'border-slate-600 focus:ring-blue-400'
+                        ? 'border-red-500/50 focus:ring-red-400/50 focus:border-red-400/50' 
+                        : 'border-slate-700/50 focus:ring-blue-400/50 focus:border-blue-400/50'
                     }`}
-                    placeholder="Your name"
+                    placeholder="Name"
                   />
                   {errors.name && (
                     <p className="text-red-400 text-xs mt-0.5">{errors.name}</p>
@@ -276,8 +278,8 @@ export const ContactSection = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-xs font-medium text-gray-300 mb-1.5">
-                    Your Email <span className="text-red-400">*</span>
+                  <label htmlFor="email" className="block text-xs font-medium text-gray-300 mb-1">
+                    Email <span className="text-red-400">*</span>
                   </label>
                   <input
                     type="email"
@@ -285,19 +287,18 @@ export const ContactSection = () => {
                     value={email}
                     onChange={(e) => {
                       setEmail(e.target.value);
-                      // Clear error when user starts typing
                       if (errors.email) {
                         setErrors(prev => ({ ...prev, email: undefined }));
                       }
                     }}
                     required
                     maxLength={254}
-                    className={`w-full p-2 rounded-lg bg-slate-700/50 border text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 transition-all hover:bg-slate-700/70 ${
+                    className={`w-full p-2 rounded bg-slate-800/50 border text-xs text-white placeholder:text-gray-500 focus:outline-none focus:ring-1 transition-all hover:bg-slate-800/70 ${
                       errors.email 
-                        ? 'border-red-500 focus:ring-red-400' 
-                        : 'border-slate-600 focus:ring-blue-400'
+                        ? 'border-red-500/50 focus:ring-red-400/50 focus:border-red-400/50' 
+                        : 'border-slate-700/50 focus:ring-blue-400/50 focus:border-blue-400/50'
                     }`}
-                    placeholder="your.email@example.com"
+                    placeholder="you@example.com"
                     autoComplete="email"
                   />
                   {errors.email && (
@@ -306,57 +307,53 @@ export const ContactSection = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-xs font-medium text-gray-300 mb-1.5">
+                  <label htmlFor="message" className="block text-xs font-medium text-gray-300 mb-1">
                     Message <span className="text-red-400">*</span>
-                    <span className="text-gray-500 text-xs ml-2">
-                      ({message.length}/1000)
-                    </span>
                   </label>
                   <textarea
                     id="message"
                     value={message}
                     onChange={(e) => {
                       setMessage(e.target.value);
-                      // Clear error when user starts typing
                       if (errors.message) {
                         setErrors(prev => ({ ...prev, message: undefined }));
                       }
                     }}
                     required
-                    rows={4}
+                    rows={3}
                     maxLength={1000}
-                    className={`w-full p-2 rounded-lg bg-slate-700/50 border text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 resize-vertical transition-all hover:bg-slate-700/70 ${
+                    className={`w-full p-2 rounded bg-slate-800/50 border text-xs text-white placeholder:text-gray-500 focus:outline-none focus:ring-1 resize-none transition-all hover:bg-slate-800/70 ${
                       errors.message 
-                        ? 'border-red-500 focus:ring-red-400' 
-                        : 'border-slate-600 focus:ring-blue-400'
+                        ? 'border-red-500/50 focus:ring-red-400/50 focus:border-red-400/50' 
+                        : 'border-slate-700/50 focus:ring-blue-400/50 focus:border-blue-400/50'
                     }`}
-                    placeholder="What would you like to discuss? Feel free to share your ideas, questions, or collaboration opportunities..."
+                    placeholder="Your message..."
                   />
                   {errors.message && (
-                    <p className="text-red-400 text-xs mt-1">{errors.message}</p>
+                    <p className="text-red-400 text-xs mt-0.5">{errors.message}</p>
                   )}
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting || rateLimitExceeded || !email.trim() || !message.trim()}
-                  className="w-full py-2 px-4 rounded-lg bg-blue-500 hover:bg-blue-600 disabled:bg-gray-600 text-sm text-white font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-blue-500/40 hover:-translate-y-0.5"
+                  className="w-full py-2 px-4 rounded bg-blue-500/90 hover:bg-blue-500 disabled:bg-slate-700 text-xs text-white font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-blue-500/20"
                 >
                   {isSubmitting ? (
-                    <div className="flex items-center justify-center gap-2">
+                    <div className="flex items-center justify-center gap-1.5">
                       <div className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                       <span className="text-xs">Sending...</span>
                     </div>
                   ) : rateLimitExceeded ? (
-                    'Please Wait...'
+                    'Please wait'
                   ) : (
-                    'Send Message'
+                    'Send'
                   )}
                 </button>
               </form>
 
-              <p className="text-xs text-gray-400 mt-3 text-center">
-                I'll respond within 24 hours!
+              <p className="text-xs text-gray-500 mt-2">
+                Response within 24h
               </p>
             </div>
           </div>
