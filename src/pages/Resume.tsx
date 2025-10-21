@@ -233,6 +233,11 @@ const Resume = () => {
                   <p className="text-gray-300 font-medium">Bachelor's in Information Technology Management</p>
                   <p className="text-xs text-gray-500 mt-1">KIST College, 2023 – 2027</p>
                 </div>
+                <div className="bg-slate-900/30 p-4 rounded hover:bg-slate-900/50 transition-colors">
+                  <p className="text-gray-300 font-medium">Aspire Leadership Program</p>
+                  <p className="text-xs text-gray-500 mt-1">Aspire Institute, August 2025 – October 2025</p>
+                </div>
+                
                 <div>
                   <p className="text-gray-300 font-medium mb-2">Key Certifications</p>
                   <ul className="space-y-1.5 text-xs text-gray-400">
