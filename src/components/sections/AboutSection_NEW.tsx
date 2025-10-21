@@ -114,14 +114,14 @@ export const AboutSection = () => {
             return (
               <div
                 key={index}
-                className="group relative bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-lg p-6 hover:border-blue-500/50 transition-all duration-300"
+                className="group relative bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-lg p-6 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
-                    <Icon className="w-6 h-6 text-blue-400" />
+                  <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 group-hover:scale-110 transition-all duration-300">
+                    <Icon className="w-6 h-6 text-blue-400 group-hover:text-blue-300 transition-colors" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors">
                       {area.title}
                     </h3>
                     <p className="text-sm text-gray-400 mb-3 leading-relaxed">
@@ -131,7 +131,7 @@ export const AboutSection = () => {
                       {area.skills.slice(0, 3).map((skill, i) => (
                         <span
                           key={i}
-                          className="text-xs px-2 py-1 bg-slate-700/50 text-gray-300 rounded"
+                          className="text-xs px-2 py-1 bg-slate-700/50 text-gray-300 rounded hover:bg-slate-700 hover:text-blue-400 transition-all duration-200"
                         >
                           {skill}
                         </span>
@@ -159,24 +159,24 @@ export const AboutSection = () => {
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-5 hover:border-blue-500/30 transition-all"
+                className="group bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-5 hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 hover:-translate-y-0.5"
               >
                 <div className="flex items-start justify-between mb-2">
-                  <span className="text-xs font-medium text-blue-400 uppercase tracking-wide">
+                  <span className="text-xs font-medium text-blue-400 uppercase tracking-wide group-hover:text-blue-300 transition-colors">
                     {item.type}
                   </span>
                   <span className="text-xs text-gray-500">{item.period}</span>
                 </div>
-                <h4 className="text-white font-semibold mb-2">{item.title}</h4>
+                <h4 className="text-white font-semibold mb-2 group-hover:text-blue-300 transition-colors">{item.title}</h4>
                 <p className="text-sm text-gray-400 mb-3">{item.description}</p>
                 {item.link && (
                   <a
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-xs text-blue-400 hover:text-blue-300 transition-colors"
+                    className="inline-flex items-center text-xs text-blue-400 hover:text-blue-300 transition-colors group/link"
                   >
-                    View Project <ExternalLink className="w-3 h-3 ml-1" />
+                    View Project <ExternalLink className="w-3 h-3 ml-1 group-hover/link:translate-x-0.5 transition-transform" />
                   </a>
                 )}
               </div>
@@ -184,7 +184,7 @@ export const AboutSection = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-lg p-8 text-center">
+          <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-lg p-8 text-center hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300">
             <h3 className="text-2xl font-bold text-white mb-3">
               Interested in Working Together?
             </h3>
@@ -194,13 +194,13 @@ export const AboutSection = () => {
             <div className="flex gap-4 justify-center flex-wrap">
               <Link
                 to="/resume"
-                className="inline-flex items-center px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:-translate-y-1"
               >
-                View Resume <ArrowRight className="w-4 h-4 ml-2" />
+                View Resume <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
                 href="#contact"
-                className="inline-flex items-center px-6 py-3 border border-slate-600 hover:border-blue-500 text-white font-medium rounded-lg transition-colors"
+                className="inline-flex items-center px-6 py-3 border border-slate-600 hover:border-blue-500 text-white font-medium rounded-lg transition-all duration-300 hover:bg-slate-800/50"
               >
                 Get in Touch
               </a>

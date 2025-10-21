@@ -149,8 +149,8 @@ export const AchievementsSection = () => {
               }}
               className={`px-4 py-2 rounded-lg font-medium transition-all ${
                 selectedCategory === category
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-slate-800/40 text-gray-300 hover:bg-slate-700/50 border border-slate-700/50'
+                  ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/50'
+                  : 'bg-slate-800/40 text-gray-300 hover:bg-slate-700/50 border border-slate-700/50 hover:shadow-lg hover:shadow-blue-500/10'
               }`}
             >
               {category}
@@ -168,11 +168,11 @@ export const AchievementsSection = () => {
               return (
                 <div
                   key={index}
-                  className="group relative bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-6 hover:border-blue-500/30 transition-all duration-300"
+                  className="group relative bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-6 hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-1"
                 >
                   {/* Category Badge */}
                   <div className="flex items-center justify-between mb-3">
-                    <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border ${config.color} text-xs font-medium`}>
+                    <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border ${config.color} text-xs font-medium group-hover:shadow-lg group-hover:shadow-current/50 transition-all`}>
                       <Icon className="w-3.5 h-3.5" />
                       {item.category}
                     </div>
@@ -183,7 +183,7 @@ export const AchievementsSection = () => {
                   <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-blue-400 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-blue-300/80 mb-3">{item.organization}</p>
+                  <p className="text-sm text-blue-300/80 mb-3 group-hover:text-blue-300 transition-colors">{item.organization}</p>
                   
                   {item.description && (
                     <p className="text-sm text-gray-400 mb-3 leading-relaxed">
@@ -197,7 +197,7 @@ export const AchievementsSection = () => {
                       {item.tags.map((tag, i) => (
                         <span
                           key={i}
-                          className="text-xs px-2 py-0.5 bg-slate-700/40 text-gray-400 rounded"
+                          className="text-xs px-2 py-0.5 bg-slate-700/40 text-gray-400 rounded hover:bg-blue-500/20 hover:text-blue-400 transition-all duration-200"
                         >
                           {tag}
                         </span>
@@ -211,9 +211,9 @@ export const AchievementsSection = () => {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-xs text-blue-400 hover:text-blue-300 transition-colors"
+                      className="inline-flex items-center text-xs text-blue-400 hover:text-blue-300 transition-colors group/link"
                     >
-                      View Details <ExternalLink className="w-3 h-3 ml-1" />
+                      View Details <ExternalLink className="w-3 h-3 ml-1 group-hover/link:translate-x-0.5 transition-transform" />
                     </a>
                   )}
                 </div>
@@ -226,7 +226,7 @@ export const AchievementsSection = () => {
             <div className="text-center mt-8">
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="px-6 py-2.5 bg-slate-800/40 hover:bg-slate-700/50 border border-slate-700/50 hover:border-blue-500/50 text-white rounded-lg transition-all"
+                className="px-6 py-2.5 bg-slate-800/40 hover:bg-slate-700/50 border border-slate-700/50 hover:border-blue-500/50 text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10"
               >
                 {showAll ? 'Show Less' : `Show All (${filteredItems.length - 6} more)`}
               </button>
@@ -236,22 +236,17 @@ export const AchievementsSection = () => {
 
         {/* Stats Summary */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-blue-400 mb-1">4+</div>
-            <div className="text-sm text-gray-400">Hackathons</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-purple-400 mb-1">10+</div>
-            <div className="text-sm text-gray-400">Certifications</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-green-400 mb-1">3+</div>
-            <div className="text-sm text-gray-400">Leadership Roles</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-orange-400 mb-1">5+</div>
-            <div className="text-sm text-gray-400">Community Events</div>
-          </div>
+          {[
+            { value: "4+", label: "Hackathons", color: "text-blue-400" },
+            { value: "10+", label: "Certifications", color: "text-purple-400" },
+            { value: "3+", label: "Leadership Roles", color: "text-green-400" },
+            { value: "5+", label: "Community Events", color: "text-orange-400" },
+          ].map((stat, i) => (
+            <div key={i} className="text-center group cursor-default">
+              <div className={`text-3xl font-bold ${stat.color} mb-1 group-hover:scale-110 transition-transform duration-300`}>{stat.value}</div>
+              <div className="text-sm text-gray-400">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

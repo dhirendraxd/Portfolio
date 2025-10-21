@@ -32,13 +32,15 @@ const SocialLink = ({ href, icon: Icon, label }: SocialLinkProps) => (
       <TooltipTrigger asChild>
         <a
           href={href}
-          className="hover-glow aspect-square w-full h-full bg-slate-800/50 rounded-lg transition-all duration-300 hover:bg-slate-700/50 flex flex-col items-center justify-center"
+          className="group relative aspect-square w-full h-full bg-slate-800/40 border border-slate-700/50 rounded-lg transition-all duration-300 hover:bg-slate-800/60 hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/10 flex flex-col items-center justify-center hover:-translate-y-1"
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
         >
-          <Icon size={28} />
-          <span className="mt-1 text-xs text-gray-300 text-center">{label}</span>
+          <div className="text-gray-300 group-hover:text-blue-400 transition-colors duration-300">
+            <Icon size={28} />
+          </div>
+          <span className="mt-1 text-xs text-gray-400 text-center group-hover:text-gray-300 transition-colors duration-300">{label}</span>
         </a>
       </TooltipTrigger>
       <TooltipContent>
@@ -204,7 +206,7 @@ export const ContactSection = () => {
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Social Links */}
-            <div className="card backdrop-blur-sm bg-slate-800/30 p-8">
+            <div className="card backdrop-blur-sm bg-slate-800/30 p-8 border border-slate-700/30 rounded-lg hover:border-blue-500/20 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-8 text-center">Connect With Me</h3>
               <p className="text-center mb-8 text-gray-300">
                 Feel free to reach out through any of these platforms.
@@ -222,11 +224,11 @@ export const ContactSection = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="card backdrop-blur-sm bg-slate-800/30 p-8">
+            <div className="card backdrop-blur-sm bg-slate-800/30 p-8 border border-slate-700/30 rounded-lg hover:border-blue-500/20 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-8 text-center">Send a Message</h3>
               
               {rateLimitExceeded && (
-                <div className="mb-4 p-3 bg-red-900/50 border border-red-500 rounded-lg text-red-200 text-sm">
+                <div className="mb-4 p-3 bg-red-900/20 border border-red-500/50 rounded-lg text-red-300 text-sm animate-pulse">
                   ⚠️ Too many attempts. Please wait before trying again.
                 </div>
               )}
@@ -261,7 +263,7 @@ export const ContactSection = () => {
                       }
                     }}
                     maxLength={50}
-                    className={`w-full p-3 rounded-lg bg-slate-700/50 border text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 transition-colors ${
+                    className={`w-full p-3 rounded-lg bg-slate-700/50 border text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 transition-all hover:bg-slate-700/70 ${
                       errors.name 
                         ? 'border-red-500 focus:ring-red-400' 
                         : 'border-slate-600 focus:ring-blue-400'
@@ -290,7 +292,7 @@ export const ContactSection = () => {
                     }}
                     required
                     maxLength={254}
-                    className={`w-full p-3 rounded-lg bg-slate-700/50 border text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 transition-colors ${
+                    className={`w-full p-3 rounded-lg bg-slate-700/50 border text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 transition-all hover:bg-slate-700/70 ${
                       errors.email 
                         ? 'border-red-500 focus:ring-red-400' 
                         : 'border-slate-600 focus:ring-blue-400'
@@ -323,7 +325,7 @@ export const ContactSection = () => {
                     required
                     rows={5}
                     maxLength={1000}
-                    className={`w-full p-3 rounded-lg bg-slate-700/50 border text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 resize-vertical transition-colors ${
+                    className={`w-full p-3 rounded-lg bg-slate-700/50 border text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 resize-vertical transition-all hover:bg-slate-700/70 ${
                       errors.message 
                         ? 'border-red-500 focus:ring-red-400' 
                         : 'border-slate-600 focus:ring-blue-400'
@@ -338,7 +340,7 @@ export const ContactSection = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting || rateLimitExceeded || !email.trim() || !message.trim()}
-                  className="w-full py-3 px-6 rounded-lg bg-blue-500 hover:bg-blue-600 disabled:bg-gray-600 text-white font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-blue-500/25"
+                  className="w-full py-3 px-6 rounded-lg bg-blue-500 hover:bg-blue-600 disabled:bg-gray-600 text-white font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-blue-500/40 hover:-translate-y-0.5"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center justify-center gap-2">

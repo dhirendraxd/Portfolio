@@ -22,7 +22,7 @@ const ThemedParticles = lazy(() => import("@/components/ThemedParticles").then(m
 
 interface SocialLinkProps {
   href: string;
-  icon: any;
+  icon: React.ComponentType<{ size?: number | string }>;
   label: string;
 }
 
@@ -32,12 +32,14 @@ const SocialLink = ({ href, icon: Icon, label }: SocialLinkProps) => (
       <TooltipTrigger asChild>
         <a
           href={href}
-          className="hover-glow p-3 bg-slate-800/50 rounded-lg transition-all duration-300 hover:bg-slate-700/50"
+          className="group relative p-3 bg-slate-800/40 border border-slate-700/50 rounded-lg transition-all duration-300 hover:bg-slate-700/60 hover:border-slate-600/50 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1"
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
         >
-          <Icon size={24} />
+          <div className="text-gray-300 group-hover:text-blue-400 transition-colors duration-300">
+            <Icon size={24} />
+          </div>
         </a>
       </TooltipTrigger>
       <TooltipContent>
@@ -49,28 +51,28 @@ const SocialLink = ({ href, icon: Icon, label }: SocialLinkProps) => (
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="hero-section section-padding relative overflow-hidden">
+    <section id="home" className="hero-section section-padding relative overflow-hidden min-h-screen flex items-center">
       <div className="particle-container">
         <Suspense fallback={<div className="absolute inset-0" />}>
           <ThemedParticles theme="hero" />
         </Suspense>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 via-transparent to-transparent pointer-events-none" />
-      <div className="container mx-auto text-center relative z-10">
-        <div className="space-y-6 mb-12">
-          <h1 className="text-5xl md:text-7xl font-bold animate-fade-in">
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-transparent to-slate-900/20 pointer-events-none" />
+      <div className="container mx-auto text-center relative z-10 px-4">
+        <div className="space-y-8 mb-12 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold animate-fade-in leading-tight">
             Hi, I am
             <br />
-            <span className="text-blue-400 inline-block mt-2">Dhirendra Singh Dhami</span>
+            <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent inline-block mt-3">Dhirendra Singh Dhami</span>
           </h1>
-            <h2 className="text-lg md:text-xl text-blue-300 font-medium animate-fade-in">
+            <h2 className="text-lg md:text-2xl text-blue-300 font-medium animate-fade-in tracking-wide">
               Digital Creator • Tech Enthusiast • Innovation Advocate
             </h2>
-            <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto animate-fade-in">
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in leading-relaxed">
               I create secure digital solutions and work on cybersecurity, web development, and sustainable tech projects. Passionate about ethical AI and digital innovation.
             </p>
         </div>
-        <div className="flex justify-center flex-wrap gap-4 mb-16">
+        <div className="flex justify-center flex-wrap gap-3 mb-16 animate-fade-in">
           <SocialLink href="https://github.com/dhirendraxd" icon={Github} label="GitHub" />
           <SocialLink href="https://x.com/dhirendra_jsx" icon={Twitter} label="Twitter" />
           <SocialLink href="https://www.linkedin.com/in/dhirendrasinghdhami/" icon={Linkedin} label="LinkedIn" />
@@ -79,13 +81,14 @@ export const HeroSection = () => {
           <SocialLink href="/resume" icon={FileText} label="Resume" />
         </div>
       </div>
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-fade-in">
         <a
           href="#about"
-          className="hover:text-blue-400 transition-colors duration-300 p-2"
+          className="group hover:text-blue-400 transition-all duration-300 p-2 flex flex-col items-center gap-1"
           aria-label="Scroll to About section"
         >
-          <ChevronDown size={32} className="animate-bounce" />
+          <span className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Scroll</span>
+          <ChevronDown size={24} className="animate-bounce group-hover:text-blue-400 transition-colors" />
         </a>
       </div>
     </section>
