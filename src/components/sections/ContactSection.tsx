@@ -198,20 +198,20 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding opacity-0 relative">
+    <section id="contact" className="section-padding opacity-0 relative py-12">
       <ThemedParticles theme="sustainability" />
       <div className="container mx-auto relative z-10">
-        <h2 className="section-title text-center mb-16">Get in Touch</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Get in Touch</h2>
 
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6">
             {/* Social Links */}
-            <div className="card backdrop-blur-sm bg-slate-800/30 p-8 border border-slate-700/30 rounded-lg hover:border-blue-500/20 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-8 text-center">Connect With Me</h3>
-              <p className="text-center mb-8 text-gray-300">
+            <div className="card backdrop-blur-sm bg-slate-800/30 p-6 border border-slate-700/30 rounded-lg hover:border-blue-500/20 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+              <h3 className="text-lg font-bold mb-4 text-center">Connect With Me</h3>
+              <p className="text-center mb-4 text-sm text-gray-300">
                 Feel free to reach out through any of these platforms.
               </p>
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-4 auto-rows-[1fr]">
+              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-3 auto-rows-[1fr]">
                 {[
                   { href: "https://github.com/dhirendraxd", icon: Github, label: "GitHub" },
                   { href: "https://x.com/dhirendra_jsx", icon: Twitter, label: "Twitter" },
@@ -224,16 +224,16 @@ export const ContactSection = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="card backdrop-blur-sm bg-slate-800/30 p-8 border border-slate-700/30 rounded-lg hover:border-blue-500/20 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-8 text-center">Send a Message</h3>
+            <div className="card backdrop-blur-sm bg-slate-800/30 p-6 border border-slate-700/30 rounded-lg hover:border-blue-500/20 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+              <h3 className="text-lg font-bold mb-4 text-center">Send a Message</h3>
               
               {rateLimitExceeded && (
-                <div className="mb-4 p-3 bg-red-900/20 border border-red-500/50 rounded-lg text-red-300 text-sm animate-pulse">
+                <div className="mb-3 p-2 bg-red-900/20 border border-red-500/50 rounded-lg text-red-300 text-xs animate-pulse">
                   ⚠️ Too many attempts. Please wait before trying again.
                 </div>
               )}
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Honeypot field - hidden from users but visible to bots */}
                 <div className="hidden">
                   <label htmlFor="honeypot">Leave this field empty</label>
@@ -249,7 +249,7 @@ export const ContactSection = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="name" className="block text-xs font-medium text-gray-300 mb-1.5">
                     Your Name <span className="text-gray-500">(optional)</span>
                   </label>
                   <input
@@ -263,7 +263,7 @@ export const ContactSection = () => {
                       }
                     }}
                     maxLength={50}
-                    className={`w-full p-3 rounded-lg bg-slate-700/50 border text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 transition-all hover:bg-slate-700/70 ${
+                    className={`w-full p-2 rounded-lg bg-slate-700/50 border text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 transition-all hover:bg-slate-700/70 ${
                       errors.name 
                         ? 'border-red-500 focus:ring-red-400' 
                         : 'border-slate-600 focus:ring-blue-400'
@@ -271,12 +271,12 @@ export const ContactSection = () => {
                     placeholder="Your name"
                   />
                   {errors.name && (
-                    <p className="text-red-400 text-xs mt-1">{errors.name}</p>
+                    <p className="text-red-400 text-xs mt-0.5">{errors.name}</p>
                   )}
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="email" className="block text-xs font-medium text-gray-300 mb-1.5">
                     Your Email <span className="text-red-400">*</span>
                   </label>
                   <input
@@ -292,7 +292,7 @@ export const ContactSection = () => {
                     }}
                     required
                     maxLength={254}
-                    className={`w-full p-3 rounded-lg bg-slate-700/50 border text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 transition-all hover:bg-slate-700/70 ${
+                    className={`w-full p-2 rounded-lg bg-slate-700/50 border text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 transition-all hover:bg-slate-700/70 ${
                       errors.email 
                         ? 'border-red-500 focus:ring-red-400' 
                         : 'border-slate-600 focus:ring-blue-400'
@@ -301,15 +301,15 @@ export const ContactSection = () => {
                     autoComplete="email"
                   />
                   {errors.email && (
-                    <p className="text-red-400 text-xs mt-1">{errors.email}</p>
+                    <p className="text-red-400 text-xs mt-0.5">{errors.email}</p>
                   )}
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="message" className="block text-xs font-medium text-gray-300 mb-1.5">
                     Message <span className="text-red-400">*</span>
                     <span className="text-gray-500 text-xs ml-2">
-                      ({message.length}/1000 characters)
+                      ({message.length}/1000)
                     </span>
                   </label>
                   <textarea
@@ -323,9 +323,9 @@ export const ContactSection = () => {
                       }
                     }}
                     required
-                    rows={5}
+                    rows={4}
                     maxLength={1000}
-                    className={`w-full p-3 rounded-lg bg-slate-700/50 border text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 resize-vertical transition-all hover:bg-slate-700/70 ${
+                    className={`w-full p-2 rounded-lg bg-slate-700/50 border text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-blue-400 resize-vertical transition-all hover:bg-slate-700/70 ${
                       errors.message 
                         ? 'border-red-500 focus:ring-red-400' 
                         : 'border-slate-600 focus:ring-blue-400'
@@ -340,24 +340,23 @@ export const ContactSection = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting || rateLimitExceeded || !email.trim() || !message.trim()}
-                  className="w-full py-3 px-6 rounded-lg bg-blue-500 hover:bg-blue-600 disabled:bg-gray-600 text-white font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-blue-500/40 hover:-translate-y-0.5"
+                  className="w-full py-2 px-4 rounded-lg bg-blue-500 hover:bg-blue-600 disabled:bg-gray-600 text-sm text-white font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-blue-500/40 hover:-translate-y-0.5"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center justify-center gap-2">
-                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                      Sending Secure Message...
+                      <div className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                      <span className="text-xs">Sending...</span>
                     </div>
                   ) : rateLimitExceeded ? (
                     'Please Wait...'
                   ) : (
-                    'Send Secure Message'
+                    'Send Message'
                   )}
                 </button>
               </form>
 
-              <p className="text-xs text-gray-400 mt-4 text-center">
-                
-                <br />I'll respond as soon as possible!
+              <p className="text-xs text-gray-400 mt-3 text-center">
+                I'll respond within 24 hours!
               </p>
             </div>
           </div>
