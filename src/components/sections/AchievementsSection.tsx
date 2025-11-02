@@ -17,9 +17,13 @@ const hackathons: Achievement[] = [
   {
     name: "100x Hackathon 2025 – Mitra Smart",
     description:
-      "Government document validation and smart form‑filling app with AI checks, field hints, next‑steps, quality precheck, dashboard, and demo mode; built by team Control BIts.",
+      "AI-powered government document validation and smart form-filling application.",
     projectLink: "https://100x-hackathon.vercel.app/",
+    githubLink: "https://github.com/dhirendraxd/100x-Hackathon",
+    linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
     date: "2025",
+    skills: ["React", "TypeScript", "Firebase", "Hugging Face MCP",],
+    certificateLink: "#",
   },
    {
     name: " KIST HackFest 2025",
