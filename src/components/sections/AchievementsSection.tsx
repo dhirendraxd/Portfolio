@@ -20,7 +20,7 @@ const hackathons: Achievement[] = [
       "AI-powered government document validation and smart form-filling application.",
     projectLink: "https://100x-hackathon.vercel.app/",
     githubLink: "https://github.com/dhirendraxd/100x-Hackathon",
-    linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
+    linkedinLink: "https://www.linkedin.com/feed/update/urn:li:activity:7390619068665442304/",
     date: "2025",
     skills: ["React", "TypeScript", "Firebase", "Hugging Face MCP",],
     certificateLink: "#",
