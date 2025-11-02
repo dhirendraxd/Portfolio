@@ -5,13 +5,13 @@ import { useEffect } from 'react';
 const Resume = () => {
   useEffect(() => {
     // Update document title for SEO
-    document.title = 'Resume - Dhirendra Singh Dhami | Cybersecurity & Web Development';
+    document.title = 'Resume - Dhirendra Singh Dhami | Application Security & Web Development';
     
     // Add meta description for this page
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 
-        'Professional resume of Dhirendra Singh Dhami. Experience in cybersecurity, web development, SEO, and digital innovation. Download CV and view complete work history.'
+        'Professional resume of Dhirendra Singh Dhami. Experience in application security, penetration testing, cybersecurity, web development, SEO, and digital innovation.'
       );
     }
 
@@ -22,7 +22,7 @@ const Resume = () => {
       ogTitle.setAttribute('property', 'og:title');
       document.head.appendChild(ogTitle);
     }
-    ogTitle.setAttribute('content', 'Resume - Dhirendra Singh Dhami | Cybersecurity & Web Development');
+  ogTitle.setAttribute('content', 'Resume - Dhirendra Singh Dhami | Application Security & Web Development');
 
     let ogDesc = document.querySelector('meta[property="og:description"]');
     if (!ogDesc) {
@@ -30,7 +30,7 @@ const Resume = () => {
       ogDesc.setAttribute('property', 'og:description');
       document.head.appendChild(ogDesc);
     }
-    ogDesc.setAttribute('content', 'Professional resume of Dhirendra Singh Dhami. Experience in cybersecurity, web development, SEO, and digital innovation.');
+  ogDesc.setAttribute('content', 'Professional resume of Dhirendra Singh Dhami. Experience in application security, penetration testing, cybersecurity, web development, and SEO.');
 
     let ogUrl = document.querySelector('meta[property="og:url"]');
     if (!ogUrl) {
@@ -47,7 +47,7 @@ const Resume = () => {
       twitterTitle.setAttribute('name', 'twitter:title');
       document.head.appendChild(twitterTitle);
     }
-    twitterTitle.setAttribute('content', 'Resume - Dhirendra Singh Dhami | Cybersecurity & Web Development');
+  twitterTitle.setAttribute('content', 'Resume - Dhirendra Singh Dhami | Application Security & Web Development');
 
     let twitterDesc = document.querySelector('meta[name="twitter:description"]');
     if (!twitterDesc) {
@@ -55,7 +55,7 @@ const Resume = () => {
       twitterDesc.setAttribute('name', 'twitter:description');
       document.head.appendChild(twitterDesc);
     }
-    twitterDesc.setAttribute('content', 'Professional resume of Dhirendra Singh Dhami. Experience in cybersecurity, web development, SEO, and digital innovation.');
+  twitterDesc.setAttribute('content', 'Professional resume of Dhirendra Singh Dhami. Experience in application security, penetration testing, cybersecurity, web development, and SEO.');
 
     // Add canonical URL
     const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
@@ -68,9 +68,9 @@ const Resume = () => {
     // Add structured data for resume page
     const structuredData = {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Dhirendra Singh Dhami",
-      "jobTitle": "SEO Specialist & Cybersecurity Enthusiast", 
+  "@type": "Person",
+  "name": "Dhirendra Singh Dhami",
+  "jobTitle": "Application Security Specialist", 
       "url": "https://dhirendrasinghdhami.com.np/resume",
       "sameAs": [
         "https://github.com/dhirendraxd",
@@ -109,7 +109,7 @@ const Resume = () => {
 
     // Cleanup function to reset title on unmount
     return () => {
-      document.title = 'Dhirendra Singh Dhami - Portfolio & Digital Projects';
+  document.title = 'Dhirendra Singh Dhami - Portfolio & Digital Projects';
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) {
         metaDesc.setAttribute('content', 
@@ -162,7 +162,7 @@ const Resume = () => {
             <section className="group">
               <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Summary</h2>
               <p className="text-gray-400 leading-relaxed text-xs md:text-sm">
-                Passionate about technology and community impact, with expertise in Cybersecurity, Cloud, and DevOps. Skilled in building user-centric digital solutions, public speaking, and visual storytelling. Actively engaged in hackathons, civic leadership, and social innovation.
+                Passionate about technology and community impact, with expertise in Cybersecurity,SEO and Web Development. Skilled in building user-centric digital solutions, public speaking, and visual storytelling. Actively engaged in hackathons, civic leadership, and social innovation.
               </p>
             </section>
 
@@ -170,12 +170,24 @@ const Resume = () => {
             <section className="group">
               <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Experience</h2>
               <div className="space-y-4 md:space-y-5">
+                  <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
+                    <div className="flex justify-between items-start mb-1 md:mb-2 flex-col md:flex-row gap-2">
+                      <h3 className="font-semibold text-white text-xs md:text-sm">Application Security Specialist</h3>
+                      <span className="text-xs text-gray-500 whitespace-nowrap">Nov 2025 – Present</span>
+                    </div>
+                    <p className="text-xs text-gray-400 mb-2">Shram Khata </p>
+                    <ul className="space-y-1 md:space-y-1.5 text-xs text-gray-400">
+                      <li>• Application security reviews and vulnerability assessments (OWASP Top 10)</li>
+                      <li>• Penetration testing and triage with actionable remediation guidance</li>
+                      <li>• Contributed to Secure SDLC practices and tooling (Burp Suite, OWASP ZAP)</li>
+                    </ul>
+                  </div>
                 <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
                   <div className="flex justify-between items-start mb-1 md:mb-2 flex-col md:flex-row gap-2">
                     <h3 className="font-semibold text-white text-xs md:text-sm">SEO Specialist</h3>
                     <span className="text-xs text-gray-500 whitespace-nowrap">May 2025 – Present</span>
                   </div>
-                  <p className="text-xs text-gray-400 mb-2">CtrlBits</p>
+                  <p className="text-xs text-gray-400 mb-2">Ctrl Bits</p>
                   <ul className="space-y-1 md:space-y-1.5 text-xs text-gray-400">
                     <li>• Leading SEO strategy and implementation for organic growth</li>
                     <li>• Conducting keyword research, content optimization, and technical SEO audits</li>
@@ -206,7 +218,7 @@ const Resume = () => {
                 <div className="bg-slate-900/30 p-3 rounded hover:bg-slate-900/50 transition-colors">
                   <div className="flex justify-between items-start mb-1 flex-col md:flex-row gap-1">
                     <h3 className="font-semibold text-white text-xs md:text-xs">Event Volunteer</h3>
-                    <span className="text-xs text-gray-500 whitespace-nowrap">2023 – 2024</span>
+                    <span className="text-xs text-gray-500 whitespace-nowrap">2023 – Present</span>
                   </div>
                   <p className="text-xs text-gray-400">TEDx, NIFF, KIST HackFest</p>
                 </div>
@@ -216,6 +228,14 @@ const Resume = () => {
             <section className="group">
               <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Projects</h2>
               <ul className="space-y-2 md:space-y-2.5 text-xs md:text-sm text-gray-400">
+                <li className="flex gap-2">
+                  <span className="text-blue-400/50 mt-0.5 flex-shrink-0">→</span>
+                  <span>
+                    <strong className="text-gray-300">Mitra Smart</strong> – Government document validation and smart form‑filling 
+                    {" "}
+                    
+                  </span>
+                </li>
                 <li className="flex gap-2">
                   <span className="text-blue-400/50 mt-0.5 flex-shrink-0">→</span>
                   <span><strong className="text-gray-300">University Finder</strong> – AI web app recommending universities with React and APIs</span>
@@ -238,17 +258,19 @@ const Resume = () => {
             <section className="group">
               <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Hackathons</h2>
               <ul className="space-y-1.5 md:space-y-2 text-xs text-gray-400">
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>100x Hackathon 2025 – Mitra Smart (Government document validation & smart form‑filling app) </span></li>
                 <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>KIST HackFest 2025 – 3rd Place, AI University Recommendation App</span></li>
-                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>CodeYatra 2025 – AI Job Readiness Tool (DevBus)</span></li>
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>CodeYatra 2025 – AI Job Readiness Tool </span></li>
+                 <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>PublicBodies Datathon 2025 – Data validation for civic tech</span></li>
                 <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>KEC Hack-a-LITE 2024 – Volunteer Management Platform</span></li>
                 <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>KIST HackFest 2023 – Farmer Marketplace</span></li>
-                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>PublicBodies Datathon 2025 – Data validation for civic tech</span></li>
+               
               </ul>
             </section>
 
             <section className="group">
               <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Technical Skills</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 text-xs text-gray-400">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 text-xs text-gray-400">
                 <div>
                   <p className="text-gray-300 font-medium mb-1 md:mb-2">Languages</p>
                   <p>Python, JavaScript, Java, HTML5, CSS3</p>
@@ -259,11 +281,11 @@ const Resume = () => {
                 </div>
                 <div>
                   <p className="text-gray-300 font-medium mb-1 md:mb-2">Backend & Cloud</p>
-                  <p>AWS, Supabase, Vercel</p>
+                  <p>AWS, Firebase, Vercel</p>
                 </div>
                 <div>
                   <p className="text-gray-300 font-medium mb-1 md:mb-2">Security & Tools</p>
-                  <p>Kali Linux, Wireshark, GitHub, Google Analytics</p>
+                    <p>Application Security, Penetration Testing, Burp Suite, OWASP ZAP, Kali Linux, Wireshark</p>
                 </div>
               </div>
             </section>

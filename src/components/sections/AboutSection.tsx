@@ -9,11 +9,11 @@ const ThemedParticles = lazy(() => import("@/components/ThemedParticles").then(m
 
 const skillCategories = {
   'Cyber Security': [
-    'Cybersecurity Fundamentals',
-    'Security Architecture',
-    'OAuth/OIDC',
-    'Network Security',
-    'Digital Forensics'
+    'Application Security',
+    'Penetration Testing',
+    'OWASP Top 10',
+    'Secure SDLC',
+    'Vulnerability Assessment'
   ],
   'Web Development': [
     'HTML5',
@@ -229,7 +229,7 @@ export const AboutSection = () => {
               <div className="card backdrop-blur-sm bg-slate-800/30 p-6">
                   <h3 className="text-2xl font-bold mb-4">Who I Am</h3>
                 <p className="text-gray-300 leading-relaxed">
-                    I'm passionate about creating secure digital solutions and working on projects that make a positive impact. My interests span cybersecurity, web development, ethical AI, and sustainable technology. I enjoy building secure applications, exploring new technologies, and contributing to digital innovation. When I'm not coding, I advocate for digital rights and community development initiatives.
+                  I build secure digital stuff that (hopefully) makes things better. I dabble in cybersecurity, web dev, ethical AI, and sustainable tech—basically anything that sounds cool and won't destroy the planet. When I'm not staring at code, I'm out there for digital rights and fixing communities initiative one at a time.
                 </p>
               </div>
             </div>
