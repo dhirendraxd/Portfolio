@@ -37,7 +37,7 @@ I wanted a portfolio that feels intentional: clean animations, subtle particles,
 | UI Components | shadcn/ui (Radix primitives) |
 | Particles | tsparticles (minimal custom configs) |
 | Forms | EmailJS (sanitized + protected) |
-| Deployment | Static host / CDN optimized |
+| Deployment | Netlify (auto-deploy from GitHub) |
 
 ---
 
@@ -123,6 +123,51 @@ public/          # static assets, sitemap, resume, robots
 - No runtime analytics overhead
 - Particles low-motion and density-tunable
 - Vendor chunk separation (react/ui/particles/icons)
+
+---
+
+## 🚀 Deployment
+
+### Deploy to Netlify
+
+1. **Connect to GitHub:**
+   - Go to [Netlify](https://app.netlify.com/) and sign in
+   - Click "Add new site" → "Import an existing project"
+   - Select GitHub and authorize Netlify
+   - Choose the `dhirendraxd/Portfolio` repository
+
+2. **Build settings** (auto-detected from `netlify.toml`):
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+   - Node version: 20
+
+3. **Deploy:**
+   - Click "Deploy site"
+   - Netlify will auto-deploy on every push to `main`
+
+4. **Custom domain** (optional):
+   - Site settings → Domain management → Add custom domain
+   - Add `dhirendrasinghdhami.com.np`
+   - Configure DNS A/CNAME records as instructed
+
+5. **Environment variables** (if using EmailJS):
+   - Site settings → Build & deploy → Environment
+   - Add:
+     - `VITE_EMAILJS_SERVICE_ID`
+     - `VITE_EMAILJS_TEMPLATE_ID`
+     - `VITE_EMAILJS_PUBLIC_KEY`
+
+### Security Headers
+
+All security headers (HSTS, CSP, X-Frame-Options, etc.) are configured in `netlify.toml` and will be applied automatically.
+
+### Local Build Test
+
+```bash
+npm install
+npm run build
+npm run preview
+```
 
 ---
 
