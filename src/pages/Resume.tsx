@@ -220,7 +220,7 @@ const Resume = () => {
                     <h3 className="font-semibold text-white text-xs md:text-xs">Event Volunteer</h3>
                     <span className="text-xs text-gray-500 whitespace-nowrap">2023 – Present</span>
                   </div>
-                  <p className="text-xs text-gray-400">TEDx, NIFF, KIST HackFest</p>
+                  <p className="text-xs text-gray-400">EUFF, TEDx, NIFF, KIST HackFest</p>
                 </div>
               </div>
             </section>
