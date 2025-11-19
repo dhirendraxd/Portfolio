@@ -198,7 +198,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding opacity-0 relative py-14">
+    <section id="contact" className="opacity-0 relative pt-14 pb-8 px-4 md:px-6 lg:px-8">
       <ThemedParticles theme="sustainability" />
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-8 md:mb-10 max-w-2xl mx-auto px-2">
