@@ -2,9 +2,9 @@ import emailjs from '@emailjs/browser';
 
 // EmailJS configuration
 export const EMAILJS_CONFIG = {
-  SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_w4lji6f',
-  TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_cy6bi9s',
-  PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'cGqwN_rp_7-psvsSp',
+  SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 };
 
 // Debug function to check configuration (only in development)
@@ -20,8 +20,8 @@ export const debugEmailJSConfig = () => {
 
 // Initialize EmailJS
 export const initEmailJS = () => {
-  if (!EMAILJS_CONFIG.PUBLIC_KEY || EMAILJS_CONFIG.PUBLIC_KEY === 'cGqwN_rp_7-psvsSp') {
-    console.error('EmailJS PUBLIC_KEY is not configured. Please set VITE_EMAILJS_PUBLIC_KEY in your .env file.');
+  if (!EMAILJS_CONFIG.PUBLIC_KEY) {
+    console.error('EmailJS PUBLIC_KEY is not configured. Please set VITE_EMAILJS_PUBLIC_KEY in your environment variables.');
     return;
   }
   emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);

@@ -26,7 +26,7 @@ const hackathons: Achievement[] = [
     linkedinLink: "https://www.linkedin.com/feed/update/urn:li:activity:7390619068665442304/",
     date: "2025",
     skills: ["React", "TypeScript", "Firebase", "Hugging Face MCP",],
-    certificateLink: "#",
+    certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7390619068665442304/",
   },
    {
     name: " KIST HackFest 2025",
@@ -46,7 +46,7 @@ const hackathons: Achievement[] = [
       "Developed an innovative solution addressing real-world challenges in a competitive 36-hour hackathon.",
     projectLink: "https://devpost.com/software/devbus#updates",
     githubLink: "https://github.com/dhirendraxd/Codeyatra-Hackathon.git",
-    linkedinLink: "https://www.linkedin.com/in/dhirendra-singh-dhami/",
+    linkedinLink: "https://www.linkedin.com/in/dhirendrasinghdhami/",
     date: "Feb 9th–11th, 2025",
     skills: ["React", "Supabase", "OpenAI API"],
     certificateLink:
@@ -90,46 +90,6 @@ const hackathons: Achievement[] = [
   },
 ];
 
-// const achievements: Achievement[] = [
-
-//   {
-//     name: "AWS Cloud Club College Representative",
-//     description:
-//       "Selected as a CR for AWS Cloud Club Nepal to foster cloud learning and community growth.",
-//     date: "March 2025 - Present",
-//   },
-//   {
-//     name: "Training Of Trainers (ToT) - Climate Justice", // typo fixed here
-//     description: "Completed ToT on climate justice .",
-//     date: "July 2025",
-//   },
-//   {
-//     name: "Civic Leadership Training (Part 5)",
-//     description:
-//       "Completed a 10-day intensive training focused on ethics, democracy, development, and communication.",
-//     date: "Jun 2025",
-//     certificateLink:
-//       "https://www.linkedin.com/feed/update/urn:li:activity:7341260946419417088/",
-//   },
-//   {
-//     name: "AWS Cloud Essentials",
-//     description:
-//       "Completed AWS foundational cloud certification to deepen cloud expertise.",
-//     date: "July 2025 - presnet "
-//   },
-//   {
-//     name: "Volunteer - Nepal International Film Festival 2025",
-//     description:
-//       "Handled guest coordination and hospitality during the Nepal International Film Festival.",
-//     date: "March 2025",
-//   },
-//   {
-//     name: "Volunteer - TEDxBaneshwor 2nd Edition 2024",
-//     description:
-//       " Assisted in logistics and guest experience for the independently organized TEDx event.",
-//     date: "Oct 2024",
-//   },
-// ];
 const achievements: Achievement[] = [
   {
     name: "Member - Rotaract Club of Kirtipur",
@@ -144,28 +104,16 @@ const achievements: Achievement[] = [
     date: "March 2025 - Present",
   },
   {
-    name: "Mentee - Sustainability Solution Program",
+    name: "Mentee - Sustainability Mentorship 2025",
     description:
       "Completed mentorship program focused on sustainable technology solutions and environmental impact by Sustainability Solutions Nepal.",
     date: "Aug 2025 - Dec 2025",
-  },
-  {
-    name: "Civic Leadership Training (Part 5)",
-    description:
-      "Completed a 10-day intensive training focused on ethics, democracy, development, and communication.",
-    date: "June 2025",
-    
   },
   {
     name: "Ambassador (2026 Cohort) - NetMission.Asia",
     description:
       "Engaged in digital rights, governance, and youth advocacy training.",
     date: "Dec 2025 - Present",
-  },
-  {
-    name: "Training Of Trainers (ToT) - Climate Justice",
-    description: "Completed ToT on climate justice.",
-    date: "July 2025",
   }
 ];
 
@@ -186,100 +134,136 @@ export const AchievementsSection = () => {
   const displayedAchievements = showAllAchievements ? filteredAchievements : filteredAchievements.slice(0, 3);
 
   return (
-    <section id="achievements" className="section-padding section-full relative">
-      <Suspense fallback={null}>
-        <ThemedParticles theme="advocacy" />
-      </Suspense>
+    <section id="achievements" className="section-padding relative">
+      <div className="particle-container z-0">
+        <Suspense fallback={null}>
+          <ThemedParticles theme="advocacy" />
+        </Suspense>
+      </div>
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="section-title">Hackathons & Achievements</h2>
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Hackathon Projects */}
-          <div className="card">
-            <h3 className="text-2xl font-bold mb-6">Hackathon Projects</h3>
-            <div className="space-y-6">
-              {displayedHackathons.map((project) => (
-                <div
-                  key={project.name.trim()}
-                  className="relative p-6 glass rounded-lg break-words"
-                >
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h4 className="font-bold text-blue-300 mb-1">
-                        {project.name}
-                      </h4>
-                      <span className="text-xs text-gray-400">{project.date}</span>
-                      <p className="text-sm text-gray-300 mt-1">
-                        {project.description}
-                      </p>
-                      {project.skills && project.skills.length > 0 && (
-                        <p className="mt-2 text-xs text-blue-400 font-mono">
-                          Skills: {project.skills.join(", ")}
-                        </p>
+        <h2 className="text-3xl font-bold text-center mb-8 text-white">Projects & Achievements</h2>
+        <div className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          {/* Hackathon Projects - Timeline */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-blue-400">Hackathons</h3>
+            <div className="flex flex-col">
+              {displayedHackathons.map((project, index) => {
+                // Cycle through muted colors
+                const colors = [
+                  { dot: 'bg-slate-600/30 border-slate-500', icon: 'text-slate-400', badge: 'bg-slate-600/20 text-slate-300', connector: 'bg-slate-500/40' },
+                  { dot: 'bg-slate-700/30 border-slate-600', icon: 'text-slate-400', badge: 'bg-slate-700/20 text-slate-300', connector: 'bg-slate-600/40' },
+                  { dot: 'bg-gray-600/30 border-gray-500', icon: 'text-gray-400', badge: 'bg-gray-600/20 text-gray-300', connector: 'bg-gray-500/40' },
+                ];
+                const colorIndex = index % 3;
+                const color = colors[colorIndex];
+                const isLast = index === displayedHackathons.length - 1;
+                
+                return (
+                  <div key={project.name.trim()} className="flex gap-4">
+                    {/* Timeline Separator */}
+                    <div className="flex flex-col items-center">
+                      {/* Timeline Dot */}
+                      <div className={`w-8 h-8 rounded-full ${color.dot} border-2 flex items-center justify-center shadow-lg shrink-0`}>
+                        <Award className={`w-4 h-4 ${color.icon}`} />
+                      </div>
+                      {/* Timeline Connector - only if not last item */}
+                      {!isLast && (
+                        <div className={`w-0.5 h-full min-h-[100px] ${color.connector} my-1`}></div>
                       )}
                     </div>
+                    
+                    {/* Timeline Content */}
+                    <div className="flex-1 pb-6">
+                      <div className="bg-slate-800/40 rounded-lg p-5 hover:bg-slate-800/50 transition-all duration-300 border border-slate-700/30 hover:border-slate-600/50 hover:shadow-lg">
+                        <div className="flex justify-between items-start mb-2">
+                          <h4 className="font-semibold text-blue-300">
+                            {project.name}
+                          </h4>
+                          <span className="text-xs text-gray-500 whitespace-nowrap ml-2 bg-slate-700/30 px-2 py-1 rounded">{project.date}</span>
+                        </div>
+                        
+                        <p className="text-sm text-gray-300 mb-3 leading-relaxed">
+                          {project.description}
+                        </p>
+                        
+                        {project.skills && project.skills.length > 0 && (
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {project.skills.map((skill) => (
+                              <span key={skill} className={`text-xs px-2.5 py-1 rounded-full ${color.badge} font-medium`}>
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                        
+                        <div className="flex items-center gap-4 flex-wrap pt-2 border-t border-slate-700/30">
+                          {project.projectLink && (
+                            <a
+                              href={project.projectLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-xs text-blue-400 hover:text-blue-300 transition-colors font-medium"
+                            >
+                              View Project →
+                            </a>
+                          )}
+                          <div className="flex items-center gap-3">
+                            {project.githubLink && (
+                              <a
+                                href={project.githubLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="GitHub"
+                                aria-label={`View GitHub repository of ${project.name}`}
+                              >
+                                <Github className="w-4 h-4 text-gray-400 hover:text-blue-400 transition-colors" />
+                              </a>
+                            )}
+                            {project.linkedinLink && (
+                              <a
+                                href={project.linkedinLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="LinkedIn"
+                                aria-label={`View LinkedIn profile related to ${project.name}`}
+                              >
+                                <Linkedin className="w-4 h-4 text-gray-400 hover:text-blue-400 transition-colors" />
+                              </a>
+                            )}
+                            {project.certificateLink && (
+                              <a
+                                href={project.certificateLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center text-xs text-gray-400 hover:text-blue-400 transition-colors"
+                                aria-label={`View certificate for ${project.name}`}
+                              >
+                                <Award className="w-3 h-3 mr-1" />
+                                Certificate
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3 mt-4 flex-wrap">
-                    {project.projectLink && (
-                      <a
-                        href={project.projectLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-white bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded font-medium transition-colors duration-200"
-                      >
-                        View Project
-                      </a>
-                    )}
-                    {project.githubLink && (
-                      <a
-                        href={project.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title="GitHub"
-                        aria-label={`View GitHub repository of ${project.name}`}
-                      >
-                        <Github className="w-5 h-5 text-white hover:text-blue-400" />
-                      </a>
-                    )}
-                    {project.linkedinLink && (
-                      <a
-                        href={project.linkedinLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title="LinkedIn"
-                        aria-label={`View LinkedIn profile related to ${project.name}`}
-                      >
-                        <Linkedin className="w-5 h-5 text-white hover:text-blue-400" />
-                      </a>
-                    )}
-                    {project.certificateLink && (
-                      <a
-                        href={project.certificateLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-xs text-blue-400 hover:underline"
-                        aria-label={`View certificate for ${project.name}`}
-                      >
-                        <Award className="w-4 h-4 mr-1" />
-                        View Certificate
-                      </a>
-                    )}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
+            
             {hackathons.length > 2 && (
               <button
                 onClick={() => setShowAllHackathons(!showAllHackathons)}
-                className="mt-6 w-full flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 transition-colors py-2 glass rounded-lg"
+                className="mt-6 w-full flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 transition-colors py-2 rounded-lg bg-slate-800/20 hover:bg-slate-800/30"
               >
                 {showAllHackathons ? (
                   <>
-                    <span>Show Less</span>
+                    <span className="text-sm">Show Less</span>
                     <ChevronUp className="w-4 h-4" />
                   </>
                 ) : (
                   <>
-                    <span>See More ({hackathons.length - 2} more)</span>
+                    <span className="text-sm">See More ({hackathons.length - 2} more)</span>
                     <ChevronDown className="w-4 h-4" />
                   </>
                 )}
@@ -288,29 +272,31 @@ export const AchievementsSection = () => {
           </div>
 
           {/* Highlights & Roles */}
-          <div className="card">
-            <h3 className="text-2xl font-bold mb-6">Highlights & Roles</h3>
-            <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-blue-400">Highlights</h3>
+            <div className="space-y-3">
               {displayedAchievements.map((cert) => (
                   <div
                     key={cert.name.trim()}
-                    className="p-6 glass rounded-lg break-words"
+                    className="p-6 bg-slate-800/40 rounded-lg break-words hover:bg-slate-800/50 transition-all duration-300 border border-slate-700/30 hover:border-slate-600/50 hover:shadow-lg min-h-[140px] flex flex-col justify-between"
                   >
-                    <div className="flex justify-between items-start">
-                      <h4 className="font-bold text-blue-300">{cert.name.trim()}</h4>
-                      <span className="text-xs text-gray-400">{cert.date}</span>
+                    <div>
+                      <div className="flex justify-between items-start mb-2">
+                        <h4 className="font-semibold text-blue-300">{cert.name.trim()}</h4>
+                        <span className="text-xs text-gray-500 whitespace-nowrap ml-2 bg-slate-700/30 px-2 py-1 rounded">{cert.date}</span>
+                      </div>
+                      <p className="text-sm text-gray-300 leading-relaxed">{cert.description}</p>
                     </div>
-                    <p className="text-sm text-gray-300 mt-1">{cert.description}</p>
                     {cert.certificateLink && (
                       <a
                         href={cert.certificateLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center mt-2 text-xs text-blue-400 hover:underline"
+                        className="inline-flex items-center mt-3 text-xs text-blue-400 hover:text-blue-300 transition-colors font-medium pt-2 border-t border-slate-700/30"
                         aria-label={`View certificate for ${cert.name}`}
                       >
-                        <Award className="w-4 h-4 mr-1" />
-                        View Certificate
+                        <Award className="w-3 h-3 mr-1" />
+                        View Certificate →
                       </a>
                     )}
                   </div>

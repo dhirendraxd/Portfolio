@@ -35,19 +35,19 @@ const SocialLink = ({ href, icon: Icon, label }: SocialLinkProps) => (
       <TooltipTrigger asChild>
         <a
           href={href}
-          className="group relative aspect-square w-full h-full bg-slate-800/30 rounded-lg transition-all duration-300 hover:bg-slate-700/50 hover:shadow-lg hover:shadow-blue-500/5 flex flex-col items-center justify-center hover:-translate-y-1"
+          className="bg-slate-700/30 rounded-lg transition-colors hover:bg-slate-700/50 flex flex-col items-center justify-center p-4"
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
         >
-          <div className="text-gray-400 group-hover:text-blue-400 transition-colors duration-300">
-            <Icon size={28} />
+          <div className="text-gray-400 hover:text-blue-400 transition-colors">
+            <Icon size={24} />
           </div>
-          <span className="mt-1 text-xs text-gray-500 text-center group-hover:text-gray-300 transition-colors duration-300">{label}</span>
+          <span className="mt-2 text-xs text-gray-500">{label}</span>
         </a>
       </TooltipTrigger>
       <TooltipContent>
-        <p className="font-medium">{label}</p>
+        <p>{label}</p>
       </TooltipContent>
     </Tooltip>
   </TooltipProvider>
@@ -95,7 +95,14 @@ export const ContactSection = () => {
 
   // Initialize EmailJS and security when component mounts
   useEffect(() => {
-    initEmailJS();
+    const isConfigured = initEmailJS();
+    if (!isConfigured && import.meta.env.DEV) {
+      toast({
+        title: "Configuration Required",
+        description: "EmailJS is not configured. Please check .env file.",
+        variant: "destructive",
+      });
+    }
     initializeFormSecurity();
   }, []);
 
@@ -166,7 +173,7 @@ export const ContactSection = () => {
 
       if (result.success) {
         logSecurityEvent('Successful form submission', { 
-          email: sanitizedEmail,
+          email: sanitizedEmail.substring(0, 3) + '***', // Log only first 3 chars for privacy
           messageLength: sanitizedMessage.length 
         });
         
@@ -185,7 +192,9 @@ export const ContactSection = () => {
         throw new Error('Failed to send email');
       }
     } catch (error) {
-      console.error('Error sending email:', error);
+      if (import.meta.env.DEV) {
+        console.error('Error sending email:', error);
+      }
       logSecurityEvent('Email sending failed', { 
         error: error instanceof Error ? error.message : 'Unknown error' 
       });
@@ -201,23 +210,25 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="opacity-0 relative pt-14 pb-8 px-4 md:px-6 lg:px-8">
-      <Suspense fallback={null}>
-        <ThemedParticles theme="sustainability" />
-      </Suspense>
+    <section id="contact" className="opacity-0 relative pt-8 pb-8 px-4 md:px-6 lg:px-8">
+      <div className="particle-container z-0">
+        <Suspense fallback={null}>
+          <ThemedParticles theme="sustainability" />
+        </Suspense>
+      </div>
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-8 md:mb-10 max-w-2xl mx-auto px-2">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3">Get in Touch</h2>
-          <p className="text-gray-400 text-sm md:text-base">
-            Have a question or want to collaborate? Reach out through any channel below.
+        <div className="text-center mb-8 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-3 text-white">Contact</h2>
+          <p className="text-gray-400">
+            Let's connect.
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6">
             {/* Social Links */}
-            <div className="bg-slate-900/40 backdrop-blur-sm rounded-lg p-6 md:p-7 hover:bg-slate-900/60 transition-all duration-300">
-              <h3 className="text-base font-semibold mb-5 text-white">Connect</h3>
+            <div className="bg-slate-800/30 rounded-lg p-6">
+              <h3 className="text-base font-semibold mb-5 text-gray-300">Connect</h3>
               <div className="grid grid-cols-2 gap-4 md:gap-4">
                 {[
                   { href: "https://github.com/dhirendraxd", icon: Github, label: "GitHub" },
@@ -231,8 +242,8 @@ export const ContactSection = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-slate-900/40 backdrop-blur-sm rounded-lg p-6 md:p-7 hover:bg-slate-900/60 transition-all duration-300">
-              <h3 className="text-base font-semibold mb-5 text-white">Message</h3>
+            <div className="bg-slate-800/30 rounded-lg p-6">
+              <h3 className="text-base font-semibold mb-5 text-gray-300">Message</h3>
               
               {rateLimitExceeded && (
                 <div className="mb-4 p-3 md:p-2 bg-red-900/20 border border-red-500/50 rounded-lg text-red-300 text-xs md:text-xs animate-pulse">

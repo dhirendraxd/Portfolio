@@ -40,7 +40,7 @@
   }
 
   .section-padding {
-    @apply py-24 px-4 md:px-6 lg:px-8;
+    @apply py-12 px-4 md:px-6 lg:px-8;
   }
 
   .hover-glow {
@@ -61,34 +61,11 @@
   @apply w-full;
 }
 
-.section-title {
-  @apply text-4xl md:text-5xl font-bold mb-12 text-white relative;
-}
-
-.section-title::after {
-  content: '';
-  @apply absolute -bottom-4 left-0 w-24 h-1 bg-blue-400;
-}
-
-.card {
-  @apply rounded-xl p-8 transition-all duration-300 hover:text-blue-400;
-}
-
-.skill-tag {
-  @apply px-4 py-2 rounded-full text-sm font-medium text-blue-300;
-}
-
 /* Performance Optimizations */
 .particle-container {
   @apply absolute inset-0 pointer-events-none;
   contain: layout style paint;
   transform: translateZ(0); /* Force hardware acceleration */
-}
-
-/* Prevent layout shifts - Critical */
-.section-full {
-  min-height: 100vh;
-  contain: layout;
 }
 
 /* Improve font rendering and reduce FOIT */

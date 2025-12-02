@@ -4,6 +4,9 @@ import { useEffect } from 'react';
 
 const Resume = () => {
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
     // Update document title for SEO
     document.title = 'Resume - Dhirendra Singh Dhami | Application Security & Web Development';
     

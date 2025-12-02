@@ -64,6 +64,10 @@ export function sanitizeInput(input: string): string {
     .replace(/javascript:/gi, '') // Remove javascript: protocol
     .replace(/on\w+=/gi, '') // Remove event handlers
     .replace(/data:/gi, '') // Remove data: protocol
+    .replace(/vbscript:/gi, '') // Remove vbscript: protocol
+    .replace(/file:/gi, '') // Remove file: protocol
+    .replace(/<!--/g, '') // Remove HTML comments
+    .replace(/-->/g, '') // Remove HTML comments
     .trim()
     .slice(0, 1000); // Limit length
 }
@@ -166,7 +170,9 @@ export function getUserIdentifier(): string {
  * Log security events (in production, send to monitoring service)
  */
 export function logSecurityEvent(event: string, details: Record<string, unknown>): void {
-  console.warn(`[SECURITY] ${event}:`, details);
+  if (import.meta.env.DEV) {
+    console.warn(`[SECURITY] ${event}:`, details);
+  }
   
   // In production, send to security monitoring service
   // Example: sendToMonitoringService({ event, details, timestamp: new Date().toISOString() });

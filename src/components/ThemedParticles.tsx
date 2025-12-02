@@ -47,11 +47,11 @@ export const ThemedParticles = ({ theme, className = "" }: ThemedParticlesProps)
       ([entry]) => {
         if (entry.isIntersecting) {
           // Add small delay to prevent render blocking
-          setTimeout(() => setIsVisible(true), 100);
+          setTimeout(() => setIsVisible(true), 50);
           observer.disconnect();
         }
       },
-      { threshold: 0.05, rootMargin: '100px' } // Larger margin for earlier loading
+      { threshold: 0, rootMargin: '200px' } // Load earlier with no threshold requirement
     );
 
     if (containerRef.current) {
