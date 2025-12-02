@@ -27,7 +27,8 @@ export const particleConfigs = {
       }
     },
     particles: {
-      color: { value: ["#ffffff", "#f8fafc", "#f1f5f9"] },
+      // Tech-theme tiny nodes with subtle cyan accents
+      color: { value: ["#ffffff", "#a5f3fc", "#22d3ee", "#f8fafc", "#f1f5f9"] },
       links: {
         color: "#ffffff",
         distance: 100,
@@ -44,7 +45,7 @@ export const particleConfigs = {
         straight: false
       },
   number: { value: Math.round(25 * PARTICLE_DENSITY_MULTIPLIER) }, // Increased base count
-      opacity: { value: 0.35 }, // Increased from 0.3
+      opacity: { value: 0.30 },
       shape: { 
         type: ["circle", "polygon"],
         options: {
@@ -76,7 +77,8 @@ export const particleConfigs = {
       }
     },
     particles: {
-      color: { value: ["#ffffff", "#f8fafc", "#f1f5f9"] },
+      // Community-theme tiny nodes with warm accents
+      color: { value: ["#ffffff", "#fde68a", "#fca5a5", "#f8fafc", "#f1f5f9"] },
       links: {
         color: "#ffffff",
         distance: 80,
@@ -93,7 +95,7 @@ export const particleConfigs = {
         straight: false
       },
   number: { value: Math.round(15 * PARTICLE_DENSITY_MULTIPLIER) }, // Increased for advocacy
-      opacity: { value: 0.4 },
+      opacity: { value: 0.28 },
       shape: { 
         type: ["circle", "star"],
         options: {
@@ -125,7 +127,8 @@ export const particleConfigs = {
       }
     },
     particles: {
-      color: { value: ["#ffffff", "#f8fafc", "#f1f5f9"] },
+      // Eco-theme tiny nodes with gentle green accents
+      color: { value: ["#ffffff", "#bbf7d0", "#4ade80", "#f8fafc", "#f1f5f9"] },
       links: {
         color: "#ffffff",
         distance: 60,
@@ -142,7 +145,7 @@ export const particleConfigs = {
         straight: false
       },
   number: { value: Math.round(12 * PARTICLE_DENSITY_MULTIPLIER) }, // Increased for sustainability
-      opacity: { value: 0.25 },
+      opacity: { value: 0.22 },
       shape: { 
         type: ["circle", "polygon"],
         options: {
@@ -174,6 +177,7 @@ export const particleConfigs = {
       }
     },
     particles: {
+      // Ultra-minimal neutral backdrop
       color: { value: ["#ffffff", "#f8fafc", "#f1f5f9"] },
       links: {
         color: "#ffffff",
@@ -191,7 +195,7 @@ export const particleConfigs = {
         straight: false
       },
   number: { value: Math.round(18 * PARTICLE_DENSITY_MULTIPLIER) }, // Increased for hero section
-      opacity: { value: 0.25 }, // Increased from 0.2 for hero
+      opacity: { value: 0.20 },
       shape: { type: "circle" },
       size: { value: { min: 1.5, max: 1.5 } }
     },

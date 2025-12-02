@@ -1,5 +1,8 @@
 import { Github, Linkedin, Award, ChevronDown, ChevronUp } from "lucide-react";
-import { ThemedParticles } from "@/components/ThemedParticles";
+import { lazy, Suspense } from "react";
+const ThemedParticles = lazy(() => import("@/components/ThemedParticles").then(module => ({
+  default: module.ThemedParticles
+})));
 import { useState } from "react";
 
 interface Achievement {
@@ -128,13 +131,7 @@ const hackathons: Achievement[] = [
 //   },
 // ];
 const achievements: Achievement[] = [
-
-   {
-    name: "Mentee - Sustainability Mentorship ",
-    description:
-      "Selected as a mentee in the Sustainability Mentorship Program by Sustainability Solutions Nepal.",
-    date: "August 2025 - Present",
-  },{
+  {
     name: "Member - Rotaract Club of Kirtipur",
     description:
       "Active member contributing to community service projects and leadership initiatives.",
@@ -147,28 +144,28 @@ const achievements: Achievement[] = [
     date: "March 2025 - Present",
   },
   {
-    name: "Training Of Trainers (ToT) - Climate Justice",
-    description: "Completed ToT on climate justice.",
-    date: "July 2025",
+    name: "Mentee - Sustainability Solution Program",
+    description:
+      "Completed mentorship program focused on sustainable technology solutions and environmental impact by Sustainability Solutions Nepal.",
+    date: "Aug 2025 - Dec 2025",
   },
   {
     name: "Civic Leadership Training (Part 5)",
     description:
       "Completed a 10-day intensive training focused on ethics, democracy, development, and communication.",
-    date: "Jun 2025",
+    date: "June 2025",
     
   },
   {
-    name: "Volunteer - Nepal International Film Festival 2025",
+    name: "Ambassador (2026 Cohort) - NetMission.Asia",
     description:
-      "Handled guest coordination and hospitality during the Nepal International Film Festival.",
-    date: "March 2025",
+      "Engaged in digital rights, governance, and youth advocacy training.",
+    date: "Dec 2025 - Present",
   },
   {
-    name: "Volunteer - TEDxBaneshwor 2nd Edition 2024",
-    description:
-      "Assisted in logistics and guest experience for the independently organized TEDx event.",
-    date: "Oct 2024",
+    name: "Training Of Trainers (ToT) - Climate Justice",
+    description: "Completed ToT on climate justice.",
+    date: "July 2025",
   }
 ];
 
@@ -189,8 +186,10 @@ export const AchievementsSection = () => {
   const displayedAchievements = showAllAchievements ? filteredAchievements : filteredAchievements.slice(0, 3);
 
   return (
-    <section id="achievements" className="section-padding relative">
-      <ThemedParticles theme="advocacy" />
+    <section id="achievements" className="section-padding section-full relative">
+      <Suspense fallback={null}>
+        <ThemedParticles theme="advocacy" />
+      </Suspense>
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="section-title">Hackathons & Achievements</h2>
         <div className="grid lg:grid-cols-2 gap-8">

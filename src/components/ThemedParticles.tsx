@@ -1,9 +1,9 @@
 import { useCallback, useMemo, useRef, useEffect, useState } from "react";
-import Particles from "react-tsparticles";
-import { loadBasic } from "tsparticles-basic";
-import { loadPolygonShape } from "tsparticles-shape-polygon";
-import { loadStarShape } from "tsparticles-shape-star";
-import type { Engine } from "tsparticles-engine";
+import Particles from "@tsparticles/react";
+import { loadBasic } from "@tsparticles/basic";
+import { loadPolygonShape } from "@tsparticles/shape-polygon";
+import { loadStarShape } from "@tsparticles/shape-star";
+import type { Engine } from "@tsparticles/engine";
 import { particleConfigs } from "@/lib/particleConfigs";
 import { getDeviceCapabilities, getOptimalParticleConfig } from "@/lib/deviceCapabilities";
 

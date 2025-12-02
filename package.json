@@ -44,12 +44,14 @@
     "@radix-ui/react-toggle-group": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.4",
     "@tanstack/react-query": "^5.56.2",
-    "@tsparticles/basic": "^3.9.1",
-    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/basic": "3.9.1",
+    "@tsparticles/engine": "3.9.1",
     "@tsparticles/interaction-external-connect": "^3.9.1",
     "@tsparticles/move-base": "^3.9.1",
-    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/react": "3.0.0",
     "@tsparticles/shape-circle": "^3.9.1",
+    "@tsparticles/shape-polygon": "3.9.1",
+    "@tsparticles/shape-star": "3.9.1",
     "bun": "^1.2.12",
     "caniuse-lite": "^1.0.30001718",
     "class-variance-authority": "^0.7.1",
@@ -97,6 +99,6 @@
     "terser": "^5.44.0",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.19"
+    "vite": "^7.2.6"
   }
 }

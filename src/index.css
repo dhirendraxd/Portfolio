@@ -86,7 +86,7 @@
 }
 
 /* Prevent layout shifts - Critical */
-.section-padding {
+.section-full {
   min-height: 100vh;
   contain: layout;
 }

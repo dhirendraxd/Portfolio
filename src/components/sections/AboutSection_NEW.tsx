@@ -90,7 +90,7 @@ const highlights = [
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="section-padding relative bg-slate-900/50">
+    <section id="about" className="section-padding section-full relative bg-slate-900/50">
       <Suspense fallback={<div className="absolute inset-0" />}>
         <ThemedParticles theme="cybersecurity" />
       </Suspense>

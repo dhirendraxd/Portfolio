@@ -8,7 +8,10 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { initEmailJS, sendEmail } from "@/lib/emailjs";
-import { ThemedParticles } from "@/components/ThemedParticles";
+import { lazy, Suspense } from "react";
+const ThemedParticles = lazy(() => import("@/components/ThemedParticles").then(module => ({
+  default: module.ThemedParticles
+})));
 import {
   validateEmail,
   validateMessage,
@@ -199,7 +202,9 @@ export const ContactSection = () => {
 
   return (
     <section id="contact" className="opacity-0 relative pt-14 pb-8 px-4 md:px-6 lg:px-8">
-      <ThemedParticles theme="sustainability" />
+      <Suspense fallback={null}>
+        <ThemedParticles theme="sustainability" />
+      </Suspense>
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-8 md:mb-10 max-w-2xl mx-auto px-2">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3">Get in Touch</h2>

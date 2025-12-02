@@ -56,12 +56,17 @@ const certifications = [
     year: "Aug 2025 ",
     certificateLink: "https://certificates.isoc.org/1c2fa81f-c045-43a0-b67f-f2967796fbf7#acc.3JfbBoUL"
   },
-
   {
     name: "Traning Of Trainers (ToT) - Climate Justice",
     issuer: "Power Shift Nepal",
     year: "July 2025",
     certificateLink: "https://www.linkedin.com/in/dhirendrasinghdhami/details/certifications/1753701613080/single-media-viewer/?profileId=ACoAAEVZbWQBEx6E3nH2U3a7L_HTQb__PZHy0rQ"
+  },
+  {
+    name: "असल नागरिक बनौं – Civic Leadership Training (Part 5)",
+    issuer: "Ganeshman Singh Foundation",
+    year: "2025",
+    certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7341260946419417088/"
   },
   {
     name: "Introducing Generative AI with AWS",
@@ -76,23 +81,16 @@ const certifications = [
     certificateLink: "https://www.credly.com/badges/028b9181-dbc3-444b-a478-4c90639811f8/public_url"
   },
   {
-    name: "असल नागरिक बनौं – Civic Leadership Training (Part 5)",
-    issuer: "Ganeshman Singh Foundation",
+    name: "AWS Cloud Essentials",
+    issuer: "Amazon Web Services",
     year: "2025",
-    certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7341260946419417088/"
+    certificateLink: "https://www.credly.com/badges/2a76a90c-8cb9-4c9b-8dbc-8bc60c980492/linked_in_profile"
   },
-  
   {
     name: "Digital Security Training Asia Pacific",
     issuer: "Digital Rights Nepal (DRN)",
     year: "2024",
     certificateLink: "https://www.linkedin.com/in/dhirendrasinghdhami/details/certifications/1734524799902/single-media-viewer/?profileId=ACoAAEVZbWQBEx6E3nH2U3a7L_HTQb__PZHy0rQ"
-  },
-  {
-    name: "AWS Cloud Essentials",
-    issuer: "Amazon Web Services",
-    year: "2025",
-    certificateLink: "https://www.credly.com/badges/2a76a90c-8cb9-4c9b-8dbc-8bc60c980492/linked_in_profile"
   },
   {
     name: "Google UX Design Professional Certificate",
@@ -215,7 +213,7 @@ const CertificationList = () => {
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="section-padding opacity-0 relative">
+    <section id="about" className="section-padding section-full opacity-0 relative">
       <Suspense fallback={<div className="absolute inset-0" />}>
         <ThemedParticles theme="cybersecurity" />
       </Suspense>
@@ -285,7 +283,7 @@ export const AboutSection = () => {
               </h3>
               <div className="card backdrop-blur-sm bg-slate-800/30 p-6 space-y-2">
                 <p className="text-gray-300">• Trained in Civic Leadership & Climate Justice </p>
-                <p className="text-gray-300">• Mentee at Sustainability Mentorship Program 2025</p>
+                <p className="text-gray-300">• Participating in Sustainability Solution Program (Aug 2025 - Present)</p>
                 <p className="text-gray-300">• Engaged in ethical AI and digital rights awareness</p>
                 <p className="text-gray-300">• Active in volunteerism, youth advocacy, hackathons, and community events </p>
               </div>

@@ -145,11 +145,11 @@ const Resume = () => {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 md:mb-3">Resume</h1>
             <p className="text-gray-400 text-sm md:text-base">SEO Specialist, Cybersecurity Enthusiast & Community Advocate</p>
             <div className="flex flex-col sm:flex-row gap-3 mt-4 md:mt-6">
-              <button onClick={() => window.open('/Dhiren Cv.pdf', '_blank', 'noopener,noreferrer')} className="inline-flex items-center justify-center px-4 py-2 md:py-2 text-xs md:text-sm font-medium bg-blue-500/90 hover:bg-blue-500 text-white rounded transition-colors">
+              <button onClick={() => window.open('/public/Dhiren cv.pdf', '_blank', 'noopener,noreferrer')} className="inline-flex items-center justify-center px-4 py-2 md:py-2 text-xs md:text-sm font-medium bg-blue-500/90 hover:bg-blue-500 text-white rounded transition-colors">
                 <FileText className="mr-2" size={16} />
                 View CV
               </button>
-              <a href="/Dhiren Cv.pdf" download="Dhirendra_Singh_Dhami_Resume.pdf" className="inline-flex items-center justify-center px-4 py-2 md:py-2 text-xs md:text-sm font-medium bg-slate-800/50 hover:bg-slate-800 text-gray-300 hover:text-white rounded border border-slate-700/50 transition-colors">
+              <a href="/public/Dhiren cv.pdf" download="Dhirendra_Singh_Dhami_Resume.pdf" className="inline-flex items-center justify-center px-4 py-2 md:py-2 text-xs md:text-sm font-medium bg-slate-800/50 hover:bg-slate-800 text-gray-300 hover:text-white rounded border border-slate-700/50 transition-colors">
                 <Download className="mr-2" size={16} />
                 Download
               </a>
@@ -187,11 +187,11 @@ const Resume = () => {
                     <h3 className="font-semibold text-white text-xs md:text-sm">SEO Specialist</h3>
                     <span className="text-xs text-gray-500 whitespace-nowrap">May 2025 – Present</span>
                   </div>
-                  <p className="text-xs text-gray-400 mb-2">Ctrl Bits</p>
+                  <p className="text-xs text-gray-400 mb-2">Ctrl Bits | Remote</p>
                   <ul className="space-y-1 md:space-y-1.5 text-xs text-gray-400">
-                    <li>• Leading SEO strategy and implementation for organic growth</li>
+                    <li>• Writes optimized blogs, manages analytics & content strategy</li>
+                    <li>• Leads SEO for internal and client web apps</li>
                     <li>• Conducting keyword research, content optimization, and technical SEO audits</li>
-                    <li>• Collaborating with marketing and development teams</li>
                   </ul>
                 </div>
               </div>
@@ -203,17 +203,26 @@ const Resume = () => {
               <div className="space-y-2 md:space-y-3">
                 <div className="bg-slate-900/30 p-3 rounded hover:bg-slate-900/50 transition-colors">
                   <div className="flex justify-between items-start mb-1 flex-col md:flex-row gap-1">
-                    <h3 className="font-semibold text-white text-xs md:text-xs">College Representative</h3>
-                    <span className="text-xs text-gray-500 whitespace-nowrap">Mar 2025 – Present</span>
+                    <h3 className="font-semibold text-white text-xs md:text-xs">Ambassador (2026 Cohort)</h3>
+                    <span className="text-xs text-gray-500 whitespace-nowrap">Dec 2025 – Present</span>
                   </div>
-                  <p className="text-xs text-gray-400">AWS Cloud Club - Nepal</p>
+                  <p className="text-xs text-gray-400">NetMission.Asia</p>
+                  <p className="text-xs text-gray-400 mt-1">Digital rights, governance, and youth advocacy training</p>
                 </div>
+                
                 <div className="bg-slate-900/30 p-3 rounded hover:bg-slate-900/50 transition-colors">
                   <div className="flex justify-between items-start mb-1 flex-col md:flex-row gap-1">
                     <h3 className="font-semibold text-white text-xs md:text-xs">General Member</h3>
                     <span className="text-xs text-gray-500 whitespace-nowrap">Jul 2025 – Present</span>
                   </div>
                   <p className="text-xs text-gray-400">Rotaract Club of Kirtipur</p>
+                </div>
+                <div className="bg-slate-900/30 p-3 rounded hover:bg-slate-900/50 transition-colors">
+                  <div className="flex justify-between items-start mb-1 flex-col md:flex-row gap-1">
+                    <h3 className="font-semibold text-white text-xs md:text-xs">College Representative</h3>
+                    <span className="text-xs text-gray-500 whitespace-nowrap">Mar 2025 – Present</span>
+                  </div>
+                  <p className="text-xs text-gray-400">AWS Cloud Club - Nepal</p>
                 </div>
                 <div className="bg-slate-900/30 p-3 rounded hover:bg-slate-900/50 transition-colors">
                   <div className="flex justify-between items-start mb-1 flex-col md:flex-row gap-1">
@@ -261,10 +270,9 @@ const Resume = () => {
                 <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>100x Hackathon 2025 – Mitra Smart (Government document validation & smart form‑filling app) </span></li>
                 <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>KIST HackFest 2025 – 3rd Place, AI University Recommendation App</span></li>
                 <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>CodeYatra 2025 – AI Job Readiness Tool </span></li>
-                 <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>PublicBodies Datathon 2025 – Data validation for civic tech</span></li>
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>PublicBodies Datathon 2025 – Data validation for civic tech</span></li>
                 <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>KEC Hack-a-LITE 2024 – Volunteer Management Platform</span></li>
                 <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>KIST HackFest 2023 – Farmer Marketplace</span></li>
-               
               </ul>
             </section>
 
@@ -295,11 +303,20 @@ const Resume = () => {
               <div className="space-y-3 md:space-y-4 text-xs md:text-sm">
                 <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
                   <p className="text-gray-300 font-medium">Bachelor's in Information Technology Management</p>
-                  <p className="text-xs text-gray-500 mt-1">KIST College, 2023 – 2027</p>
+                  <p className="text-xs text-gray-500 mt-1">KIST College & SS, Kathmandu, Nov 2023 – Present</p>
                 </div>
+                
                 <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
                   <p className="text-gray-300 font-medium">Aspire Leadership Program</p>
                   <p className="text-xs text-gray-500 mt-1">Aspire Institute, August 2025 – October 2025</p>
+                </div>
+                <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
+                  <p className="text-gray-300 font-medium">Sustainability Solution Program (Mentee)</p>
+                  <p className="text-xs text-gray-500 mt-1">Sustainability Solutions | Aug 2025 – Dec 2025</p>
+                  <ul className="space-y-1 mt-2 text-xs text-gray-400">
+                    <li>• Learned design thinking, ESG basics, and sustainable business models</li>
+                    <li>• Structured mentorship focused on sustainable technology solutions</li>
+                  </ul>
                 </div>
                 
                 <div>
@@ -310,7 +327,12 @@ const Resume = () => {
                     <li>• AWS Cloud Essentials & Generative AI</li>
                     <li>• Google Digital Marketing & E-Commerce</li>
                     <li>• Google UI/UX Design Certificate</li>
-                    <li>• Civic Leadership Training – Ganeshman Singh Foundation</li>
+                    <li>• Training of Trainer on Climate Justice – Power Shift Nepal</li>
+                    <li>• असल नागरिक बनौं - Civic Leadership Training – Ganeshman Singh Foundation</li>
+                    <li>• UN CC:Learn Climate Change: From Learning to Action</li>
+                    <li>• Future of AI Governance – Blue Dot Impact</li>
+                    <li>• Digital Rights Training Asia Pacific</li>
+                    <li>• ICANN Learn (Problem-Solving, Facilitation, Anti-Harassment, Presentation)</li>
                   </ul>
                 </div>
               </div>

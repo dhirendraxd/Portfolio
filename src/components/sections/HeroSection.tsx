@@ -52,12 +52,12 @@ const SocialLink = ({ href, icon: Icon, label }: SocialLinkProps) => (
 export const HeroSection = () => {
   return (
     <section id="home" className="hero-section section-padding relative overflow-hidden min-h-screen flex items-center">
-      <div className="particle-container">
+      <div className="particle-container z-0">
         <Suspense fallback={<div className="absolute inset-0" />}>
           <ThemedParticles theme="hero" />
         </Suspense>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-transparent to-slate-900/20 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-transparent to-slate-900/20 pointer-events-none z-[-1]" />
       <div className="container mx-auto text-center relative z-10 px-4">
         <div className="space-y-8 mb-12 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold animate-fade-in leading-tight">

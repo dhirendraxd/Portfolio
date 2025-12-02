@@ -1,5 +1,8 @@
 import { Award, Code2, Users, TrendingUp, ExternalLink } from "lucide-react";
-import { ThemedParticles } from "@/components/ThemedParticles";
+import { lazy, Suspense } from "react";
+const ThemedParticles = lazy(() => import("@/components/ThemedParticles").then(module => ({
+  default: module.ThemedParticles
+})));
 import { useState } from "react";
 
 interface Item {
@@ -123,8 +126,10 @@ export const AchievementsSection = () => {
   const displayedItems = showAll ? filteredItems : filteredItems.slice(0, 6);
 
   return (
-    <section id="achievements" className="section-padding relative">
-      <ThemedParticles theme="advocacy" />
+    <section id="achievements" className="section-padding section-full relative">
+      <Suspense fallback={null}>
+        <ThemedParticles theme="advocacy" />
+      </Suspense>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
