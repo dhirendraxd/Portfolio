@@ -1,5 +1,9 @@
 # Netlify _redirects file (backup for SPA routing)
-# This ensures client-side routing works even if netlify.toml redirects fail
+# This ensures client-side routing works for known routes
 
-# Redirect all routes to index.html for SPA routing (200 = rewrite, not redirect)
-/*    /index.html   200
+# Known routes - serve directly (no redirect)
+/            /index.html   200
+/resume      /index.html   200
+
+# Redirect old/unknown routes to 404 page
+/*           /404.html     404

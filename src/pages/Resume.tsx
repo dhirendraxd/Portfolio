@@ -68,6 +68,15 @@ const Resume = () => {
       document.head.appendChild(canonicalLink);
     }
 
+    // Ensure robots meta allows indexing (fix GSC "noindex" exclusion)
+    let robotsMeta = document.querySelector('meta[name="robots"]');
+    if (!robotsMeta) {
+      robotsMeta = document.createElement('meta');
+      robotsMeta.setAttribute('name', 'robots');
+      document.head.appendChild(robotsMeta);
+    }
+    robotsMeta.setAttribute('content', 'index, follow');
+
     // Load resume JSON-LD from static file to keep CSP strict
     const ld = document.createElement('script');
     ld.type = 'application/ld+json';
