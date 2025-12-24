@@ -1,5 +1,15 @@
-# Netlify _redirects file (backup for SPA routing)
-# This ensures client-side routing works for known routes
+# Prevent duplicate pages from query parameters and variants
+/*?utm_*=*          /:splat             301
+/*?fbclid=*         /:splat             301
+/*?gclid=*          /:splat             301
+/*?source=*         /:splat             301
+
+# Redirect trailing slashes to clean URLs
+/resume/            /resume             301
+/index/             /                   301
+
+# Prevent .html extensions
+/*.html             /:splat             301
 
 # Known routes - serve directly (no redirect)
 /            /index.html   200
@@ -7,3 +17,4 @@
 
 # Redirect old/unknown routes to 404 page
 /*           /404.html     404
+

@@ -9,6 +9,11 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /backup/
 Disallow: /temp/
+Disallow: /?*
+Disallow: /*?*
+Disallow: /*utm_*
+Disallow: /*redirect*
+Disallow: /*source*
 
 # Block common vulnerability scanners
 User-agent: sqlmap
@@ -26,7 +31,13 @@ Disallow: /
 User-agent: OpenVAS
 Disallow: /
 
+# Specify clean URLs only
 Sitemap: https://dhirendrasinghdhami.com.np/sitemap.xml
+
+# Tell Google: clean parameters = no query strings
+Clean-param: utm_* /
+Clean-param: fbclid /
+Clean-param: gclid /
 
 # Block access to private files
 Disallow: /src/

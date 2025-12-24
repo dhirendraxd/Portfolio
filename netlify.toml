@@ -5,6 +5,24 @@
   publish = "dist"
   environment = { SECRETS_SCAN_OMIT_KEYS = "VITE_EMAILJS_PUBLIC_KEY,VITE_EMAILJS_SERVICE_ID,VITE_EMAILJS_TEMPLATE_ID" }
 
+# Prevent duplicate pages: redirect trailing slashes to clean URLs
+[[redirects]]
+  from = "/resume/"
+  to = "/resume"
+  status = 301
+
+[[redirects]]
+  from = "/*/"
+  to = "/:splat"
+  status = 301
+  force = true
+
+# Prevent .html extensions (no pages should have .html)
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat"
+  status = 301
+
 # SPA routing: redirect 404s to index.html with proper status code for SEO
 [[redirects]]
   from = "/*"
