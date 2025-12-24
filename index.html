@@ -74,53 +74,15 @@
     <link rel="modulepreload" href="/src/App.tsx">
     <link rel="modulepreload" href="/src/pages/Index.tsx">
     
-    <!-- Preload critical styles -->
-    <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
+    <!-- Stylesheet (avoid inline onload to satisfy strict CSP) -->
+    <link rel="stylesheet" href="/src/index.css">
     
     <!-- Fonts - Optimized for LCP -->
     <!-- Use font-display=swap to prevent layout shift and improve LCP -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Dhirendra Singh Dhami",
-      "alternateName": ["Dhirendra", "Dhirendra Singh", "dhirendra"],
-  "jobTitle": "Application Security Specialist",
-      "description": "Dhirendra's portfolio: Secure digital solutions, cybersecurity, web development, and sustainable tech. Contact Dhirendra for collaboration.",
-      "url": "https://dhirendrasinghdhami.com.np/",
-      "sameAs": [
-        "https://github.com/dhirendraxd",
-        "https://x.com/dhirendra_jsx",
-        "https://www.linkedin.com/in/dhirendrasinghdhami/"
-      ],
-      "email": "dhirendraxd@gmail.com",
-      "knowsAbout": [
-        "dhirendra",
-        "Cybersecurity",
-        "Web Development",
-        "Digital Security",
-        "Ethical AI",
-        "Sustainable Technology",
-        "JavaScript",
-        "React",
-        "TypeScript",
-        "Node.js",
-        "Information Security"
-      ],
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Freelance"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "IN"
-      }
-    }
-    </script>
+    <script type="application/ld+json" src="/ld/home.json"></script>
   </head>
   <body>
     <div id="root">

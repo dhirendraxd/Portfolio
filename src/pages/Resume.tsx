@@ -68,47 +68,12 @@ const Resume = () => {
       document.head.appendChild(canonicalLink);
     }
 
-    // Add structured data for resume page
-    const structuredData = {
-      "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Dhirendra Singh Dhami",
-  "jobTitle": "Application Security Specialist", 
-      "url": "https://dhirendrasinghdhami.com.np/resume",
-      "sameAs": [
-        "https://github.com/dhirendraxd",
-        "https://x.com/dhirendra_jsx", 
-        "https://www.linkedin.com/in/dhirendrasinghdhami/"
-      ],
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "Bachelor of Information Management",
-          "educationalLevel": "Bachelor's Degree"
-        }
-      ],
-      "workExample": [
-        {
-          "@type": "CreativeWork",
-          "name": "Personal Portfolio Website",
-          "description": "Secure, performant portfolio built with React, TypeScript, and modern SEO practices",
-          "url": "https://dhirendrasinghdhami.com.np"
-        }
-      ]
-    };
-
-    // Remove existing resume structured data if any
-    const existingScript = document.querySelector('script[data-resume-ld]');
-    if (existingScript) {
-      existingScript.remove();
-    }
-
-    // Add new structured data
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.setAttribute('data-resume-ld', 'true');
-    script.textContent = JSON.stringify(structuredData);
-    document.head.appendChild(script);
+    // Load resume JSON-LD from static file to keep CSP strict
+    const ld = document.createElement('script');
+    ld.type = 'application/ld+json';
+    ld.src = '/ld/resume.json';
+    ld.setAttribute('data-resume-ld', 'true');
+    document.head.appendChild(ld);
 
     // Cleanup function to reset title on unmount
     return () => {
@@ -120,11 +85,9 @@ const Resume = () => {
         );
       }
       
-      // Remove resume-specific structured data
+      // Remove resume-specific structured data tag
       const resumeScript = document.querySelector('script[data-resume-ld]');
-      if (resumeScript) {
-        resumeScript.remove();
-      }
+      if (resumeScript) resumeScript.remove();
       
       // Reset canonical URL
       const canonical = document.querySelector('link[rel="canonical"]');
@@ -148,11 +111,11 @@ const Resume = () => {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 md:mb-3">Resume</h1>
             <p className="text-gray-400 text-sm md:text-base">SEO Specialist, Cybersecurity Enthusiast & Community Advocate</p>
             <div className="flex flex-col sm:flex-row gap-3 mt-4 md:mt-6">
-              <button onClick={() => window.open('/Dhiren cv.pdf', '_blank', 'noopener,noreferrer')} className="inline-flex items-center justify-center px-4 py-2 md:py-2 text-xs md:text-sm font-medium bg-blue-500/90 hover:bg-blue-500 text-white rounded transition-colors">
+              <button onClick={() => window.open('/Dhiren%20cv.pdf', '_blank', 'noopener,noreferrer')} className="inline-flex items-center justify-center px-4 py-2 md:py-2 text-xs md:text-sm font-medium bg-blue-500/90 hover:bg-blue-500 text-white rounded transition-colors">
                 <FileText className="mr-2" size={16} />
                 View CV
               </button>
-              <a href="/Dhiren cv.pdf" download="Dhirendra_Singh_Dhami_Resume.pdf" className="inline-flex items-center justify-center px-4 py-2 md:py-2 text-xs md:text-sm font-medium bg-slate-800/50 hover:bg-slate-800 text-gray-300 hover:text-white rounded border border-slate-700/50 transition-colors">
+              <a href="/Dhiren%20cv.pdf" download="Dhirendra_Singh_Dhami_Resume.pdf" className="inline-flex items-center justify-center px-4 py-2 md:py-2 text-xs md:text-sm font-medium bg-slate-800/50 hover:bg-slate-800 text-gray-300 hover:text-white rounded border border-slate-700/50 transition-colors">
                 <Download className="mr-2" size={16} />
                 Download
               </a>

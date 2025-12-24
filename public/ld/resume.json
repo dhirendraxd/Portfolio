@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dhirendra Singh Dhami",
+  "jobTitle": "Application Security Specialist",
+  "url": "https://dhirendrasinghdhami.com.np/resume",
+  "sameAs": [
+    "https://github.com/dhirendraxd",
+    "https://x.com/dhirendra_jsx",
+    "https://www.linkedin.com/in/dhirendrasinghdhami/"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Bachelor of Information Management",
+      "educationalLevel": "Bachelor's Degree"
+    }
+  ],
+  "workExample": [
+    {
+      "@type": "CreativeWork",
+      "name": "Personal Portfolio Website",
+      "description": "Secure, performant portfolio built with React, TypeScript, and modern SEO practices",
+      "url": "https://dhirendrasinghdhami.com.np"
+    }
+  ]
+}
