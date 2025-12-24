@@ -1,21 +1,17 @@
+# Standard robots.txt - Allow all, block query strings and private resources
 User-agent: *
 Allow: /
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /?*
 Disallow: /*.json$
 Disallow: /*.log$
-Disallow: /*.config$
-Disallow: /.htaccess
-Disallow: /SECURITY_AUDIT.md
 Disallow: /admin/
 Disallow: /private/
 Disallow: /backup/
 Disallow: /temp/
-Disallow: /?*
-Disallow: /*?*
-Disallow: /*utm_*
-Disallow: /*redirect*
-Disallow: /*source*
 
-# Block common vulnerability scanners
+# Block known malicious crawlers
 User-agent: sqlmap
 Disallow: /
 
@@ -31,29 +27,15 @@ Disallow: /
 User-agent: OpenVAS
 Disallow: /
 
-# Specify clean URLs only
+# Sitemap location for search engines
 Sitemap: https://dhirendrasinghdhami.com.np/sitemap.xml
 
-# Tell Google: clean parameters = no query strings
-Clean-param: utm_* /
+# Clean-param directives tell Google to treat these URLs as equivalent
+Clean-param: utm_source /
+Clean-param: utm_medium /
+Clean-param: utm_campaign /
 Clean-param: fbclid /
 Clean-param: gclid /
 
-# Block access to private files
-Disallow: /src/
-Disallow: /node_modules/
-Disallow: /*.json
-Disallow: /package.json
-Disallow: /tsconfig.json
-Disallow: /vite.config.ts
-
-# Allow important files
-Allow: /favicon.ico
-Allow: /og-image.png
-Allow: /apple-touch-icon.png
-Allow: /favicon-32x32.png
-Allow: /favicon-16x16.png
-Allow: /site.webmanifest
-
-# Crawl-delay (optional)
+# Crawl-delay to be respectful to servers
 Crawl-delay: 1
