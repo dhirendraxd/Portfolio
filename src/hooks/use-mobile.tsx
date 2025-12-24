@@ -17,3 +17,4 @@ export function useIsMobile() {
 
   return !!isMobile
 }
+// Unused hook removed during cleanup. Intentionally left blank.

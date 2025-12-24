@@ -49,7 +49,7 @@ export default defineConfig(({ mode }) => ({
           // Separate vendor chunks for better caching
           react: ['react', 'react-dom'],
           'react-router': ['react-router-dom'],
-          particles: ['react-tsparticles', '@tsparticles/engine', '@tsparticles/basic', '@tsparticles/shape-polygon', '@tsparticles/shape-star', '@tsparticles/react'],
+          particles: ['@tsparticles/engine', '@tsparticles/basic', '@tsparticles/shape-polygon', '@tsparticles/shape-star', '@tsparticles/react'],
           ui: ['@radix-ui/react-toast', '@radix-ui/react-tooltip', '@radix-ui/react-accordion', '@radix-ui/react-dialog'],
           icons: ['lucide-react'],
           forms: ['@emailjs/browser', '@hookform/resolvers'],

@@ -19,13 +19,14 @@ export const debugEmailJSConfig = () => {
 };
 
 // Initialize EmailJS
-export const initEmailJS = () => {
+export const initEmailJS = (): boolean => {
   if (!EMAILJS_CONFIG.PUBLIC_KEY) {
     console.error('EmailJS PUBLIC_KEY is not configured. Please set VITE_EMAILJS_PUBLIC_KEY in your environment variables.');
-    return;
+    return false;
   }
   emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
   debugEmailJSConfig(); // Show config in console for debugging (dev only)
+  return true;
 };
 
 // Send email using EmailJS

@@ -104,7 +104,7 @@ export const ContactSection = () => {
       });
     }
     initializeFormSecurity();
-  }, []);
+  }, [toast]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

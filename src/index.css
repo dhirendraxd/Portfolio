@@ -43,23 +43,10 @@
     @apply py-12 px-4 md:px-6 lg:px-8;
   }
 
-  .hover-glow {
-    @apply transition-all duration-300 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(96,165,250,0.3)];
-  }
+  /* removed unused .hover-glow */
 }
 
-.nav-link {
-  @apply relative text-sm font-sans uppercase tracking-wider hover:text-blue-400 transition-colors duration-300;
-}
-
-.nav-link::after {
-  content: '';
-  @apply absolute left-0 bottom-0 w-0 h-0.5 bg-blue-400 transition-all duration-300;
-}
-
-.nav-link:hover::after {
-  @apply w-full;
-}
+/* removed unused .nav-link styles */
 
 /* Performance Optimizations */
 .particle-container {
@@ -69,9 +56,7 @@
 }
 
 /* Improve font rendering and reduce FOIT */
-* {
-  font-display: swap;
-}
+/* removed invalid global font-display rule */
 
 /* Reduce reflows and optimize images */
 img, video {

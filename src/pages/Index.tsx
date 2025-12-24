@@ -7,7 +7,7 @@ import { ContactSection } from '../components/sections/ContactSection';
 import { DeviceInfo } from '../components/DeviceInfo';
 
 // Lazy load performance monitor in development
-if (process.env.NODE_ENV === 'development') {
+if (import.meta.env.DEV) {
   import('../lib/performance');
 }
 

@@ -139,7 +139,7 @@ class PerformanceMonitor {
 }
 
 // Initialize performance monitoring in development
-if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
+if (typeof window !== 'undefined' && import.meta.env.DEV) {
   (window as unknown as { performanceMonitor: PerformanceMonitor }).performanceMonitor = new PerformanceMonitor();
   
   // Report summary after page load
