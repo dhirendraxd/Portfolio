@@ -63,23 +63,32 @@
       @media (min-width: 768px) { h1 { font-size: 4.5rem; } }
     </style>
     
-    <!-- Resource Hints for Performance -->
+    <!-- Resource Hints for Performance (Critical for Mobile) -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="prefetch" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3i6t4kByBoSChFQcEQ1AkWn.0.woff2">
+    <!-- DNS prefetch for Google CDN assets -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- Preload critical fonts (only used above the fold) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
+    
+    <!-- Defer Space Mono font (used only on resume page) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"></noscript>
     
     <!-- Preload critical resources -->
     <link rel="modulepreload" href="/src/main.tsx">
     <link rel="modulepreload" href="/src/App.tsx">
     <link rel="modulepreload" href="/src/pages/Index.tsx">
     
-    <!-- Stylesheet (avoid inline onload to satisfy strict CSP) -->
-    <link rel="stylesheet" href="/src/index.css">
-    
-    <!-- Fonts - Optimized for LCP -->
-    <!-- Use font-display=swap to prevent layout shift and improve LCP -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet - Optimize for non-blocking load -->
+    <!-- Load async to prevent FCP blocking, then apply immediately -->
+    <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" src="/ld/home.json"></script>
@@ -94,9 +103,9 @@
         </div>
       </div>
     </div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx" defer></script>
     
-    <!-- Inline spinner animation -->
+    <!-- Inline spinner animation (critical for UX) -->
     <style>
       @keyframes spin {
         0% { transform: rotate(0deg); }
