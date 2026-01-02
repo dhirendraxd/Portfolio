@@ -39,6 +39,7 @@ const skillCategories = {
     'Google Analytics'
   ],
   'Advocacy & Social Leadership': [
+    'Internet Governance',
     'Civic Engagement',
     'Policy Awareness',
     'Community Mobilization',
@@ -50,9 +51,13 @@ const skillCategories = {
 
 const certifications = [
   {
+    name: "APIGA Nepal 2025",
+    issuer: "Asia Pacific Internet Governance Academy (APIGA)",
+    year: "Dec 2025",
+    certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7411209346430349312/"
+  },{
     name: "Internet Governance",
     issuer: "Internet Society ",
-
     year: "Aug 2025 ",
     certificateLink: "https://certificates.isoc.org/1c2fa81f-c045-43a0-b67f-f2967796fbf7#acc.3JfbBoUL"
   },
