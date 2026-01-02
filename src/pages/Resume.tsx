@@ -118,7 +118,7 @@ const Resume = () => {
           {/* Header */}
           <div className="mb-8 md:mb-12">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 md:mb-3">Resume</h1>
-            <p className="text-gray-400 text-sm md:text-base">SEO Specialist, Cybersecurity Enthusiast & Community Advocate</p>
+            <p className="text-gray-400 text-sm md:text-base">Application Security • SEO • Civic Tech & Digital Rights</p>
             <div className="flex flex-col sm:flex-row gap-3 mt-4 md:mt-6">
               <button onClick={() => window.open('/Dhiren%20cv.pdf', '_blank', 'noopener,noreferrer')} className="inline-flex items-center justify-center px-4 py-2 md:py-2 text-xs md:text-sm font-medium bg-blue-500/90 hover:bg-blue-500 text-white rounded transition-colors">
                 <FileText className="mr-2" size={16} />
@@ -137,7 +137,7 @@ const Resume = () => {
             <section className="group">
               <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Summary</h2>
               <p className="text-gray-400 leading-relaxed text-xs md:text-sm">
-                Passionate about technology and community impact, with expertise in Cybersecurity,SEO and Web Development. Skilled in building user-centric digital solutions, public speaking, and visual storytelling. Actively engaged in hackathons, civic leadership, and social innovation.
+                Multidisciplinary learner blending IT management, application security, SEO, web development, civic tech, photography, and public leadership. Experienced in hackathons, datathons, cloud tools, and digital rights work. Passionate about youth advocacy, climate action, and Internet governance.
               </p>
             </section>
 
@@ -145,18 +145,19 @@ const Resume = () => {
             <section className="group">
               <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Experience</h2>
               <div className="space-y-4 md:space-y-5">
-                  <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
-                    <div className="flex justify-between items-start mb-1 md:mb-2 flex-col md:flex-row gap-2">
-                      <h3 className="font-semibold text-white text-xs md:text-sm">Application Security Specialist</h3>
-                      <span className="text-xs text-gray-500 whitespace-nowrap">Nov 2025 – Present</span>
-                    </div>
-                    <p className="text-xs text-gray-400 mb-2">Shram Khata </p>
-                    <ul className="space-y-1 md:space-y-1.5 text-xs text-gray-400">
-                      <li>• Application security reviews and vulnerability assessments (OWASP Top 10)</li>
-                      <li>• Penetration testing and triage with actionable remediation guidance</li>
-                      <li>• Contributed to Secure SDLC practices and tooling (Burp Suite, OWASP ZAP)</li>
-                    </ul>
+                <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
+                  <div className="flex justify-between items-start mb-1 md:mb-2 flex-col md:flex-row gap-2">
+                    <h3 className="font-semibold text-white text-xs md:text-sm">Application Security Specialist</h3>
+                    <span className="text-xs text-gray-500 whitespace-nowrap">Nov 2025 – Present</span>
                   </div>
+                  <p className="text-xs text-gray-400 mb-2">Shram Khata | Remote</p>
+                  <ul className="space-y-1 md:space-y-1.5 text-xs text-gray-400">
+                    <li>• Application security and penetration testing for worker payment tracking platform</li>
+                    <li>• Security reviews aligned to OWASP Top 10; actionable remediation and triage</li>
+                    <li>• Enables secure SDLC with tooling (Burp Suite, OWASP ZAP) and threat models</li>
+                  </ul>
+                </div>
+
                 <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
                   <div className="flex justify-between items-start mb-1 md:mb-2 flex-col md:flex-row gap-2">
                     <h3 className="font-semibold text-white text-xs md:text-sm">SEO Specialist</h3>
@@ -164,17 +165,29 @@ const Resume = () => {
                   </div>
                   <p className="text-xs text-gray-400 mb-2">Ctrl Bits | Remote</p>
                   <ul className="space-y-1 md:space-y-1.5 text-xs text-gray-400">
-                    <li>• Writes optimized blogs, manages analytics & content strategy</li>
-                    <li>• Leads SEO for internal and client web apps</li>
-                    <li>• Conducting keyword research, content optimization, and technical SEO audits</li>
+                    <li>• Writes optimized blogs; leads content strategy and analytics</li>
+                    <li>• Technical SEO audits, keyword research, and experimentation for client web apps</li>
+                    <li>• Tracks performance via Search Console and analytics dashboards</li>
+                  </ul>
+                </div>
+
+                <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
+                  <div className="flex justify-between items-start mb-1 md:mb-2 flex-col md:flex-row gap-2">
+                    <h3 className="font-semibold text-white text-xs md:text-sm">Sustainability Mentee</h3>
+                    <span className="text-xs text-gray-500 whitespace-nowrap">Aug 2025 – Present</span>
+                  </div>
+                  <p className="text-xs text-gray-400 mb-2">Sustainability Solutions | Kathmandu (On-site)</p>
+                  <ul className="space-y-1 md:space-y-1.5 text-xs text-gray-400">
+                    <li>• Structured mentorship on design thinking and sustainable business models</li>
+                    <li>• Built climate-focused solutions with community impact framing</li>
                   </ul>
                 </div>
               </div>
             </section>
 
-            {/* Volunteer Experience */}
+            {/* Leadership & Community */}
             <section className="group">
-              <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Volunteer Experience</h2>
+              <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Leadership & Community</h2>
               <div className="space-y-2 md:space-y-3">
                 <div className="bg-slate-900/30 p-3 rounded hover:bg-slate-900/50 transition-colors">
                   <div className="flex justify-between items-start mb-1 flex-col md:flex-row gap-1">
@@ -182,29 +195,36 @@ const Resume = () => {
                     <span className="text-xs text-gray-500 whitespace-nowrap">Dec 2025 – Present</span>
                   </div>
                   <p className="text-xs text-gray-400">NetMission.Asia</p>
-                  <p className="text-xs text-gray-400 mt-1">Digital rights, governance, and youth advocacy training</p>
+                  <p className="text-xs text-gray-400 mt-1">Internet governance, digital rights, and community advocacy projects</p>
                 </div>
-                
-                <div className="bg-slate-900/30 p-3 rounded hover:bg-slate-900/50 transition-colors">
-                  <div className="flex justify-between items-start mb-1 flex-col md:flex-row gap-1">
-                    <h3 className="font-semibold text-white text-xs md:text-xs">General Member</h3>
-                    <span className="text-xs text-gray-500 whitespace-nowrap">Jul 2025 – Present</span>
-                  </div>
-                  <p className="text-xs text-gray-400">Rotaract Club of Kirtipur</p>
-                </div>
+
                 <div className="bg-slate-900/30 p-3 rounded hover:bg-slate-900/50 transition-colors">
                   <div className="flex justify-between items-start mb-1 flex-col md:flex-row gap-1">
                     <h3 className="font-semibold text-white text-xs md:text-xs">College Representative</h3>
                     <span className="text-xs text-gray-500 whitespace-nowrap">Mar 2025 – Present</span>
                   </div>
-                  <p className="text-xs text-gray-400">AWS Cloud Club - Nepal</p>
+                  <p className="text-xs text-gray-400">AWS Cloud Club Nepal</p>
+                  <p className="text-xs text-gray-400 mt-1">Organizes cloud sessions; promotes community-focused cloud learning</p>
                 </div>
+
+                <div className="bg-slate-900/30 p-3 rounded hover:bg-slate-900/50 transition-colors">
+                  <div className="flex justify-between items-start mb-1 flex-col md:flex-row gap-1">
+                    <h3 className="font-semibold text-white text-xs md:text-xs">Member</h3>
+                    <span className="text-xs text-gray-500 whitespace-nowrap">Jun 2025 – Present</span>
+                  </div>
+                  <p className="text-xs text-gray-400">Rotaract Club of Kirtipur</p>
+                  <p className="text-xs text-gray-400 mt-1">Supports civic, tech-forward, and sustainability initiatives</p>
+                </div>
+
+                
+
                 <div className="bg-slate-900/30 p-3 rounded hover:bg-slate-900/50 transition-colors">
                   <div className="flex justify-between items-start mb-1 flex-col md:flex-row gap-1">
                     <h3 className="font-semibold text-white text-xs md:text-xs">Event Volunteer</h3>
                     <span className="text-xs text-gray-500 whitespace-nowrap">2023 – Present</span>
                   </div>
-                  <p className="text-xs text-gray-400">EUFF, TEDx, NIFF, KIST HackFest</p>
+                  <p className="text-xs text-gray-400">EUFF, NIFF (hospitality), TEDxBaneshwor, KIST HackFest 2024</p>
+                  <p className="text-xs text-gray-400 mt-1">Crowd management, workshop coordination, delegate support, logistics</p>
                 </div>
               </div>
             </section>
@@ -215,14 +235,12 @@ const Resume = () => {
                 <li className="flex gap-2">
                   <span className="text-blue-400/50 mt-0.5 flex-shrink-0">→</span>
                   <span>
-                    <strong className="text-gray-300">Mitra Smart</strong> – Government document validation and smart form‑filling 
-                    {" "}
-                    
+                    <strong className="text-gray-300">Mitra Smart</strong> – Government document validation and smart form‑filling (AI-powered checks and hints)
                   </span>
                 </li>
                 <li className="flex gap-2">
                   <span className="text-blue-400/50 mt-0.5 flex-shrink-0">→</span>
-                  <span><strong className="text-gray-300">University Finder</strong> – AI web app recommending universities with React and APIs</span>
+                  <span><strong className="text-gray-300">Edu Connect Global</strong> – AI university recommendation platform (KIST HackFest 2025)</span>
                 </li>
                 <li className="flex gap-2">
                   <span className="text-blue-400/50 mt-0.5 flex-shrink-0">→</span>
@@ -242,33 +260,41 @@ const Resume = () => {
             <section className="group">
               <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Hackathons</h2>
               <ul className="space-y-1.5 md:space-y-2 text-xs text-gray-400">
-                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>100x Hackathon 2025 – Mitra Smart (Government document validation & smart form‑filling app) </span></li>
-                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>KIST HackFest 2025 – 3rd Place, AI University Recommendation App</span></li>
-                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>CodeYatra 2025 – AI Job Readiness Tool </span></li>
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>Mitra Smart – 100x Nepal Hackathon 2025 (AI validation + smart form-filling)</span></li>
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>Edu Connect Global – KIST HackFest 2025, 3rd Place (AI university recommendation)</span></li>
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>DevBus – CodeYatra 2025 (AI job assessment for SMEs)</span></li>
                 <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>PublicBodies Datathon 2025 – Data validation for civic tech</span></li>
-                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>KEC Hack-a-LITE 2024 – Volunteer Management Platform</span></li>
-                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>KIST HackFest 2023 – Farmer Marketplace</span></li>
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>Volunteer Recruitment Platform – KEC Hack-a-LITE 2024</span></li>
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>Local Produce Marketplace – KIST HackFest 2023</span></li>
               </ul>
             </section>
 
             <section className="group">
               <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Technical Skills</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 text-xs text-gray-400">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 text-xs text-gray-400">
                 <div>
-                  <p className="text-gray-300 font-medium mb-1 md:mb-2">Languages</p>
-                  <p>Python, JavaScript, Java, HTML5, CSS3</p>
+                  <p className="text-gray-300 font-medium mb-1 md:mb-2">Web Development</p>
+                  <p>HTML5, CSS3, JavaScript, TypeScript, React, Tailwind, Sass, Git, Vercel</p>
                 </div>
                 <div>
-                  <p className="text-gray-300 font-medium mb-1 md:mb-2">Frontend</p>
-                  <p>React.js, Tailwind CSS, TypeScript</p>
+                  <p className="text-gray-300 font-medium mb-1 md:mb-2">SEO & Analytics</p>
+                  <p>On-page & technical SEO, Google Search Console, analytics dashboards, content audits</p>
                 </div>
                 <div>
-                  <p className="text-gray-300 font-medium mb-1 md:mb-2">Backend & Cloud</p>
-                  <p>AWS, Firebase, Vercel</p>
+                  <p className="text-gray-300 font-medium mb-1 md:mb-2">Cloud & DevOps</p>
+                  <p>AWS basics, deployment workflows, GitHub, CI/CD familiarity</p>
                 </div>
                 <div>
-                  <p className="text-gray-300 font-medium mb-1 md:mb-2">Security & Tools</p>
-                    <p>Application Security, Penetration Testing, Burp Suite, OWASP ZAP, Kali Linux, Wireshark</p>
+                  <p className="text-gray-300 font-medium mb-1 md:mb-2">Cybersecurity</p>
+                  <p>Application security, penetration testing, OWASP Top 10, Burp Suite, OWASP ZAP, threat models</p>
+                </div>
+                <div>
+                  <p className="text-gray-300 font-medium mb-1 md:mb-2">UI/UX & Content</p>
+                  <p>Wireframing, content strategy, mobile optimization, Figma (basic)</p>
+                </div>
+                <div>
+                  <p className="text-gray-300 font-medium mb-1 md:mb-2">Media & Tools</p>
+                  <p>Photography, visual storytelling, Canva, Notion, Google Workspace, Microsoft/Adobe Suite</p>
                 </div>
               </div>
             </section>
@@ -277,40 +303,79 @@ const Resume = () => {
               <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Education & Certifications</h2>
               <div className="space-y-3 md:space-y-4 text-xs md:text-sm">
                 <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
-                  <p className="text-gray-300 font-medium">Bachelor's in Information Technology Management</p>
-                  <p className="text-xs text-gray-500 mt-1">KIST College & SS, Kathmandu, Nov 2023 – Present</p>
+                  <p className="text-gray-300 font-medium">Bachelor of Information Technology Management</p>
+                  <p className="text-xs text-gray-500 mt-1">KIST College & SS, Kathmandu | 2023 – Present</p>
+                  <p className="text-xs text-gray-400 mt-1">Volunteer at KIST HackFest 2024; community-centered tech initiatives</p>
                 </div>
-                
+
                 <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
-                  <p className="text-gray-300 font-medium">Aspire Leadership Program</p>
-                  <p className="text-xs text-gray-500 mt-1">Aspire Institute, August 2025 – October 2025</p>
+                  <p className="text-gray-300 font-medium">Aspire Leaders Program</p>
+                  <p className="text-xs text-gray-500 mt-1">Aug 2025 – Oct 2025</p>
+                  <p className="text-xs text-gray-400 mt-1">Leadership development focused on reflection, empathy, and community impact</p>
                 </div>
+
+ 
+
                 <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
-                  <p className="text-gray-300 font-medium">Sustainability Solution Program (Mentee)</p>
-                  <p className="text-xs text-gray-500 mt-1">Sustainability Solutions | Aug 2025 – Dec 2025</p>
+                  <p className="text-gray-300 font-medium">Sustainability Solutions Program (Mentee)</p>
+                  <p className="text-xs text-gray-500 mt-1">Aug 2025 – Dec 2025</p>
                   <ul className="space-y-1 mt-2 text-xs text-gray-400">
-                    <li>• Learned design thinking, ESG basics, and sustainable business models</li>
-                    <li>• Structured mentorship focused on sustainable technology solutions</li>
+                    <li>• Design thinking, ESG basics, and sustainable business models</li>
+                    <li>• Structured mentorship for climate and community solutions</li>
                   </ul>
                 </div>
-                
+
                 <div>
-                  <p className="text-gray-300 font-medium mb-2">Key Certifications</p>
+                  <p className="text-gray-300 font-medium mb-2">Certifications</p>
                   <ul className="space-y-1 md:space-y-1.5 text-xs text-gray-400">
                     <li>• Internet Governance – Internet Society</li>
-                    <li>• Google Cybersecurity Professional Certificate</li>
-                    <li>• AWS Cloud Essentials & Generative AI</li>
-                    <li>• Google Digital Marketing & E-Commerce</li>
-                    <li>• Google UI/UX Design Certificate</li>
-                    <li>• Training of Trainer on Climate Justice – Power Shift Nepal</li>
-                    <li>• असल नागरिक बनौं - Civic Leadership Training – Ganeshman Singh Foundation</li>
-                    <li>• UN CC:Learn Climate Change: From Learning to Action</li>
+                    <li>• AI vs. Cybercrime – Future War, Human Firewall</li>
+                    <li>• Digital Rights: Understanding Your Online Freedoms</li>
                     <li>• Future of AI Governance – Blue Dot Impact</li>
-                    <li>• Digital Rights Training Asia Pacific</li>
-                    <li>• ICANN Learn (Problem-Solving, Facilitation, Anti-Harassment, Presentation)</li>
+                    <li>• Google Cybersecurity Professional Certificate</li>
+                    <li>• AWS Knowledge: Cloud Essentials & Generative AI (Udacity/AWS)</li>
+                    <li>• Google Digital Marketing & E-Commerce</li>
+                    <li>• Google UX Design Certificate</li>
+                    <li>• Training of Trainer on Climate Justice – Power Shift Nepal</li>
+                    <li>• “असल नागरिक बनौं” Civic Leadership Training – Ganeshman Singh Foundation</li>
+                    
+                    <li>• UN CC:Learn Climate Change: From Learning to Action</li>
+                    <li>• NFRs for SMEs – Mero Job</li>
                   </ul>
                 </div>
               </div>
+            </section>
+
+            <section className="group">
+              <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Training, Conferences & Events</h2>
+              <ul className="space-y-1.5 md:space-y-2 text-xs text-gray-400">
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>APIGA 2025</span></li>
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>Asia Pacific Regional Internet Governance Forum (APrIGF)</span></li>
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>Workshop on Community Contribution in Censorship Detection (OONI)</span></li>
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>Training of Trainer on Climate Justice</span></li>
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>“असल नागरिक बनौं” Civic Leadership Training</span></li>
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>Digital Rights Training Asia Pacific</span></li>
+                <li className="flex gap-2"><span className="text-blue-400/50 flex-shrink-0">•</span> <span>Public Bodies Datathon</span></li>
+              </ul>
+            </section>
+
+            <section className="group">
+              <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Soft Skills & Languages</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 text-xs text-gray-400">
+                <div>
+                  <p className="text-gray-300 font-medium mb-1 md:mb-2">Soft Skills</p>
+                  <p>Team leadership and collaboration; event and community coordination; strategic thinking; adaptability; public speaking and facilitation</p>
+                </div>
+                <div>
+                  <p className="text-gray-300 font-medium mb-1 md:mb-2">Languages</p>
+                  <p>English (Fluent), Hindi (Fluent), Nepali (Native)</p>
+                </div>
+              </div>
+            </section>
+
+            <section className="group">
+              <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Interests</h2>
+              <p className="text-xs md:text-sm text-gray-400">Civic tech, climate communication, youth leadership, community innovation, public speaking, SEO for social impact, and visual storytelling.</p>
             </section>
 
           </div>

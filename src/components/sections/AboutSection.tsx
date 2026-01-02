@@ -49,46 +49,53 @@ const skillCategories = {
   ]
 };
 
-const certifications = [
-  {
-    name: "APIGA Nepal 2025",
-    issuer: "Asia Pacific Internet Governance Academy (APIGA)",
-    year: "Dec 2025",
-    certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7411209346430349312/"
-  },{
-    name: "Internet Governance",
-    issuer: "Internet Society ",
-    year: "Aug 2025 ",
-    certificateLink: "https://certificates.isoc.org/1c2fa81f-c045-43a0-b67f-f2967796fbf7#acc.3JfbBoUL"
-  },
-  {
-    name: "Traning Of Trainers (ToT) - Climate Justice",
-    issuer: "Power Shift Nepal",
-    year: "July 2025",
-    certificateLink: "https://www.linkedin.com/in/dhirendrasinghdhami/details/certifications/1753701613080/single-media-viewer/?profileId=ACoAAEVZbWQBEx6E3nH2U3a7L_HTQb__PZHy0rQ"
-  },
-  {
-    name: "असल नागरिक बनौं – Civic Leadership Training (Part 5)",
-    issuer: "Ganeshman Singh Foundation",
-    year: "2025",
-    certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7341260946419417088/"
-  },
-  {
-    name: "Introducing Generative AI with AWS",
-    issuer: "Udacity",
-    year: "2025",
-    certificateLink: "https://www.udacity.com/certificate/e/15ec95fe-48d9-11f0-a9d2-875efbc54a76"
-  }
-];
-
-const CertificationList = () => {
-  return (
-    <div className="space-y-4">
-      {certifications.map(cert => (
-        <div
-          key={cert.name}
-          className="card backdrop-blur-sm bg-slate-800/30 p-6 hover:border-blue-500/50 transition-all flex items-center justify-between"
-        >
+const skillCategories = {
+  'Cyber Security': [
+    'Application Security',
+    'Penetration Testing',
+    'OWASP Top 10',
+    'Secure SDLC',
+    'Threat Modeling',
+    'Vulnerability Assessment'
+  ],
+  'Web Development': [
+    'HTML5',
+    'CSS3',
+    'JavaScript',
+    'TypeScript',
+    'React.js',
+    'Tailwind CSS',
+    'Sass',
+    'Supabase',
+    'Git & GitHub',
+    'Vercel'
+  ],
+  'SEO & Analytics': [
+    'On-page & Technical SEO',
+    'Google Search Console',
+    'Analytics Dashboards',
+    'Content Audits'
+  ],
+  'Cloud & DevOps': [
+    'AWS (Basics)',
+    'CI/CD Workflows',
+    'Deployment Pipelines'
+  ],
+  'Advocacy & Social Leadership': [
+    'Civic Engagement',
+    'Policy Awareness',
+    'Community Mobilization',
+    'Youth Advocacy',
+    'Climate Action',
+    'Ethical AI & Digital Rights',
+    'Public Speaking'
+  ],
+  'Storytelling & Media': [
+    'Photography',
+    'Visual Storytelling',
+    'Content Strategy'
+  ]
+};
           <div>
             <h4 className="font-bold text-blue-300">{cert.name}</h4>
             <p className="text-sm text-gray-400 mt-1">

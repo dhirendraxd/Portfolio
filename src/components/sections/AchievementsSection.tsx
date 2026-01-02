@@ -29,9 +29,9 @@ const hackathons: Achievement[] = [
     certificateLink: "https://www.linkedin.com/feed/update/urn:li:activity:7390619068665442304/",
   },
    {
-    name: " KIST HackFest 2025",
+    name: "Edu Connect Global — KIST HackFest 2025 (3rd Place)",
     description:
-      "Secured  3rd position , developed AI-Powered University Recommendation Web App",
+      "AI-powered university recommendation platform matching students with best-fit options.",
     projectLink: "https://kannun-2025.vercel.app/",
     githubLink: "https://github.com/dhirendraxd/Kannun-2025.git",
     linkedinLink: "https://www.linkedin.com/feed/update/urn:li:activity:7361770720659443713/",
@@ -92,6 +92,12 @@ const hackathons: Achievement[] = [
 
 const achievements: Achievement[] = [
   {
+    name: "Ambassador (2026 Cohort) - NetMission.Asia",
+    description:
+      "Engaged in digital rights, governance, and youth advocacy training.",
+    date: "Dec 2025 - Present",
+  },
+  {
     name: "Member - Rotaract Club of Kirtipur",
     description:
       "Active member contributing to community service projects and leadership initiatives.",
@@ -110,10 +116,22 @@ const achievements: Achievement[] = [
     date: "Aug 2025 - Dec 2025",
   },
   {
-    name: "Ambassador (2026 Cohort) - NetMission.Asia",
+    name: "APIGA 2025 – Participant",
     description:
-      "Engaged in digital rights, governance, and youth advocacy training.",
-    date: "Dec 2025 - Present",
+      "Asia Pacific Internet Governance Academy training on Internet governance and policy.",
+    date: "2025",
+  },
+  {
+    name: "APrIGF 2025 – Delegate",
+    description:
+      "Asia Pacific Regional Internet Governance Forum attendee focusing on digital rights and policy.",
+    date: "2025",
+  },
+  {
+    name: "Workshop – Community Contribution in Censorship Detection (OONI)",
+    description:
+      "Hands-on workshop using OONI tools for community-driven censorship monitoring.",
+    date: "Nov 14, 2025",
   }
 ];
 
@@ -129,7 +147,9 @@ export const AchievementsSection = () => {
       cert.name.toLowerCase().includes("mentee") ||
       cert.name.toLowerCase().includes("representative") ||
       cert.name.toLowerCase().includes("training") ||
-      cert.name.toLowerCase().includes("member")
+      cert.name.toLowerCase().includes("member") ||
+      cert.name.toLowerCase().includes("participant") ||
+      cert.name.toLowerCase().includes("workshop")
   );
   const displayedAchievements = showAllAchievements ? filteredAchievements : filteredAchievements.slice(0, 3);
 

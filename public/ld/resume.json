@@ -2,8 +2,15 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Dhirendra Singh Dhami",
-  "jobTitle": "Application Security Specialist",
+  "jobTitle": "Application Security Specialist, SEO Specialist",
   "url": "https://dhirendrasinghdhami.com.np/resume",
+  "email": "mailto:dhirendradhami09@gmail.com",
+  "telephone": "+977-9862478859",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kirtipur, Kathmandu",
+    "addressCountry": "NP"
+  },
   "sameAs": [
     "https://github.com/dhirendraxd",
     "https://x.com/dhirendra_jsx",
@@ -12,7 +19,7 @@
   "hasCredential": [
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "Bachelor of Information Management",
+      "name": "Bachelor of Information Technology Management",
       "educationalLevel": "Bachelor's Degree"
     }
   ],
