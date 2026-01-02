@@ -78,3 +78,28 @@ img, video {
   align-items: center;
   justify-content: center;
 }
+
+/* Animated wave gradient for hero name */
+.wave-text {
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.55),
+    rgba(191, 219, 254, 0.85),
+    rgba(96, 165, 250, 0.78),
+    rgba(191, 219, 254, 0.85)
+  );
+  background-size: 140% 140%;
+  animation: wave-gradient 5s ease-in-out infinite;
+}
+
+@keyframes wave-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

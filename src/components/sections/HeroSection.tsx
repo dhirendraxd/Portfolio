@@ -60,7 +60,7 @@ export const HeroSection = () => {
       <div className="container mx-auto text-center relative z-10 px-4">
         <div className="space-y-6 mb-16 max-w-3xl mx-auto">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold animate-fade-in leading-tight">
-            <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Dhirendra Singh Dhami</span>
+            <span className="wave-text bg-clip-text text-transparent">Dhirendra Singh Dhami</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto animate-fade-in leading-relaxed">
             Building secure digital solutions. Focused on cybersecurity, web development, and sustainable technology.
