@@ -145,18 +145,7 @@ const Resume = () => {
             <section className="group">
               <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Experience</h2>
               <div className="space-y-4 md:space-y-5">
-                <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
-                  <div className="flex justify-between items-start mb-1 md:mb-2 flex-col md:flex-row gap-2">
-                    <h3 className="font-semibold text-white text-xs md:text-sm">Application Security Specialist</h3>
-                    <span className="text-xs text-gray-500 whitespace-nowrap">Nov 2025 – Present</span>
-                  </div>
-                  <p className="text-xs text-gray-400 mb-2">Shram Khata | Remote</p>
-                  <ul className="space-y-1 md:space-y-1.5 text-xs text-gray-400">
-                    <li>• Application security and penetration testing for worker payment tracking platform</li>
-                    <li>• Security reviews aligned to OWASP Top 10; actionable remediation and triage</li>
-                    <li>• Enables secure SDLC with tooling (Burp Suite, OWASP ZAP) and threat models</li>
-                  </ul>
-                </div>
+                
 
                 <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
                   <div className="flex justify-between items-start mb-1 md:mb-2 flex-col md:flex-row gap-2">
@@ -170,22 +159,20 @@ const Resume = () => {
                     <li>• Tracks performance via Search Console and analytics dashboards</li>
                   </ul>
                 </div>
-
                 <div className="bg-slate-900/30 p-3 md:p-4 rounded hover:bg-slate-900/50 transition-colors">
                   <div className="flex justify-between items-start mb-1 md:mb-2 flex-col md:flex-row gap-2">
-                    <h3 className="font-semibold text-white text-xs md:text-sm">Sustainability Mentee</h3>
-                    <span className="text-xs text-gray-500 whitespace-nowrap">Aug 2025 – Present</span>
+                    <h3 className="font-semibold text-white text-xs md:text-sm">Application Security Specialist</h3>
+                    <span className="text-xs text-gray-500 whitespace-nowrap">Nov 2025 – Jan 2025</span>
                   </div>
-                  <p className="text-xs text-gray-400 mb-2">Sustainability Solutions | Kathmandu (On-site)</p>
+                  <p className="text-xs text-gray-400 mb-2">Shram Khata | Remote</p>
                   <ul className="space-y-1 md:space-y-1.5 text-xs text-gray-400">
-                    <li>• Structured mentorship on design thinking and sustainable business models</li>
-                    <li>• Built climate-focused solutions with community impact framing</li>
+                    <li>• Application security and penetration testing for worker payment tracking platform</li>
+                    <li>• Security reviews aligned to OWASP Top 10; actionable remediation and triage</li>
+                    <li>• Enables secure SDLC with tooling (Burp Suite, OWASP ZAP) and threat models</li>
                   </ul>
                 </div>
               </div>
             </section>
-
-            {/* Leadership & Community */}
             <section className="group">
               <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Leadership & Community</h2>
               <div className="space-y-2 md:space-y-3">
@@ -206,7 +193,6 @@ const Resume = () => {
                   <p className="text-xs text-gray-400">AWS Cloud Club Nepal</p>
                   <p className="text-xs text-gray-400 mt-1">Organizes cloud sessions; promotes community-focused cloud learning</p>
                 </div>
-
                 <div className="bg-slate-900/30 p-3 rounded hover:bg-slate-900/50 transition-colors">
                   <div className="flex justify-between items-start mb-1 flex-col md:flex-row gap-1">
                     <h3 className="font-semibold text-white text-xs md:text-xs">Member</h3>
@@ -215,9 +201,6 @@ const Resume = () => {
                   <p className="text-xs text-gray-400">Rotaract Club of Kirtipur</p>
                   <p className="text-xs text-gray-400 mt-1">Supports civic, tech-forward, and sustainability initiatives</p>
                 </div>
-
-                
-
                 <div className="bg-slate-900/30 p-3 rounded hover:bg-slate-900/50 transition-colors">
                   <div className="flex justify-between items-start mb-1 flex-col md:flex-row gap-1">
                     <h3 className="font-semibold text-white text-xs md:text-xs">Event Volunteer</h3>
@@ -226,9 +209,8 @@ const Resume = () => {
                   <p className="text-xs text-gray-400">EUFF, NIFF (hospitality), TEDxBaneshwor, KIST HackFest 2024</p>
                   <p className="text-xs text-gray-400 mt-1">Crowd management, workshop coordination, delegate support, logistics</p>
                 </div>
-              </div>
+              </div> 
             </section>
-
             <section className="group">
               <h2 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4 pb-3 border-b border-slate-700/50 group-hover:border-slate-600/50 transition-colors">Projects & Hackathons</h2>
               <ul className="space-y-2 md:space-y-2.5 text-xs md:text-sm text-gray-400">
